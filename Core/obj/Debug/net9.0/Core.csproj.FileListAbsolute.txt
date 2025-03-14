@@ -1,0 +1,12 @@
+C:\Users\sandu\Desktop\pontaj\Core\bin\Debug\net9.0\Core.deps.json
+C:\Users\sandu\Desktop\pontaj\Core\bin\Debug\net9.0\Core.dll
+C:\Users\sandu\Desktop\pontaj\Core\bin\Debug\net9.0\Core.pdb
+C:\Users\sandu\Desktop\pontaj\Core\obj\Debug\net9.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sandu\Desktop\pontaj\Core\obj\Debug\net9.0\Core.AssemblyInfoInputs.cache
+C:\Users\sandu\Desktop\pontaj\Core\obj\Debug\net9.0\Core.AssemblyInfo.cs
+C:\Users\sandu\Desktop\pontaj\Core\obj\Debug\net9.0\Core.csproj.CoreCompileInputs.cache
+C:\Users\sandu\Desktop\pontaj\Core\obj\Debug\net9.0\Core.dll
+C:\Users\sandu\Desktop\pontaj\Core\obj\Debug\net9.0\refint\Core.dll
+C:\Users\sandu\Desktop\pontaj\Core\obj\Debug\net9.0\Core.pdb
+C:\Users\sandu\Desktop\pontaj\Core\obj\Debug\net9.0\ref\Core.dll
+C:\Users\sandu\Desktop\pontaj\Core\obj\Debug\net9.0\Core.csproj.AssemblyReference.cache
