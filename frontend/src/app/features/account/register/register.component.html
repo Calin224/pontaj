@@ -1,0 +1,73 @@
+<div
+  class="bg-[#003B95] max-w-3xl mx-auto mt-10 w-full p-4 rounded-md shadow-md"
+>
+  <div>
+    <h1 class="text-4xl text-center font-bold mb-4 mt-5">Register</h1>
+  </div>
+
+  <div class="flex flex-col justify-center items-center w-full">
+    <form
+      [formGroup]="registerForm"
+      (ngSubmit)="onSubmit()"
+      class="w-full px-20 space-y-5"
+    >
+    <p-float-label variant="in">
+        <input
+          pInputText
+          id="over_label1"
+          formControlName="firstName"
+          autocomplete="off"
+          [style]="{ width: '100%', background: 'white', color: 'black' }"
+        />
+        <label for="over_label1">First Name</label>
+      </p-float-label>
+
+      <p-float-label variant="in">
+        <input
+          pInputText
+          id="over_label2"
+          formControlName="lastName"
+          autocomplete="off"
+          [style]="{ width: '100%', background: 'white', color: 'black' }"
+        />
+        <label for="over_label2">Last Name</label>
+      </p-float-label>
+
+      <p-float-label variant="in">
+        <input
+          pInputText
+          id="over_label3"
+          formControlName="email"
+          autocomplete="off"
+          [style]="{ width: '100%', background: 'white', color: 'black' }"
+        />
+        <label for="over_label3">Email</label>
+      </p-float-label>
+
+      <p-float-label variant="in">
+        <input
+          pInputText
+          id="over_label4"
+          formControlName="password"
+          autocomplete="off"
+          type="password"
+          [style]="{ width: '100%', background: 'white', color: 'black' }"
+        />
+        <label for="over_label4">Password</label>
+      </p-float-label>
+
+      <p-button type="submit" styleClass="w-full" variant="text"
+        >Submit</p-button
+      >
+    </form>
+  </div>
+
+  <div class="p-text-right mt-5">
+    <p-button
+      icon="pi pi-times"
+      label="Close"
+      severity="danger"
+      routerLink="/"
+    ></p-button>
+  </div>
+</div>

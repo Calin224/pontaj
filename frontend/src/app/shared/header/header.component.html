@@ -1,0 +1,51 @@
+<section class="bg-[#003B95] px-4">
+    <div class="max-w-7xl mx-auto relative h-full">
+      <div class="flex justify-between items-center py-5">
+        <p class="text-2xl font-bold">Pontaj</p>
+        <div class="flex items-center gap-4">
+          @if (accountService.currentUser()) {
+          <div>
+            <button
+              class="flex flex-row gap-2 items-center justify-center hover:bg-[#1A4FA0] px-3 py-3 rounded-xl"
+              [matMenuTriggerFor]="menu"
+            >
+              <!-- <img
+                ngSrc="/profile.png"
+                alt=""
+                class="rounded-full border-[#DDA61B] border-2 p-0 m-0"
+                height="35"
+                width="35"
+              /> -->
+  
+              {{ accountService.currentUser() | name }}
+            </button>
+  
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>
+                <span class="hover:opacity-60">Profile</span>
+              </button>
+              <button mat-menu-item (click)="logout()">
+                <span class="hover:opacity-60">Logout</span>
+              </button>
+            </mat-menu>
+          </div>
+          } @else {
+          <button
+            class="bg-white px-3 py-1 text-[#003B95] rounded-md"
+            routerLink="/account/login"
+          >
+            Sign in
+          </button>
+          <button 
+          class="bg-white px-3 py-1 text-[#003B95] rounded-md"
+          routerLink="/account/register"
+          >
+            Register
+          </button>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <p-toast position="bottom-right" />

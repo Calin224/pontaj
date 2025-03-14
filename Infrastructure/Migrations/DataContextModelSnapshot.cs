@@ -22,6 +22,21 @@ namespace Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("AppUserProiect", b =>
+                {
+                    b.Property<int>("ProiecteId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UseriId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("ProiecteId", "UseriId");
+
+                    b.HasIndex("UseriId");
+
+                    b.ToTable("AppUserProiect");
+                });
+
             modelBuilder.Entity("Core.Entities.AppUser", b =>
                 {
                     b.Property<string>("Id")
@@ -101,6 +116,9 @@ namespace Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<TimeSpan>("OraInceput")
                         .HasColumnType("time");
 
@@ -114,10 +132,15 @@ namespace Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
                     b.Property<int>("ZiDeLucruId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
 
                     b.HasIndex("ProiectId");
 
@@ -151,10 +174,15 @@ namespace Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<DateTime>("Data")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
 
                     b.ToTable("ZileDeLucru");
                 });
@@ -292,8 +320,27 @@ namespace Infrastructure.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("AppUserProiect", b =>
+                {
+                    b.HasOne("Core.Entities.Proiect", null)
+                        .WithMany()
+                        .HasForeignKey("ProiecteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Core.Entities.AppUser", null)
+                        .WithMany()
+                        .HasForeignKey("UseriId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Core.Entities.Pontaj", b =>
                 {
+                    b.HasOne("Core.Entities.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("AppUserId");
+
                     b.HasOne("Core.Entities.Proiect", "Proiect")
                         .WithMany("Pontaje")
                         .HasForeignKey("ProiectId");
@@ -304,9 +351,18 @@ namespace Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("AppUser");
+
                     b.Navigation("Proiect");
 
                     b.Navigation("ZiDeLucru");
+                });
+
+            modelBuilder.Entity("Core.Entities.ZiDeLucru", b =>
+                {
+                    b.HasOne("Core.Entities.AppUser", null)
+                        .WithMany("ZileMuncite")
+                        .HasForeignKey("AppUserId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -358,6 +414,11 @@ namespace Infrastructure.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Core.Entities.AppUser", b =>
+                {
+                    b.Navigation("ZileMuncite");
                 });
 
             modelBuilder.Entity("Core.Entities.Proiect", b =>

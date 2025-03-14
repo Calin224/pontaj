@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sandu\\Desktop\\pontaj\\API\\API.csproj": {}
+    "C:\\Users\\sandu\\Desktop\\pontaj\\api\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sandu\\Desktop\\pontaj\\API\\API.csproj": {
+    "C:\\Users\\sandu\\Desktop\\pontaj\\api\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\API.csproj",
+        "projectPath": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\API.csproj",
         "packagesPath": "C:\\Users\\sandu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\",
+        "outputPath": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sandu\\AppData\\Roaming\\NuGet\\NuGet.Config"
