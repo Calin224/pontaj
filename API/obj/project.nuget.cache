@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "zrInk3AZDH0=",
+=======
+  "dgSpecHash": "2qWvbnZx/ac=",
+>>>>>>> 4eeb757c2ebe97dd9192428c9c4dedd9a7d4cda9
   "success": true,
   "projectFilePath": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\API.csproj",
   "expectedPackageFiles": [

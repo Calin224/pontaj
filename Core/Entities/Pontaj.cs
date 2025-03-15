@@ -14,5 +14,8 @@ public class Pontaj : BaseEntity
     public int? ProiectId { get; set; }
     public Proiect? Proiect { get; set; }
 
+    public int UserId { get; set; }
+    public AppUser AppUser { get; set; }
+
     public TimeSpan DurataMuncita => OraSfarsit - OraInceput;
 }
