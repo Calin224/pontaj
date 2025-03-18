@@ -2,12 +2,13 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Pontaj } from '../../shared/models/pontaj';
 import {GrupajPontaj} from '../../shared/models/grupajPontaj';
+import {environment} from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PontajService {
-  baseUrl = 'https://localhost:5001/api/';
+  baseUrl = environment.apiUrl;
   http = inject(HttpClient);
 
   getPontajByDate(date: string){
