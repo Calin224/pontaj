@@ -1,8 +1,10 @@
-import { Pontaj } from "./pontaj";
-import { UtilizatoriProiect } from "./utilizator-proiect";
-
 export type Proiect = {
-    nume: string;
-    utilizatorId: string;
-    pontaje: Pontaj[];
+    id: number;
+    denumireaActivitatii: string;
+    descriereaActivitatii: string;
+    pozitiaInProiect: string;
+    categoriaExpertului: string;
+    denumireBeneficiar: string;
+    titluProiect?: string;
+    codProiect?: string;
 }

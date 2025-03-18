@@ -1,12 +1,11 @@
 import { Proiect } from "./proiect";
+import {ZiDeLucru} from './ziDeLucru';
 
 export type Pontaj = {
-    ziDeLucruId: number;
-    data: Date;
+    ziDeLucru: ZiDeLucru;
     oraInceput: string;
     oraSfarsit: string;
     tipMunca: string;
-    proiectId?: number;
-    utilizatorId: string;
-    proiect?: Proiect;
+    durataMuncita: string;
+    proiect?: Proiect | null;
 }

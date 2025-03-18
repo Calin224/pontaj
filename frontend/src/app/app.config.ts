@@ -8,6 +8,8 @@ import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/aura';
 import { InitService } from './core/services/init.service';
 import { lastValueFrom } from 'rxjs';
+import {provideAnimations} from '@angular/platform-browser/animations';
+import {Noir} from '../../mytheme';
 
 function initializeApp(initService: InitService) {
   return () => lastValueFrom(initService.init());
@@ -16,12 +18,13 @@ function initializeApp(initService: InitService) {
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }), 
-    provideRouter(routes), 
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(routes),
     provideHttpClient(),
+    provideAnimations(),
     providePrimeNG({
       theme: {
-        preset: Aura
+        preset: Noir
       }
     }),
     {

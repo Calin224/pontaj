@@ -1,0 +1,115 @@
+<div class="container mx-auto mt-4">
+  <h2 class="text-2xl font-bold mb-4">Pontaje pentru: {{selectedDate}}</h2>
+
+  <button
+    (click)="showDialog()"
+    class="bg-sky-600 text-white px-4 py-2 rounded-lg hover:opacity-90 mb-4"
+  >
+    Add Pontaj
+  </button>
+
+  <p-dialog
+    header="Add Event"
+    [modal]="true"
+    [(visible)]="visible"
+    [style]="{ width: '70rem' }"
+    styleClass="p-fluid"
+  >
+    <form [formGroup]="pontajForm" (ngSubmit)="onSubmit()">
+      <div class="flex items-center gap-4 mb-4">
+        <label for="date" class="font-semibold w-24">Date</label>
+        <input
+          pInputText
+          type="date"
+          id="date"
+          class="flex-auto"
+          autocomplete="off"
+          formControlName="data"
+        />
+      </div>
+      <div class="flex items-center gap-4 mb-8">
+        <label for="oraInceput" class="font-semibold w-24">Start Time</label>
+        <input
+          pInputText
+          type="time"
+          id="oraInceput"
+          class="flex-auto w-full"
+          autocomplete="off"
+          formControlName="oraInceput"
+        />
+      </div>
+
+      <div class="flex items-center gap-4 mb-8">
+        <label for="oraSfarsit" type="time" class="font-semibold w-24"
+        >End Time</label
+        >
+        <input
+          pInputText
+          type="time"
+          id="oraSfarsit"
+          class="flex-auto"
+          autocomplete="off"
+          formControlName="oraSfarsit"
+        />
+      </div>
+
+      <div class="flex items-center gap-4 mb-8">
+        <label for="tipMunca" class="font-semibold w-24">Tip Munca</label>
+        <select pInputText name="" id="tipMunca" formControlName="tipMunca" class="w-full">
+          <option value="Norma de baza">Norma de baza</option>
+          <option value="Proiect">Proiect</option>
+        </select>
+      </div>
+
+      @if (pontajForm.value['tipMunca'] === 'Proiect') {
+        <div class="flex items-center gap-4 mb-8">
+          <label for="proiect" class="font-semibold w-24">Proiect</label>
+          <select pInputText name="" id="proiect" formControlName="proiectId" class="w-full">
+            @for (project of projects; track $index) {
+              <option [value]="project.id">{{ project.denumireaActivitatii }}</option>
+            }
+          </select>
+        </div>
+      }
+
+      <button class="bg-sky-500 hover:bg-sky-600 text-white px-4 py-2 rounded-xl w-full" type="submit">
+        Submit
+      </button>
+    </form>
+  </p-dialog>
+
+   <mat-form-field>
+    <mat-label>Selectează o dată</mat-label>
+    <input matInput [matDatepicker]="picker" (dateChange)="onDateChange($event)">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker [dateClass]="dateClass"></mat-datepicker>
+  </mat-form-field>
+
+  @if (errorMessage) {
+    {{ errorMessage }}
+  } @else {
+    <p-table [value]="pontaje" class="p-datatable-striped p-datatable-gridlines mt-4">
+      <ng-template #header>
+        <tr>
+          <th>Ora Început</th>
+          <th>Ora Sfârșit</th>
+          <th>Tip Muncă</th>
+          <th>Durata</th>
+          <th>Proiect</th>
+        </tr>
+      </ng-template>
+      <ng-template #body let-pontaj>
+        <tr>
+          <td>{{ pontaj.oraInceput }}</td>
+          <td>{{ pontaj.oraSfarsit }}</td>
+          <td>{{ pontaj.tipMunca }}</td>
+          <td>{{ pontaj.durata }}</td>
+          <td>{{ pontaj.proiect ? pontaj.proiect.denumireaActivitatii : "Norma de bază" }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  }
+</div>
+
+
+<p-toast></p-toast>

@@ -6,8 +6,8 @@ import { User } from '../models/user';
 })
 export class NamePipe implements PipeTransform {
 
-  transform(value: User, ...args: unknown[]): unknown {
-    if(value.firstName != null && value.lastName != null){
+  transform(value: User | null, ...args: unknown[]): unknown {
+    if(value?.firstName != null && value.lastName != null){
       return `${value.firstName} ${value.lastName}`;
     }
     return 'value.email';

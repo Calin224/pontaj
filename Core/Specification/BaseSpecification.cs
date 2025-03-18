@@ -11,4 +11,11 @@ public class BaseSpecification<T>(Expression<Func<T, bool>>? criteria) : ISpecif
     }
 
     public Expression<Func<T, bool>>? Criteria => criteria;
+
+    public List<Expression<Func<T, object>>> Includes { get; private set; } = [];
+
+    protected void AddInclude(Expression<Func<T, object>> includeExpression)
+    {
+        Includes.Add(includeExpression);
+    }
 }

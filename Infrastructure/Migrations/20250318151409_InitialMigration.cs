@@ -158,6 +158,87 @@ namespace Infrastructure.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Proiecte",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    DenumireaActivitatii = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DescriereaActivitatii = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PozitiaInProiect = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CategoriaExpertului = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DenumireBeneficiar = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TitluProiect = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CodProiect = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Proiecte", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Proiecte_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ZileDeLucru",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Data = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ZileDeLucru", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ZileDeLucru_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Pontaje",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ZiDeLucruId = table.Column<int>(type: "int", nullable: false),
+                    OraInceput = table.Column<TimeSpan>(type: "time", nullable: false),
+                    OraSfarsit = table.Column<TimeSpan>(type: "time", nullable: false),
+                    TipMunca = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ProiectId = table.Column<int>(type: "int", nullable: true),
+                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AppUserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Pontaje", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Pontaje_AspNetUsers_AppUserId",
+                        column: x => x.AppUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Pontaje_Proiecte_ProiectId",
+                        column: x => x.ProiectId,
+                        principalTable: "Proiecte",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Pontaje_ZileDeLucru_ZiDeLucruId",
+                        column: x => x.ZiDeLucruId,
+                        principalTable: "ZileDeLucru",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -196,6 +277,31 @@ namespace Infrastructure.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Pontaje_AppUserId",
+                table: "Pontaje",
+                column: "AppUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Pontaje_ProiectId",
+                table: "Pontaje",
+                column: "ProiectId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Pontaje_ZiDeLucruId",
+                table: "Pontaje",
+                column: "ZiDeLucruId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Proiecte_UserId",
+                table: "Proiecte",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ZileDeLucru_UserId",
+                table: "ZileDeLucru",
+                column: "UserId");
         }
 
         /// <inheritdoc />
@@ -217,7 +323,16 @@ namespace Infrastructure.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Pontaje");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
+
+            migrationBuilder.DropTable(
+                name: "Proiecte");
+
+            migrationBuilder.DropTable(
+                name: "ZileDeLucru");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

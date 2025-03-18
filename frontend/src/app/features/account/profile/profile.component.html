@@ -1,0 +1,91 @@
+<div>
+  <button
+    class="bg-sky-600 rounded-md px-2 py-2 flex flex-row gap-2"
+    (click)="showDialog()"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="size-6"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M12 4.5v15m7.5-7.5h-15"
+      />
+    </svg>
+
+    <span class="text-white">Add project</span>
+  </button>
+
+  <p-dialog
+    header="Adaugă Proiect"
+    [modal]="true"
+    [(visible)]="visible"
+    [style]="{ width: '25rem' }"
+  >
+    <span class="p-text-secondary block mb-8">Introdu detaliile proiectului.</span>
+    <form
+      [formGroup]="projectForm"
+      (ngSubmit)="onSubmit()"
+      class="flex flex-col gap-4"
+    >
+      <div>
+        <label for="denumireActivitate">Denumire Activitate:</label>
+        <input pInputText type="text" id="denumireActivitate" formControlName="denumireaActivitatii" />
+      </div>
+      <div>
+        <label for="descriereaActivitatii">Descrierea Activității:</label>
+        <input pInputText type="text" id="descriereaActivitatii" formControlName="descriereaActivitatii" />
+      </div>
+      <div>
+        <label for="potiziaInProiect">Poziția În Proiect:</label>
+        <input pInputText type="text" id="potiziaInProiect" formControlName="pozitiaInProiect" />
+      </div>
+      <div>
+        <label for="categoriaExpertului">Categoria Expertului:</label>
+        <input pInputText type="text" id="categoriaExpertului" formControlName="categoriaExpertului" />
+      </div>
+      <div>
+        <label for="denumireBeneficiar">Denumire Beneficiar:</label>
+        <input pInputText type="text" id="denumireBeneficiar" formControlName="denumireBeneficiar" />
+      </div>
+      <div>
+        <label for="titluProiect">Titlu Proiect:</label>
+        <input pInputText type="text" id="titluProiect" formControlName="titluProiect" />
+      </div>
+      <div>
+        <label for="codProiect">Cod Proiect:</label>
+        <input pInputText type="text" id="codProiect" formControlName="codProiect" />
+      </div>
+      <button type="submit" class="bg-sky-600 rounded-md px-2 py-2 text-white">
+        Salvează
+      </button>
+    </form>
+  </p-dialog>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+  @for (project of projects; track $index) {
+    <p-card>
+      <div><strong>Denumire:</strong> {{ project.denumireaActivitatii }}</div>
+      <div><strong>Descriere:</strong> {{ project.descriereaActivitatii }}</div>
+      <div><strong>Poziție:</strong> {{ project.pozitiaInProiect }}</div>
+      <div><strong>Categorie Expert:</strong> {{ project.categoriaExpertului }}</div>
+      <div><strong>Beneficiar:</strong> {{ project.denumireBeneficiar }}</div>
+      @if (project.titluProiect) {
+        <div><strong>Titlu Proiect:</strong> {{ project.titluProiect }}</div>
+      }
+      @if (project.codProiect) {
+        <div><strong>Cod Proiect:</strong> {{ project.codProiect }}</div>
+      }
+
+      <button (click)="deleteProject(project.id)">Delete</button>
+    </p-card>
+  }
+</div>
+
+<p-toast position="bottom-right" />

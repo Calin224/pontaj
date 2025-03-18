@@ -8,6 +8,5 @@ public class PontajCreateDto
     public TimeSpan OraInceput { get; set; }
     public TimeSpan OraSfarsit { get; set; }
     public string TipMunca { get; set; } = "Norma de baza";
-    public int UserId { get; set; }
     public int? ProiectId { get; set; }
 }
