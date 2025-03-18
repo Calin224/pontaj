@@ -105,6 +105,23 @@ public class PontajController(
         return Ok(pontaj);
     }
 
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeletePontaj(int id)
+    {
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (userId == null) return Unauthorized();
+
+        var pontaj = await repo.GetByIdAsync(id);
+        if (pontaj == null) return NotFound();
+
+        if (pontaj.UserId != userId) return Unauthorized();
+
+        repo.Delete(pontaj);
+        if (!await repo.SaveAllAsync()) return BadRequest("Eroare la stergerea pontajului");
+
+        return Ok();
+    }
+
     [HttpGet("zile-pontaje")]
     public async Task<IActionResult> GetZileCuPontaje([FromQuery] int year, [FromQuery] int month)
     {

@@ -2,7 +2,7 @@ import {Component, inject, OnInit} from '@angular/core';
 import {PontajService} from '../../core/services/pontaj.service';
 import {Pontaj} from '../../shared/models/pontaj';
 import {TableModule} from 'primeng/table';
-import {DatePipe, NgForOf} from '@angular/common';
+import {DatePipe, DecimalPipe, NgForOf} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {GrupajPontaj} from '../../shared/models/grupajPontaj';
 
@@ -12,7 +12,8 @@ import {GrupajPontaj} from '../../shared/models/grupajPontaj';
     TableModule,
     DatePipe,
     FormsModule,
-    NgForOf
+    NgForOf,
+    DecimalPipe
   ],
   templateUrl: './pontaj-luna.component.html',
   styleUrl: './pontaj-luna.component.css'
@@ -22,6 +23,8 @@ export class PontajLunaComponent implements OnInit {
 
   pontaje: Pontaj[] = [];
   pontajeGrupate: GrupajPontaj[] = [];
+
+  errorMessage: string = "";
 
   currentYear = new Date().getFullYear();
   currentMonth = new Date().getMonth() + 1;
@@ -39,6 +42,10 @@ export class PontajLunaComponent implements OnInit {
     this.pontajService.getPontajeByMonth(this.currentYear, this.currentMonth).subscribe({
       next: pontaje => {
         this.pontajeGrupate = pontaje;
+        if(this.pontajeGrupate.length === 0){
+          this.errorMessage = "Nu exista pontaj pentru aceasta luna";
+          console.log(this.errorMessage);
+        }
       }
     })
   }

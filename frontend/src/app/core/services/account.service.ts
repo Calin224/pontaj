@@ -23,7 +23,7 @@ export class AccountService {
   }
 
   logout(){
-    return this.http.post(this.baseUrl + 'logout', {}, {withCredentials: true});
+    return this.http.post(this.baseUrl + 'account/logout', {}, {withCredentials: true});
   }
 
   getUserInfo(){
@@ -33,5 +33,9 @@ export class AccountService {
         return user;
       })
     )
+  }
+
+  getAuthStatus(){
+    return this.http.get<{ isAuthenticated: boolean }>(this.baseUrl + 'account/auth-status', {withCredentials: true});
   }
 }

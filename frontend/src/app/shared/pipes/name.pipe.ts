@@ -8,7 +8,7 @@ export class NamePipe implements PipeTransform {
 
   transform(value: User | null, ...args: unknown[]): unknown {
     if(value?.firstName != null && value.lastName != null){
-      return `${value.firstName} ${value.lastName}`;
+      return `${value.firstName.toUpperCase()} ${value.lastName.toUpperCase()}`;
     }
     return 'value.email';
   }

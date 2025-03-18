@@ -36,4 +36,8 @@ export class PontajService {
     params = params.append('month', month);
     return this.http.get(this.baseUrl + 'pontaj/export/', {params, responseType: 'blob', withCredentials: true});
   }
+
+  deletePontaj(id: number){
+    return this.http.delete(this.baseUrl + 'pontaj/' + id, {withCredentials: true});
+  }
 }

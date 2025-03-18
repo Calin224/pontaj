@@ -2,3 +2,7 @@
   background-color: #ffcc80 !important;
   border-radius: 50%;
 }
+
+ngx-material-timepicker-overlay {
+  z-index: 1050 !important; /* PrimeNG p-dialog folosește z-index: 1000 */
+}

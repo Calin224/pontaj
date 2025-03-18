@@ -15,6 +15,7 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {MatInput} from '@angular/material/input';
 import {MessageService} from 'primeng/api';
 import {Toast} from 'primeng/toast';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 
 @Component({
   selector: 'app-pontaj',
@@ -23,7 +24,6 @@ import {Toast} from 'primeng/toast';
     TableModule,
     ReactiveFormsModule,
     Dialog,
-    InputText,
     SelectModule,
     MatDatepicker,
     MatDatepickerToggle,
@@ -33,7 +33,8 @@ import {Toast} from 'primeng/toast';
     MatDatepickerInput,
     MatNativeDateModule,
     MatInput,
-    Toast
+    Toast,
+    NgxMaterialTimepickerModule
   ],
   templateUrl: './pontaj.component.html',
   styleUrl: './pontaj.component.css',
@@ -131,4 +132,18 @@ export class PontajComponent implements OnInit {
       }
     });
   }
+
+  deletePontaj(id: number){
+    this.pontajService.deletePontaj(id).subscribe({
+      next: _ => {
+        console.log('Pontajul a fost sters');
+        this.loadPontaje();
+      },
+      error: err => {
+        console.log('Eroare la stergerea pontajului');
+      }
+    })
+  }
+
+  protected readonly Number = Number;
 }
