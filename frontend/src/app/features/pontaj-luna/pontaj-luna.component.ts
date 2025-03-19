@@ -2,7 +2,7 @@ import {Component, inject, OnInit} from '@angular/core';
 import {PontajService} from '../../core/services/pontaj.service';
 import {Pontaj} from '../../shared/models/pontaj';
 import {TableModule} from 'primeng/table';
-import {DatePipe, DecimalPipe, NgForOf} from '@angular/common';
+import {DatePipe, DecimalPipe, NgClass, NgForOf} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {GrupajPontaj} from '../../shared/models/grupajPontaj';
 import {Proiect} from '../../shared/models/proiect';
@@ -15,7 +15,7 @@ import {ProiectService} from '../../core/services/proiect.service';
     DatePipe,
     FormsModule,
     NgForOf,
-    DecimalPipe
+    DecimalPipe,
   ],
   templateUrl: './pontaj-luna.component.html',
   styleUrl: './pontaj-luna.component.css'
@@ -29,6 +29,8 @@ export class PontajLunaComponent implements OnInit {
   proiecte: Proiect[] = [];
 
   selectedProject?: number;
+
+  exportType: string = "all";
 
   errorMessage: string = "";
 

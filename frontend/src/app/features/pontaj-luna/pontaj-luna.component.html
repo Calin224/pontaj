@@ -1,41 +1,55 @@
 <div class="bg-blue-200 p-6 rounded-xl shadow-lg">
 
-  <h2 class="text-2xl font-bold mb-4 text-black">Pontaje pentru: {{ currentYear }}
+  <h2 class="text-[1.2rem] font-bold mb-4 text-black">Pontaje pentru: {{ currentYear }}
     -{{ currentMonth | number: '2.0' }}</h2>
 
-  <div class="flex gap-4 items-center mb-4">
-    <select [(ngModel)]="currentMonth"
-            class="border p-2 rounded-lg  text-black shadow-sm focus:ring-2 focus:ring-blue-400">
-      <option *ngFor="let month of months; let i = index" [value]="i + 1">{{ month }}</option>
-    </select>
+  <select [(ngModel)]="exportType" class="border p-2 rounded-lg text-black shadow-md focus:ring-2 focus:ring-blue-400 w-full mb-10">
+    <option value="all">Toate</option>
+    <option value="proiect">Proiect</option>
+  </select>
 
-    <input type="number" [(ngModel)]="currentYear" min="2000" max="2100"
-           class="border text-black p-2 rounded-lg w-24 shadow-sm focus:ring-2 focus:ring-blue-400 text-center"/>
+  @if (exportType === "all") {
 
-    <button (click)="loadPontaje()"
-            class="bg-sky-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-sky-700 transition">
-      Încarcă Pontaje
-    </button>
+    <div class="flex gap-4 items-center mb-4 flex-col md:flex-row">
+      <select [(ngModel)]="currentMonth"
+              class="border p-2 rounded-lg w-full text-black shadow-sm focus:ring-2 focus:ring-blue-400">
+        <option *ngFor="let month of months; let i = index" [value]="i + 1">{{ month }}</option>
+      </select>
 
-    <button (click)="generateExcel()"
-            class="bg-green-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-green-700 transition">
-      Exportă Excel
-    </button>
-  </div>
+      <input type="number" [(ngModel)]="currentYear" min="2000" max="2100"
+             class="border w-full text-black p-2 rounded-lg w-24 shadow-sm focus:ring-2 focus:ring-blue-400 text-center"/>
 
-  <div class="flex flex-row gap-4 mb-4">
-    <select [(ngModel)]="selectedProject"
-            class="border p-2 rounded-lg text-black shadow-md focus:ring-2 focus:ring-blue-400">
-      @for (project of proiecte; track project.id) {
-        <option [value]="project.id">{{ project.denumireaActivitatii }} - {{ project.titluProiect }}</option>
-      }
-    </select>
+      <button (click)="loadPontaje()"
+              class="bg-sky-600 w-full text-white px-4 py-2 rounded-lg shadow-md hover:bg-sky-700 transition">
+        Încarcă Pontaje
+      </button>
 
-    <button (click)="exportWithProject()" class="bg-green-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-green-700 transition">Exporta excel doar cu un proiect</button>
-  </div>
+      <button (click)="generateExcel()"
+              class="bg-green-600 w-full text-white px-4 py-2 rounded-lg shadow-md hover:bg-green-700 transition">
+        Exportă Excel
+      </button>
+    </div>
+  } @else {
+    @if (proiecte.length > 0) {
+      <div class="flex flex-col md:flex-row gap-4 mb-4">
+        <select [(ngModel)]="selectedProject"
+                class="border p-2 rounded-lg text-black shadow-md focus:ring-2 focus:ring-blue-400">
+          @for (project of proiecte; track project.id) {
+            <option [value]="project.id">{{ project.denumireaActivitatii }} - {{ project.titluProiect }}</option>
+          }
+        </select>
+
+        <button (click)="exportWithProject()"
+                class="bg-green-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-green-700 transition">Exporta
+          excel
+          doar cu un proiect
+        </button>
+      </div>
+    }
+  }
 
   @if (!errorMessage) {
-    <p-table [value]="pontajeGrupate" class="p-datatable-striped p-datatable-gridlines mt-4 rounded-xl">
+    <p-table [value]="pontajeGrupate" [style]="{ 'background-color': '#fff' }">
       <ng-template #header>
         <tr class="bg-black text-white text-center">
           <th class="p-3">Data</th>

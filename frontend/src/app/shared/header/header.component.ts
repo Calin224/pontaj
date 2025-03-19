@@ -5,6 +5,11 @@ import {Router, RouterLink} from '@angular/router';
 import {MenuItem, MessageService} from 'primeng/api';
 import {MatMenu, MatMenuItem, MatMenuTrigger} from '@angular/material/menu';
 import {Toast} from 'primeng/toast';
+import {Menubar} from 'primeng/menubar';
+import {Ripple} from 'primeng/ripple';
+import {Badge} from 'primeng/badge';
+import {NgClass} from '@angular/common';
+import {InputText} from 'primeng/inputtext';
 
 @Component({
   selector: 'app-header',

@@ -1,8 +1,17 @@
-.highlight-day {
-  background-color: #ffcc80 !important;
-  border-radius: 50%;
+:host ::ng-deep .p-datatable .p-datatable-thead > tr > th {
+  background-color: #4272ae;
+  color: white;
+  font-weight: 600;
 }
 
-ngx-material-timepicker-overlay {
-  z-index: 1050 !important; /* PrimeNG p-dialog folosește z-index: 1000 */
+:host ::ng-deep .p-datatable .p-datatable-tbody > tr:nth-child(even) {
+  background-color: #4d7dbc;
+}
+
+:host ::ng-deep .p-datatable .p-datatable-tbody > tr:nth-child(odd) {
+  background-color: #366daf;
+}
+
+:host ::ng-deep .p-datatable .p-datatable-tbody > tr:hover {
+  background-color: #123a71;
 }
