@@ -15,4 +15,13 @@ public class PontajByMonthSpecification : BaseSpecification<Pontaj>
         AddInclude(p => p.Proiect);
         AddInclude(z => z.ZiDeLucru);
     }
+
+    public PontajByMonthSpecification(string userId, DateTime startTime, DateTime endTime, int projectId) : base(p => p.UserId == userId
+                                                                                                                && p.ZiDeLucru.Data >= startTime 
+                                                                                                                && p.ZiDeLucru.Data <= endTime 
+                                                                                                                && (projectId == null || p.Proiect.Id == projectId))
+    {
+        AddInclude(z => z.ZiDeLucru);
+        AddInclude(p => p.Proiect);
+    }
 }

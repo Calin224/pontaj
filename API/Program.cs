@@ -65,8 +65,12 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
 app.MapControllers();
 app.MapGroup("api").MapIdentityApi<AppUser>();
+app.MapFallbackToController("Index", "Fallback");
 
 
 app.Run();

@@ -158,7 +158,9 @@ public class PontajController(
             p.OraSfarsit,
             p.TipMunca,
             Durata = p.DurataMuncita.ToString(@"hh\:mm"),
-            Proiect = p.Proiect != null ? new { p.Proiect.Id, DenumireaActivitatii = p.Proiect.DenumireaActivitatii } : null
+            Proiect = p.Proiect != null
+                ? new { p.Proiect.Id, DenumireaActivitatii = p.Proiect.DenumireaActivitatii }
+                : null
         });
 
         return Ok(res);
@@ -194,174 +196,276 @@ public class PontajController(
     {
         var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
         if (userId == null) return Unauthorized();
+
         var user = await userManager.GetUserByEmail(User);
         var pontaje = await repo.ListAsync(new PontajByMonthSpecification(userId, year, month));
-        if (!pontaje.Any()) return NotFound("Nu există pontaje pentru această lună!");
+
+        var project = await projectRepo.GetEntityWithSpec(new ProiectSpecification(userId));
+        if (project == null) return NotFound("Nu există proiecte asociate!");
 
         ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
         using var package = new ExcelPackage();
         var worksheet = package.Workbook.Worksheets.Add("Fișă de pontaj");
 
-        var project = await projectRepo.GetEntityWithSpec(new ProiectSpecification(userId));
-        if(project == null) return NotFound();
-
-        // Title Section
+        // Titlul fișei
         worksheet.Cells["A1:E1"].Merge = true;
         worksheet.Cells["A1"].Value = "Fișă de pontaj";
         worksheet.Cells["A1"].Style.Font.Size = 14;
         worksheet.Cells["A1"].Style.Font.Bold = true;
         worksheet.Cells["A1"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
 
-        // Header Section
-        worksheet.Cells["A3:C3"].Merge = true;
+        // Informații despre utilizator și proiect
         worksheet.Cells["A3"].Value = "Luna / anul:";
-        worksheet.Cells["D3:E3"].Merge = true;
-        worksheet.Cells["D3:E3"].Value = $"{CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(month)} / {year}";
-        
-        worksheet.Cells["A4:C4"].Merge = true;
-        worksheet.Cells["A4"].Value = "Numele si prenumele expertului";
-        worksheet.Cells["D4:E4"].Merge = true;
-        worksheet.Cells["D4:E4"].Value = user.FirstName + " " + user.LastName;
-        
-        worksheet.Cells["A5:C5"].Merge = true;
-        worksheet.Cells["A5"].Value = "Poziția in proiect";
-        worksheet.Cells["D5:E5"].Merge = true;
-        worksheet.Cells["D5:E5"].Value = project.PozitiaInProiect;
-        
-        worksheet.Cells["A6:C6"].Merge = true;
+        worksheet.Cells["C3:E3"].Merge = true;
+        worksheet.Cells["C3:E3"].Value = $"{CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(month)} / {year}";
+        worksheet.Cells["A4"].Value = "Numele și prenumele expertului";
+        worksheet.Cells["C4:E4"].Merge = true;
+        worksheet.Cells["C4"].Value = $"{user.FirstName} {user.LastName}";
+        worksheet.Cells["A5"].Value = "Poziția în proiect";
+        worksheet.Cells["C5:E5"].Merge = true;
+        worksheet.Cells["C5:E5"].Value = project.PozitiaInProiect;
         worksheet.Cells["A6"].Value = "Denumire beneficiar";
-        worksheet.Cells["D6:E6"].Merge = true;
-        worksheet.Cells["D6:E6"].Value = project.DenumireBeneficiar;
-        
-        worksheet.Cells["A7:C7"].Merge = true;
+        worksheet.Cells["C6:E6"].Merge = true;
+        worksheet.Cells["C6:E6"].Value = project.DenumireBeneficiar;
         worksheet.Cells["A7"].Value = "Cod / titlu proiect";
-        // worksheet.Cells["E7"].Style.WrapText = true;
-        worksheet.Cells["D7:E7"].Merge = true;
-        worksheet.Cells["D7:E7"].Value = project.TitluProiect != null ? $"{project.TitluProiect}, " : "";
-        worksheet.Cells["D7:E7"].Value += project.CodProiect != null ? $"{project.CodProiect}" : "";
+        worksheet.Cells["C7:E7"].Style.WrapText = true;
+        worksheet.Cells["C7:E7"].Merge = true;
+        worksheet.Cells["C7:E7"].Value = $"{project.TitluProiect}, {project.CodProiect}";
 
-        // Table Headers
+        // Titluri coloane
+        worksheet.Cells["A9"].Style.WrapText = true;
         worksheet.Cells["A9"].Style.Fill.PatternType = ExcelFillStyle.Solid;
         worksheet.Cells["A9"].Style.Fill.BackgroundColor.SetColor(Color.Gray);
         worksheet.Cells["A9"].Value = "Ziua";
-        
+
+        worksheet.Cells["B9"].Style.WrapText = true;
         worksheet.Cells["B9"].Style.Fill.PatternType = ExcelFillStyle.Solid;
         worksheet.Cells["B9"].Style.Fill.BackgroundColor.SetColor(Color.Gray);
         worksheet.Cells["B9"].Value = "Etape/Denumirea activității";
-        
+
+        worksheet.Cells["C9"].Style.WrapText = true;
         worksheet.Cells["C9"].Style.Fill.PatternType = ExcelFillStyle.Solid;
         worksheet.Cells["C9"].Style.Fill.BackgroundColor.SetColor(Color.Gray);
         worksheet.Cells["C9"].Value = "Descrierea activității prestate";
-        
+
+        worksheet.Cells["D9"].Style.WrapText = true;
         worksheet.Cells["D9"].Style.Fill.PatternType = ExcelFillStyle.Solid;
         worksheet.Cells["D9"].Style.Fill.BackgroundColor.SetColor(Color.Gray);
         worksheet.Cells["D9"].Value = "Nr. ore lucrate și interval orar proiect";
-        
+
+        worksheet.Cells["E9"].Style.WrapText = true;
         worksheet.Cells["E9"].Style.Fill.PatternType = ExcelFillStyle.Solid;
         worksheet.Cells["E9"].Style.Fill.BackgroundColor.SetColor(Color.Gray);
         worksheet.Cells["E9"].Value = "Nr. ore și interval orar alocate altor activități";
-        
         worksheet.Cells["A9:E9"].Style.Font.Bold = true;
-        worksheet.Cells["A9:E9"].Style.Border.BorderAround(ExcelBorderStyle.Thin);
+
 
         int row = 10;
-        // int totalOreProiect = 0;
-        // int totalOreAlteActivitati = 0;
-        int totalZileLucrate = 0;
-        
         double totalOreProiect = 0;
         double totalOreAlteActivitati = 0;
 
         for (int day = 1; day <= DateTime.DaysInMonth(year, month); day++)
         {
             var pontajeZi = pontaje.Where(p => p.ZiDeLucru.Data.Day == day).ToList();
+            bool firstEntry = true;
+            int startRow = row;
+
             if (pontajeZi.Any())
             {
-                totalZileLucrate++;
-                bool firstEntry = true;
-                var normeDeBazaTotal = 0.0;
-                var proiectePontaje = new List<Pontaj>();
+                var oreAlteActivitati = pontajeZi
+                    .Where(p => p.TipMunca == "Norma de baza")
+                    .Sum(p => p.DurataMuncita.TotalHours);
+                totalOreAlteActivitati += oreAlteActivitati;
 
-                foreach (Pontaj pontaj in pontajeZi)
+                var pontajeProiect = pontajeZi.Where(p => p.TipMunca != "Norma de baza").ToList();
+
+                if (oreAlteActivitati > 0)
                 {
-                    if (pontaj.TipMunca == "Norma de baza")
-                    {
-                        normeDeBazaTotal += pontaj.DurataMuncita.TotalHours;
-                    }
-                    else
-                    {
-                        proiectePontaje.Add(pontaj);
-                    }
-                }
-
-                int startRow = row;
-                worksheet.Cells[row, 1].Value = day;
-                worksheet.Cells[row, 1].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-
-                if (normeDeBazaTotal > 0)
-                {
-                    worksheet.Cells[row, 2].Value = "";
-                    worksheet.Cells[row, 5].Value = $"{normeDeBazaTotal} h";
-                    totalOreAlteActivitati += normeDeBazaTotal;
+                    worksheet.Cells[row, 1].Value = day;
+                    worksheet.Cells[row, 5].Value = $"{oreAlteActivitati} h";
                     row++;
                 }
 
-                foreach (var pontaj in proiectePontaje)
+                foreach (var pontaj in pontajeProiect)
                 {
+                    worksheet.Cells[row, 1].Value = firstEntry ? day : (object)DBNull.Value;
                     worksheet.Cells[row, 2].Value = pontaj.Proiect?.DenumireaActivitatii;
                     worksheet.Cells[row, 3].Value = pontaj.Proiect?.DescriereaActivitatii;
                     worksheet.Cells[row, 4].Value =
                         $"{pontaj.DurataMuncita.TotalHours} h ({pontaj.OraInceput:hh\\:mm}-{pontaj.OraSfarsit:hh\\:mm})";
                     totalOreProiect += pontaj.DurataMuncita.TotalHours;
                     row++;
+                    firstEntry = false;
                 }
 
-                if (row > startRow + 1)
+                if (row - startRow > 1)
                 {
                     worksheet.Cells[startRow, 1, row - 1, 1].Merge = true;
-                    worksheet.Cells[startRow, 1].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
                 }
             }
             else
             {
                 worksheet.Cells[row, 1].Value = day;
+                worksheet.Cells[row, 2].Value = "-";
+                worksheet.Cells[row, 3].Value = "-";
+                worksheet.Cells[row, 4].Value = "-";
+                worksheet.Cells[row, 5].Value = "-";
                 row++;
             }
-
-            // Set row height for each row
-            worksheet.Row(row).Height = 30; // Adjust the value as needed
         }
 
-        // Total Section
+        // Total general
         worksheet.Cells[row, 1].Value = "Total:";
-        worksheet.Cells[row, 1].Style.Font.Bold = true;
-        worksheet.Cells[row, 4].Value = totalOreProiect.ToString("0.00") + " h";
-        worksheet.Cells[row, 5].Value = totalOreAlteActivitati.ToString("0.00") + " h";
-        worksheet.Cells[9, 1, row, 5].Style.Border.BorderAround(ExcelBorderStyle.Thin);
-        
+        worksheet.Cells[row, 4].Value = $"{totalOreProiect} h";
+        worksheet.Cells[row, 5].Value = $"{totalOreAlteActivitati} h";
+        worksheet.Cells[row, 1, row, 5].Style.Font.Bold = true;
 
-        // Adjust Row Height and Column Width
-        worksheet.Row(1).Height = 20;
-        worksheet.Column(1).Width = 8;
+        // Ajustare dimensiuni coloane
+        worksheet.Column(1).Width = 10;
         worksheet.Column(2).Width = 30;
-        worksheet.Column(3).Width = 30;
-        worksheet.Column(4).Width = 30;
-        worksheet.Column(5).Width = 30;
+        worksheet.Column(3).Width = 40;
+        worksheet.Column(4).Width = 25;
+        worksheet.Column(5).Width = 25;
 
-        // Center Text Alignment
-        worksheet.Cells["A1:E" + row].Style.WrapText = true;
-        worksheet.Cells["A1:E" + row].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-        worksheet.Cells["A1:E" + row].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-
-        for (int i = 10; i < row; i++)
-        {
-            worksheet.Cells[i, 1, i, 5].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
-        }
-        
-        // worksheet.Cells.AutoFitColumns();
+        // Aplicare borduri și aliniere
+        worksheet.Cells[10, 1, row, 5].Style.Border.BorderAround(ExcelBorderStyle.Thin);
+        worksheet.Cells[10, 1, row, 5].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+        worksheet.Cells[10, 1, row, 5].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+        worksheet.Cells[10, 1, row, 5].Style.WrapText = true;
 
         var stream = new MemoryStream(package.GetAsByteArray());
         return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
             $"Pontaj_{month}_{year}.xlsx");
+    }
+
+
+    [HttpGet("export-with-project")]
+    public async Task<IActionResult> ExportTimesheetByProject([FromQuery] int year, [FromQuery] int month,
+        [FromQuery] int projectId)
+    {
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (userId == null) return Unauthorized();
+
+        var user = await userManager.GetUserByEmail(User);
+        var project = await projectRepo.GetByIdAsync(projectId);
+        if (project == null) return NotFound("Proiectul nu există!");
+
+        var startDate = new DateTime(year, month, 1);
+        var endDate = startDate.AddMonths(1).AddDays(-1);
+
+        var spec = new PontajByMonthSpecification(userId, startDate, endDate, projectId);
+        var pontaje = await repo.ListAsync(spec);
+
+        ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+        using var package = new ExcelPackage();
+        var worksheet = package.Workbook.Worksheets.Add("Fisa de pontaj");
+
+        // Setăm antetul
+        worksheet.Cells["A3:C3"].Merge = true;
+        worksheet.Cells["A3"].Value = "Luna / anul:";
+        worksheet.Cells["D3:E3"].Merge = true;
+        worksheet.Cells["D3:E3"].Value = $"{CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(month)} / {year}";
+
+        worksheet.Cells["A4:C4"].Merge = true;
+        worksheet.Cells["A4"].Value = "Numele si prenumele expertului";
+        worksheet.Cells["D4:E4"].Merge = true;
+        worksheet.Cells["D4:E4"].Value = user.FirstName + " " + user.LastName;
+
+        worksheet.Cells["A5:C5"].Merge = true;
+        worksheet.Cells["A5"].Value = "Poziția in proiect";
+        worksheet.Cells["D5:E5"].Merge = true;
+        worksheet.Cells["D5:E5"].Value = project.PozitiaInProiect;
+
+        worksheet.Cells["A6:C6"].Merge = true;
+        worksheet.Cells["A6"].Value = "Denumire beneficiar";
+        worksheet.Cells["D6:E6"].Merge = true;
+        worksheet.Cells["D6:E6"].Value = project.DenumireBeneficiar;
+
+        worksheet.Cells["A7:C7"].Merge = true;
+        worksheet.Cells["A7"].Value = "Cod / titlu proiect";
+        worksheet.Cells["D7:E7"].Merge = true;
+        worksheet.Cells["D7:E7"].Value = $"{project.TitluProiect}, {project.CodProiect}";
+
+        // Stilizare antet tabel
+        worksheet.Cells["A9:E9"].Style.Font.Bold = true;
+        worksheet.Cells["A9:E9"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+        worksheet.Cells["A9:E9"].Style.Fill.BackgroundColor.SetColor(Color.Gray);
+        worksheet.Cells["A9:E9"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+        worksheet.Cells["A9:E9"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+        worksheet.Cells["A9:E9"].Style.Border.BorderAround(ExcelBorderStyle.Thin);
+
+        // Titlurile coloanelor
+        worksheet.Cells["A9"].Value = "Ziua";
+        worksheet.Cells["B9"].Value = "Etape/Denumirea activității";
+        worksheet.Cells["C9"].Value = "Descrierea activității prestate";
+        worksheet.Cells["D9:E9"].Merge = true;
+        worksheet.Cells["D9:E9"].Value = "Nr. ore lucrate și interval orar proiect";
+
+        int row = 10;
+        double totalOre = 0;
+
+        for (int day = 1; day <= DateTime.DaysInMonth(year, month); day++)
+        {
+            var pontajeZi = pontaje.Where(p => p.ZiDeLucru.Data.Day == day).ToList();
+            if (pontajeZi.Any())
+            {
+                int startRow = row;
+                foreach (var pontaj in pontajeZi)
+                {
+                    worksheet.Cells[row, 2].Value = pontaj.Proiect?.DenumireaActivitatii;
+                    worksheet.Cells[row, 3].Value = pontaj.Proiect?.DescriereaActivitatii;
+                    worksheet.Cells[row, 4, row, 5].Merge = true;
+                    worksheet.Cells[row, 4].Value =
+                        $"{pontaj.DurataMuncita.TotalHours} h ({pontaj.OraInceput:hh\\:mm}-{pontaj.OraSfarsit:hh\\:mm})";
+                    totalOre += pontaj.DurataMuncita.TotalHours;
+                    row++;
+                }
+
+                // Aplicăm Merge doar dacă sunt mai multe rânduri pentru aceeași zi
+                if (row - startRow > 1)
+                {
+                    worksheet.Cells[startRow, 1, row - 1, 1].Merge = true;
+                    worksheet.Cells[startRow, 1].Value = day;
+                    worksheet.Cells[startRow, 1].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+                }
+                else
+                {
+                    worksheet.Cells[startRow, 1].Value = day;
+                }
+            }
+            else
+            {
+                // Zi fără proiecte
+                worksheet.Cells[row, 1].Value = day;
+                worksheet.Cells[row, 2].Value = "-";
+                worksheet.Cells[row, 3].Value = "-";
+                worksheet.Cells[row, 4, row, 5].Merge = true;
+                worksheet.Cells[row, 4].Value = "-";
+                row++;
+            }
+        }
+
+        // Total general
+        worksheet.Cells[row, 1].Value = "Total:";
+        worksheet.Cells[row, 4, row, 5].Merge = true;
+        worksheet.Cells[row, 4].Value = $"{totalOre} h";
+        worksheet.Cells[row, 1, row, 5].Style.Font.Bold = true;
+
+        // Ajustăm dimensiunile coloanelor
+        worksheet.Column(1).Width = 10; // Ziua
+        worksheet.Column(2).Width = 30; // Etape/Denumirea activității
+        worksheet.Column(3).Width = 40; // Descrierea activității prestate
+        worksheet.Column(4).Width = 15; // Nr. ore lucrate
+        worksheet.Column(5).Width = 20; // Interval orar proiect
+
+        // Aplicăm borduri și aliniere
+        worksheet.Cells[10, 1, row, 5].Style.Border.BorderAround(ExcelBorderStyle.Thin);
+        worksheet.Cells[10, 1, row, 5].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+        worksheet.Cells[10, 1, row, 5].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+        worksheet.Cells[10, 1, row, 5].Style.WrapText = true;
+
+        var stream = new MemoryStream(package.GetAsByteArray());
+        return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            $"Pontaj_{project.DenumireaActivitatii}_{month}_{year}.xlsx");
     }
 }

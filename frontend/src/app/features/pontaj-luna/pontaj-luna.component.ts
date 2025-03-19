@@ -5,6 +5,8 @@ import {TableModule} from 'primeng/table';
 import {DatePipe, DecimalPipe, NgForOf} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {GrupajPontaj} from '../../shared/models/grupajPontaj';
+import {Proiect} from '../../shared/models/proiect';
+import {ProiectService} from '../../core/services/proiect.service';
 
 @Component({
   selector: 'app-pontaj-luna',
@@ -20,9 +22,13 @@ import {GrupajPontaj} from '../../shared/models/grupajPontaj';
 })
 export class PontajLunaComponent implements OnInit {
   private pontajService = inject(PontajService);
+  private projectService = inject(ProiectService);
 
   pontaje: Pontaj[] = [];
   pontajeGrupate: GrupajPontaj[] = [];
+  proiecte: Proiect[] = [];
+
+  selectedProject?: number;
 
   errorMessage: string = "";
 
@@ -36,6 +42,7 @@ export class PontajLunaComponent implements OnInit {
 
   ngOnInit() {
     this.loadPontaje();
+    this.loadProjects();
   }
 
   loadPontaje() {
@@ -46,6 +53,28 @@ export class PontajLunaComponent implements OnInit {
           this.errorMessage = "Nu exista pontaj pentru aceasta luna";
           console.log(this.errorMessage);
         }
+      }
+    })
+  }
+
+  loadProjects(){
+    this.projectService.getProjects().subscribe({
+      next: projects => {
+        this.proiecte = projects;
+      }
+    })
+  }
+
+  exportWithProject(){
+    this.pontajService.exportPontajByProiect(this.currentYear, this.currentMonth, this.selectedProject!).subscribe({
+      next: file => {
+        const blob = new Blob([file], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `Pontaj_${this.currentMonth}_${this.currentYear}.xlsx`;
+        a.click();
+        window.URL.revokeObjectURL(url);
       }
     })
   }
