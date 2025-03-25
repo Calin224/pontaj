@@ -101,105 +101,29 @@ namespace Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("AppUserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<TimeSpan>("OraInceput")
-                        .HasColumnType("time");
-
-                    b.Property<TimeSpan>("OraSfarsit")
-                        .HasColumnType("time");
-
-                    b.Property<int?>("ProiectId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("TipMunca")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ZiDeLucruId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AppUserId");
-
-                    b.HasIndex("ProiectId");
-
-                    b.HasIndex("ZiDeLucruId");
-
-                    b.ToTable("Pontaje");
-                });
-
-            modelBuilder.Entity("Core.Entities.Proiect", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("CategoriaExpertului")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CodProiect")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DenumireBeneficiar")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DenumireaActivitatii")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DescriereaActivitatii")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PozitiaInProiect")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TitluProiect")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Proiecte");
-                });
-
-            modelBuilder.Entity("Core.Entities.ZiDeLucru", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
                     b.Property<DateTime>("Data")
                         .HasColumnType("datetime2");
 
+                    b.Property<bool>("NormaBaza")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("NumeProiect")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<TimeSpan>("OraFinal")
+                        .HasColumnType("time");
+
+                    b.Property<TimeSpan>("OraStart")
+                        .HasColumnType("time");
+
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
-
-                    b.ToTable("ZileDeLucru");
+                    b.ToTable("Pontaje");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -335,51 +259,6 @@ namespace Infrastructure.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Core.Entities.Pontaj", b =>
-                {
-                    b.HasOne("Core.Entities.AppUser", "AppUser")
-                        .WithMany()
-                        .HasForeignKey("AppUserId");
-
-                    b.HasOne("Core.Entities.Proiect", "Proiect")
-                        .WithMany("Pontaje")
-                        .HasForeignKey("ProiectId");
-
-                    b.HasOne("Core.Entities.ZiDeLucru", "ZiDeLucru")
-                        .WithMany("Pontaje")
-                        .HasForeignKey("ZiDeLucruId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("AppUser");
-
-                    b.Navigation("Proiect");
-
-                    b.Navigation("ZiDeLucru");
-                });
-
-            modelBuilder.Entity("Core.Entities.Proiect", b =>
-                {
-                    b.HasOne("Core.Entities.AppUser", "User")
-                        .WithMany("Proiecte")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("Core.Entities.ZiDeLucru", b =>
-                {
-                    b.HasOne("Core.Entities.AppUser", "User")
-                        .WithMany("ZileMuncite")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -429,23 +308,6 @@ namespace Infrastructure.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("Core.Entities.AppUser", b =>
-                {
-                    b.Navigation("Proiecte");
-
-                    b.Navigation("ZileMuncite");
-                });
-
-            modelBuilder.Entity("Core.Entities.Proiect", b =>
-                {
-                    b.Navigation("Pontaje");
-                });
-
-            modelBuilder.Entity("Core.Entities.ZiDeLucru", b =>
-                {
-                    b.Navigation("Pontaje");
                 });
 #pragma warning restore 612, 618
         }

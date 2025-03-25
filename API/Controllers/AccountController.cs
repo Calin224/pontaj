@@ -1,6 +1,7 @@
 using System;
 using API.DTOs;
 using API.Extensions;
+using Core.DTOs;
 using Core.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -62,23 +63,4 @@ public class AccountController(SignInManager<AppUser> signInManager) : BaseApiCo
             IsAuthenticated = User.Identity?.IsAuthenticated ?? false
         });
     }
-
-
-    // [Authorize]
-    // [HttpPost("update-profile")]
-    // public async Task<ActionResult> UpdateProfile(UpdateUserDto updateUserDto)
-    // {
-    //     var user = await signInManager.UserManager.GetUserByEmail(User);
-    //     user.FirstName = updateUserDto.FirstName;
-    //     user.LastName = updateUserDto.LastName;
-    //     user.Email = updateUserDto.Email;
-
-    //     var res = await signInManager.UserManager.UpdateAsync(user);
-    //     if (!res.Succeeded)
-    //     {
-    //         return ValidationProblem();
-    //     }
-
-    //     return Ok();
-    // }
 }

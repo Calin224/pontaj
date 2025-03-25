@@ -160,11 +160,9 @@ C:\Users\sandu\Desktop\pontaj\api\obj\Release\net9.0\API.csproj.CoreCompileInput
 C:\Users\sandu\Desktop\pontaj\api\obj\Release\net9.0\API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\sandu\Desktop\pontaj\api\obj\Release\net9.0\API.sourcelink.json
 C:\Users\sandu\Desktop\pontaj\api\obj\Release\net9.0\scopedcss\bundle\API.styles.css
-C:\Users\sandu\Desktop\pontaj\api\obj\Release\net9.0\compressed\zzyd6wgwl5-cy4d3isyey.gz
 C:\Users\sandu\Desktop\pontaj\api\obj\Release\net9.0\compressed\6x0scahnf1-vagikyz9qx.gz
 C:\Users\sandu\Desktop\pontaj\api\obj\Release\net9.0\compressed\wsenxafarw-39tegmrjtp.gz
 C:\Users\sandu\Desktop\pontaj\api\obj\Release\net9.0\compressed\xtgzzp8wob-tvy3j3n584.gz
-C:\Users\sandu\Desktop\pontaj\api\obj\Release\net9.0\compressed\8o4eum1nfx-h7o2z8f90q.gz
 C:\Users\sandu\Desktop\pontaj\api\obj\Release\net9.0\staticwebassets.build.json
 C:\Users\sandu\Desktop\pontaj\api\obj\Release\net9.0\staticwebassets.development.json
 C:\Users\sandu\Desktop\pontaj\api\obj\Release\net9.0\staticwebassets.build.endpoints.json
@@ -180,5 +178,8 @@ C:\Users\sandu\Desktop\pontaj\api\obj\Release\net9.0\refint\API.dll
 C:\Users\sandu\Desktop\pontaj\api\obj\Release\net9.0\API.pdb
 C:\Users\sandu\Desktop\pontaj\api\obj\Release\net9.0\API.genruntimeconfig.cache
 C:\Users\sandu\Desktop\pontaj\api\obj\Release\net9.0\ref\API.dll
-C:\Users\sandu\Desktop\pontaj\api\obj\Release\net9.0\compressed\1dpm1p8bmc-0umji088yh.gz
-C:\Users\sandu\Desktop\pontaj\api\obj\Release\net9.0\compressed\i2ngjz6j5k-qq3dvd0733.gz
+C:\Users\sandu\Desktop\pontaj\API\bin\Release\net9.0\AutoMapper.dll
+C:\Users\sandu\Desktop\pontaj\API\obj\Release\net9.0\compressed\zzyd6wgwl5-4o29g9btr0.gz
+C:\Users\sandu\Desktop\pontaj\API\obj\Release\net9.0\compressed\1dpm1p8bmc-nnysd8f6zo.gz
+C:\Users\sandu\Desktop\pontaj\API\obj\Release\net9.0\compressed\mpnbxvfejw-q2mzu891hz.gz
+C:\Users\sandu\Desktop\pontaj\API\obj\Release\net9.0\compressed\ozfvjr8x86-gf6zxlct13.gz

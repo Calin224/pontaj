@@ -62,4 +62,9 @@ public class GenericRepository<T>(DataContext context) : IGenericRepository<T> w
     {
         return await context.SaveChangesAsync() > 0;
     }
+
+    public async Task SaveChangesAsync()
+    {
+        await context.SaveChangesAsync();
+    }
 }

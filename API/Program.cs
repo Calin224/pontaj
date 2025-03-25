@@ -1,6 +1,7 @@
 using Core.Entities;
 using Core.Interfaces;
 using Infrastructure.Data;
+using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -48,6 +49,7 @@ builder.Services.ConfigureApplicationCookie(options =>
 
 
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddScoped<IPontajService, PontajService>();
 
 
 var app = builder.Build();

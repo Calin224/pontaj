@@ -1,0 +1,14 @@
+C:\Users\sandu\Desktop\pontaj\bin\Publish\Core.dll
+C:\Users\sandu\Desktop\pontaj\bin\Publish\Core.deps.json
+C:\Users\sandu\Desktop\pontaj\bin\Publish\Core.pdb
+C:\Users\sandu\Desktop\pontaj\bin\Publish\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\sandu\Desktop\pontaj\bin\Publish\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\sandu\Desktop\pontaj\bin\Publish\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\sandu\Desktop\pontaj\bin\Publish\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\sandu\Desktop\pontaj\bin\Publish\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\sandu\Desktop\pontaj\bin\Publish\Microsoft.Extensions.Identity.Core.dll
+C:\Users\sandu\Desktop\pontaj\bin\Publish\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\sandu\Desktop\pontaj\bin\Publish\Microsoft.Extensions.Logging.dll
+C:\Users\sandu\Desktop\pontaj\bin\Publish\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\sandu\Desktop\pontaj\bin\Publish\Microsoft.Extensions.Options.dll
+C:\Users\sandu\Desktop\pontaj\bin\Publish\Microsoft.Extensions.Primitives.dll
