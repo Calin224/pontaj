@@ -51,6 +51,7 @@ import { PontajePreviewDialogComponent } from './pontaje-preview-dialog/pontaje-
 })
 export class PontajeComponent implements OnInit {
   pontaje: PontajDto[] = [];
+  pontajeFiltered: PontajDto[] = [];
   proiecte: string[] = [];
   loading = false;
   
@@ -58,6 +59,8 @@ export class PontajeComponent implements OnInit {
   showPreviewDialog = false;
   previewLoading = false;
   submitting = false;
+
+  vizualizarePontajeCuNorma: boolean = true;
   
   protected pontajeService = inject(PontajeService);
   private fb = inject(FormBuilder);
@@ -81,6 +84,10 @@ export class PontajeComponent implements OnInit {
     oreAlocate: [null, [Validators.required, Validators.min(1)]],
   });
 
+  toggleNormaBaza() {
+    this.vizualizarePontajeCuNorma = !this.vizualizarePontajeCuNorma;
+  }
+
   loadProiecte(): void {
     this.pontajeService.getProiecte().subscribe(
       (proiecte: any) => {
@@ -100,6 +107,7 @@ export class PontajeComponent implements OnInit {
     this.pontajeService.getPontaje(startDate, endDate).subscribe(
       (pontaje: any) => {
         this.pontaje = pontaje;
+        this.pontajeFiltered = this.pontaje.filter(p => p.normaBaza === false);
         this.loading = false;
       },
       (error: any) => {

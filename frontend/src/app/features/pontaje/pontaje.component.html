@@ -1,7 +1,6 @@
-<!-- src/app/pontaje/pontaje.component.html -->
 <div class="container mx-auto p-4 max-w-screen-xl">
   <h1 class="text-2xl font-bold mb-6 text-gray-800">Pontaje</h1>
-  
+
   <div class="bg-white rounded-lg shadow-md mb-6">
     <div class="bg-gray-50 p-4 border-b border-gray-200">
       <h5 class="text-lg font-medium text-gray-700">Perioadă</h5>
@@ -11,33 +10,18 @@
         <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
           <div class="md:col-span-5">
             <label for="dataInceput" class="block text-sm font-medium text-gray-700 mb-1">Data început</label>
-            <p-datePicker 
-              id="dataInceput" 
-              formControlName="dataInceput"
-              [showIcon]="true"
-              dateFormat="dd.mm.yy"
-              styleClass="w-full"
-              inputStyleClass="w-full p-inputtext">
+            <p-datePicker id="dataInceput" formControlName="dataInceput" [showIcon]="true" dateFormat="dd.mm.yy"
+              styleClass="w-full" inputStyleClass="w-full p-inputtext">
             </p-datePicker>
           </div>
           <div class="md:col-span-5">
             <label for="dataSfarsit" class="block text-sm font-medium text-gray-700 mb-1">Data sfârșit</label>
-            <p-datePicker 
-              id="dataSfarsit" 
-              formControlName="dataSfarsit"
-              [showIcon]="true"
-              dateFormat="dd.mm.yy"
-              styleClass="w-full"
-              inputStyleClass="w-full p-inputtext">
+            <p-datePicker id="dataSfarsit" formControlName="dataSfarsit" [showIcon]="true" dateFormat="dd.mm.yy"
+              styleClass="w-full" inputStyleClass="w-full p-inputtext">
             </p-datePicker>
           </div>
           <div class="md:col-span-2 flex items-end">
-            <p-button 
-              type="submit" 
-              label="Afișează" 
-              icon="pi pi-search" 
-              styleClass="w-full"
-              [loading]="loading">
+            <p-button type="submit" label="Afișează" icon="pi pi-search" styleClass="w-full" [loading]="loading">
             </p-button>
           </div>
         </div>
@@ -56,25 +40,16 @@
             <h6 class="text-base font-medium text-gray-700">Generare normă de bază</h6>
           </div>
           <div class="p-4">
-            <p class="text-sm text-gray-600 mb-4">Generează automat norma de bază (9:00-17:00) pentru zilele lucrătoare din luna selectată.</p>
+            <p class="text-sm text-gray-600 mb-4">Generează automat norma de bază (9:00-17:00) pentru zilele lucrătoare
+              din luna selectată.</p>
             <div class="mb-3">
               <label for="lunaSelectata1" class="block text-sm font-medium text-gray-700 mb-1">Selectează luna</label>
-              <p-datePicker 
-                id="lunaSelectata1" 
-                [(ngModel)]="lunaSelectata" 
-                view="month" 
-                dateFormat="MM.yy" 
-                [showIcon]="true"
-                [readonlyInput]="true" 
-                styleClass="w-full">
+              <p-datePicker id="lunaSelectata1" [(ngModel)]="lunaSelectata" view="month" dateFormat="MM.yy"
+                [showIcon]="true" [readonlyInput]="true" styleClass="w-full">
               </p-datePicker>
             </div>
-            <p-button 
-              label="Generare normă" 
-              icon="pi pi-calendar-plus" 
-              styleClass="p-button-success"
-              [loading]="loading"
-              (onClick)="generareNormaBaza()">
+            <p-button label="Generare normă" icon="pi pi-calendar-plus" styleClass="p-button-success"
+              [loading]="loading" (onClick)="generareNormaBaza()">
             </p-button>
           </div>
         </div>
@@ -86,32 +61,20 @@
             <form [formGroup]="proiecteForm" (ngSubmit)="generarePontajeProiect()">
               <div class="mb-3">
                 <label for="numeProiect" class="block text-sm font-medium text-gray-700 mb-1">Nume proiect</label>
-                <p-autoComplete
-                  id="numeProiect"
-                  formControlName="numeProiect"
-                  [suggestions]="proiecte"
-                  [dropdown]="true"
-                  styleClass="w-full"
-                  placeholder="Introduceți sau selectați un proiect">
+                <p-autoComplete id="numeProiect" formControlName="numeProiect" [suggestions]="proiecte"
+                  [dropdown]="true" styleClass="w-full" placeholder="Introduceți sau selectați un proiect">
                 </p-autoComplete>
               </div>
               <div class="mb-3">
                 <label for="oreAlocate" class="block text-sm font-medium text-gray-700 mb-1">Ore de alocat</label>
-                <p-inputNumber
-                  id="oreAlocate"
-                  formControlName="oreAlocate"
-                  [min]="1"
-                  [showButtons]="true"
+                <p-inputNumber id="oreAlocate" formControlName="oreAlocate" [min]="1" [showButtons]="true"
                   styleClass="w-full">
                 </p-inputNumber>
-                <small class="text-xs text-gray-500 mt-1 block">Sistemul va căuta automat intervale libere și va aloca orele în perioada selectată</small>
+                <small class="text-xs text-gray-500 mt-1 block">Sistemul va căuta automat intervale libere și va aloca
+                  orele în perioada selectată</small>
               </div>
-              <p-button 
-                type="submit" 
-                label="Previzualizare și alocare" 
-                icon="pi pi-plus" 
-                [disabled]="proiecteForm.invalid"
-                [loading]="loading">
+              <p-button type="submit" label="Previzualizare și alocare" icon="pi pi-plus"
+                [disabled]="proiecteForm.invalid" [loading]="loading">
               </p-button>
             </form>
           </div>
@@ -130,20 +93,24 @@
         <p-progressSpinner styleClass="w-12 h-12"></p-progressSpinner>
         <p class="mt-3 text-gray-600">Se încarcă datele...</p>
       </div>
-      
-      <p-message *ngIf="!loading && pontaje.length === 0" severity="info" text="Nu există pontaje în perioada selectată." styleClass="w-full"></p-message>
-      
-      <p-table 
-        *ngIf="!loading && pontaje.length > 0"
-        [value]="pontaje"
-        styleClass="p-datatable-sm"
-        [rowHover]="true"
-        [paginator]="true"
-        [rows]="10"
-        [showCurrentPageReport]="true"
+
+      <p-message *ngIf="!loading && pontaje.length === 0" severity="info"
+        text="Nu există pontaje în perioada selectată." styleClass="w-full"></p-message>
+
+      @if(!vizualizarePontajeCuNorma){
+      <button class="bg-sky-400 rounded-xl shadow-md px-3 py-4 mb-3" (click)="toggleNormaBaza()">Afiseaza normele de
+        baza</button>
+      }@else {
+      <button class="bg-sky-300 rounded-xl shadow-md px-3 py-4 mb-3" (click)="toggleNormaBaza()">Ascunde normele de
+        baza</button>
+      }
+
+      @if(vizualizarePontajeCuNorma){
+      <p-table *ngIf="!loading && pontaje.length > 0" [value]="pontaje" styleClass="p-datatable-sm" [rowHover]="true"
+        [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
         currentPageReportTemplate="Afișare {first} - {last} din {totalRecords} pontaje"
         [rowsPerPageOptions]="[10, 25, 50]">
-        
+
         <ng-template pTemplate="header">
           <tr>
             <th>Data</th>
@@ -153,35 +120,60 @@
             <th style="width: 10%">Acțiuni</th>
           </tr>
         </ng-template>
-        
+
+
         <ng-template pTemplate="body" let-pontaj>
-          <tr [ngClass]="{'bg-green-50': pontaj.normaBaza}">
+          <tr [ngClass]="{'bg-green-500': pontaj.normaBaza}">
             <td>{{ pontaj.data | date:'dd.MM.yyyy' }}</td>
             <td>{{ formatTime(pontaj.oraStart) }} - {{ formatTime(pontaj.oraFinal) }}</td>
             <td>{{ calculateDuration(pontaj.oraStart, pontaj.oraFinal) }}</td>
             <td>{{ pontaj.numeProiect }}</td>
             <td>
-              <p-button 
-                label="Șterge"
-                severity="danger" 
-                size="small"
-                (onClick)="deletePontaj(pontaj.id)"
+              <p-button label="Șterge" severity="danger" size="small" (onClick)="deletePontaj(pontaj.id)"
                 pTooltip="Șterge pontaj">
               </p-button>
             </td>
           </tr>
         </ng-template>
       </p-table>
+      }@else {
+      <p-table *ngIf="!loading && pontaje.length > 0" [value]="pontajeFiltered" styleClass="p-datatable-sm" [rowHover]="true"
+        [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
+        currentPageReportTemplate="Afișare {first} - {last} din {totalRecords} pontaje"
+        [rowsPerPageOptions]="[10, 25, 50]">
+
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Data</th>
+            <th>Interval</th>
+            <th>Durată</th>
+            <th>Proiect</th>
+            <th style="width: 10%">Acțiuni</th>
+          </tr>
+        </ng-template>
+
+
+        <ng-template pTemplate="body" let-pontaj>
+          <tr [ngClass]="{'bg-green-500': pontaj.normaBaza}">
+            <td>{{ pontaj.data | date:'dd.MM.yyyy' }}</td>
+            <td>{{ formatTime(pontaj.oraStart) }} - {{ formatTime(pontaj.oraFinal) }}</td>
+            <td>{{ calculateDuration(pontaj.oraStart, pontaj.oraFinal) }}</td>
+            <td>{{ pontaj.numeProiect }}</td>
+            <td>
+              <p-button label="Șterge" severity="danger" size="small" (onClick)="deletePontaj(pontaj.id)"
+                pTooltip="Șterge pontaj">
+              </p-button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+      }
+
     </div>
   </div>
 
-  <app-pontaje-preview-dialog
-    [(visible)]="showPreviewDialog"
-    [pontajePreview]="pontajePreview"
-    [numeProiect]="proiecteForm.get('numeProiect')?.value || ''"
-    [loading]="previewLoading"
-    [submitting]="submitting"
-    (confirm)="onConfirmGenerarePontaje()"
-    (cancel)="onCancelGenerarePontaje()">
+  <app-pontaje-preview-dialog [(visible)]="showPreviewDialog" [pontajePreview]="pontajePreview"
+    [numeProiect]="proiecteForm.get('numeProiect')?.value || ''" [loading]="previewLoading" [submitting]="submitting"
+    (confirm)="onConfirmGenerarePontaje()" (cancel)="onCancelGenerarePontaje()">
   </app-pontaje-preview-dialog>
 </div>
