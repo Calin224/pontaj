@@ -130,31 +130,41 @@ public class PontajeController(
     }
 
     [HttpPost("simulare-pontaj")]
-    public async Task<ActionResult<IEnumerable<PontajDto>>> SimularePontajeProiect([FromBody] GenerarePontajDto dto)
+    public async Task<ActionResult<PontajSimulareResponse>> SimularePontajeProiect([FromBody] GenerarePontajDto dto)
     {
         var user = await signInManager.UserManager.GetUserByEmail(User);
         if (user == null) return Unauthorized();
 
-        Console.WriteLine($"Simulare pontaje: PermiteAjustareNorma = {dto.PermiteAjustareaNorma}");
+        Console.WriteLine($"Simulare pontaje: PermiteAjustareaNorma = {dto.PermiteAjustareaNorma}");
 
-        IEnumerable<PontajDto> pontajeSimulate;
-    
         if (dto.PermiteAjustareaNorma)
         {
-            pontajeSimulate = await pontajService.SimuleazaPontajeProiectCuAjustareNormaAsync(
+            var rezultatCuAjustare = await pontajService.SimuleazaPontajeProiectCuAjustareNormaAsync(
                 user.Id, dto.DataInceput, dto.DataSfarsit, dto.NumeProiect, dto.OreAlocate);
             
-            // Debug: Verificăm dacă există pontaje care înlocuiesc normă
-            var countInlocuiri = pontajeSimulate.Count(p => p.InlocuiesteNorma);
-            Console.WriteLine($"Pontaje care înlocuiesc normă: {countInlocuiri} din {pontajeSimulate.Count()}");
+            var countInlocuiri = rezultatCuAjustare.Pontaje.Count(p => p.InlocuiesteNorma);
+            Console.WriteLine($"Pontaje care înlocuiesc normă: {countInlocuiri} din {rezultatCuAjustare.Pontaje.Count()}");
+            Console.WriteLine($"Ore rămase: {rezultatCuAjustare.OreRamase}, Zile necesare: {rezultatCuAjustare.ZileNecesareExtra}");
+        
+            return Ok(rezultatCuAjustare);
         }
         else
         {
-            pontajeSimulate = await pontajService.SimuleazaPontajeProiectAsync(
+            var pontajeSimulate = await pontajService.SimuleazaPontajeProiectAsync(
                 user.Id, dto.DataInceput, dto.DataSfarsit, dto.NumeProiect, dto.OreAlocate);
+            
+            var oreAcoperite = pontajeSimulate.Sum(p => (p.OraFinal - p.OraStart).TotalHours);
+            var oreRamase = dto.OreAlocate - (int)oreAcoperite;
+            var zileNecesareExtra = oreRamase > 0 ? Math.Ceiling(oreRamase / 8.0) : 0;
+        
+            return Ok(new PontajSimulareResponse
+            {
+                Pontaje = pontajeSimulate,
+                OreRamase = oreRamase > 0 ? oreRamase : 0,
+                OreAcoperite = (int)oreAcoperite,
+                ZileNecesareExtra = (int)zileNecesareExtra
+            });
         }
-
-        return Ok(pontajeSimulate);
     }
 
     [HttpGet("export-excel")]

@@ -1,4 +1,5 @@
 using Core.DTOs;
+using Core.Entities;
 
 namespace Core.Interfaces
 {
@@ -14,7 +15,7 @@ namespace Core.Interfaces
         Task<IEnumerable<PontajDto>> SimuleazaPontajeProiectAsync(string userId, DateTime dataInceput, DateTime dataSfarsit, string numeProiect, int oreAlocate);
         
         // Noile metode adăugate
-        Task<IEnumerable<PontajDto>> SimuleazaPontajeProiectCuAjustareNormaAsync(string userId, DateTime dataInceput, DateTime dataSfarsit, string numeProiect, int oreAlocate);
+        Task<PontajSimulareResponse> SimuleazaPontajeProiectCuAjustareNormaAsync(string userId, DateTime dataInceput, DateTime dataSfarsit, string numeProiect, int oreAlocate);
         Task<IEnumerable<PontajDto>> GenerarePontajeProiectCuAjustareNormaAsync(string userId, DateTime dataInceput, DateTime dataSfarsit, string numeProiect, int oreAlocate);
     }
 }

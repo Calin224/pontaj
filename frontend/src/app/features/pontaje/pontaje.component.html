@@ -262,10 +262,17 @@
     </div>
   </div>
 
-  <app-pontaje-preview-dialog [(visible)]="showPreviewDialog" [pontajePreview]="pontajePreview"
-                              [numeProiect]="proiecteForm.get('numeProiect')?.value || ''" [loading]="previewLoading"
-                              [submitting]="submitting"
-                              (confirm)="onConfirmGenerarePontaje()" (cancel)="onCancelGenerarePontaje()">
+  <app-pontaje-preview-dialog
+    [(visible)]="showPreviewDialog"
+    [pontajePreview]="pontajePreview"
+    [numeProiect]="proiecteForm.get('numeProiect')?.value || ''"
+    [loading]="previewLoading"
+    [submitting]="submitting"
+    [oreRamase]="oreRamase"
+    [oreAcoperite]="oreAcoperite"
+    [zileNecesareExtra]="zileNecesareExtra"
+    (confirm)="onConfirmGenerarePontaje()"
+    (cancel)="onCancelGenerarePontaje()">
   </app-pontaje-preview-dialog>
 </div>
 

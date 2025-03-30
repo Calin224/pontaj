@@ -335,7 +335,7 @@ namespace Infrastructure.Services
             }).OrderBy(p => p.Data).ThenBy(p => p.OraStart).ToList();
         }
 
-        public async Task<IEnumerable<PontajDto>> SimuleazaPontajeProiectCuAjustareNormaAsync(
+        public async Task<PontajSimulareResponse> SimuleazaPontajeProiectCuAjustareNormaAsync(
             string userId, DateTime dataInceput, DateTime dataSfarsit, string numeProiect, int oreAlocate)
         {
             dataInceput = dataInceput.Date;
@@ -488,7 +488,10 @@ namespace Infrastructure.Services
                 }
             }
 
-            return pontajeSimulate
+            var oreAcoperite = oreAlocate - oreRamase;
+            var zileNecesareExtra = Math.Ceiling(oreRamase / 12.0); // presupun zile de 12 ore
+
+            var rezultat = pontajeSimulate
                 .Where(p => p.Id != -2) // Excludem pontajele marcate ca fiind de normă rămasă după ajustare
                 .Select(p => new PontajDto
                 {
@@ -509,6 +512,14 @@ namespace Infrastructure.Services
                 .OrderBy(p => p.Data)
                 .ThenBy(p => p.OraStart)
                 .ToList();
+
+            return new PontajSimulareResponse
+            {
+                Pontaje = rezultat,
+                OreRamase = oreRamase,
+                OreAcoperite = oreAcoperite,
+                ZileNecesareExtra = zileNecesareExtra
+            };
         }
 
         public async Task<IEnumerable<PontajDto>> GenerarePontajeProiectCuAjustareNormaAsync(

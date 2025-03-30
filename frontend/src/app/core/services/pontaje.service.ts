@@ -6,6 +6,7 @@ import {GenerarePontajDto} from '../../shared/models/generarePontajDto';
 import {GenerareNormaDto} from '../../shared/models/generareNormaDto';
 import {PontajPreviewDto} from '../../shared/models/pontajPreviewDto';
 import {PontajSumarDto} from '../../shared/models/pontajSumarDto';
+import {PontajSimulareResponse} from '../../shared/models/pontajSimulareResponse';
 
 @Injectable({
   providedIn: 'root',
@@ -72,7 +73,7 @@ export class PontajeService {
       dataSfarsit: endAdjusted.toISOString()
     }
 
-    return this.http.post<PontajPreviewDto[]>(this.baseUrl + 'pontaje/simulare-pontaj', adjustedDto, {withCredentials: true});
+    return this.http.post<PontajSimulareResponse>(this.baseUrl + 'pontaje/simulare-pontaj', adjustedDto, {withCredentials: true});
   }
 
   getPontajeSumarizate(start: Date, end: Date) {

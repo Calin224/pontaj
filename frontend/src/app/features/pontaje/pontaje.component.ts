@@ -28,6 +28,7 @@ import {PontajePreviewDialogComponent} from './pontaje-preview-dialog/pontaje-pr
 import {PontajeChartComponent} from "../../shared/pontaje-chart/pontaje-chart.component";
 import {PontajSumarDto} from '../../shared/models/pontajSumarDto';
 import {Toast} from 'primeng/toast';
+import {PontajSimulareResponse} from '../../shared/models/pontajSimulareResponse';
 
 @Component({
   selector: 'app-pontaje',
@@ -79,6 +80,11 @@ export class PontajeComponent implements OnInit {
 
   // Proprietate pentru ajustarea normei de bază
   ajustareNorma: boolean = false;
+
+  // Proprietăți pentru informațiile despre orele rămase
+  oreRamase: number = 0;
+  oreAcoperite: number = 0;
+  zileNecesareExtra: number = 0;
 
   protected pontajeService = inject(PontajeService);
   private fb = inject(FormBuilder);
@@ -194,8 +200,7 @@ export class PontajeComponent implements OnInit {
           detail: 'Eroare la generarea normei de bază!',
         });
       }
-    })
-    ;
+    });
   }
 
   previzualizarePontajeProiect(): void {
@@ -235,26 +240,31 @@ export class PontajeComponent implements OnInit {
       }
     }
 
-    console.log("Ajustare normă:", this.ajustareNorma); // Verifică valoarea checkbox-ului
+    console.log("Ajustare normă:", this.ajustareNorma);
 
     const dto: GenerarePontajDto = {
       dataInceput: adjustedStartDate.toISOString(),
       dataSfarsit: adjustedEndDate.toISOString(),
       numeProiect: numeProiect,
       oreAlocate: oreAlocate,
-      permiteAjustareaNorma: this.ajustareNorma // Numele corect al proprietății
+      permiteAjustareaNorma: this.ajustareNorma
     };
 
-    console.log("DTO trimis:", dto); // Verifică obiectul trimis la backend
+    console.log("DTO trimis:", dto);
 
     this.showPreviewDialog = true;
     this.previewLoading = true;
 
     this.pontajeService.simualrePontaje(dto).subscribe({
-      next: (pontaje: any) => {
-        this.pontajePreview = pontaje;
-        console.log("Pontaje primite:", pontaje); // Verifică răspunsul primit
-        console.log("Pontaje care înlocuiesc normă:", pontaje.filter((p: PontajDto) => p.inlocuiesteNorma)); // Verifică dacă există pontaje care înlocuiesc normă
+      next: response => {
+        this.pontajePreview = response.pontaje;
+        this.oreRamase = response.oreRamase;
+        this.oreAcoperite = response.oreAcoperite;
+        this.zileNecesareExtra = response.zileNecesareExtra;
+
+        console.log("Răspuns de la server:", response);
+        console.log(`Ore acoperite: ${this.oreAcoperite}, Ore rămase: ${this.oreRamase}, Zile necesare extra: ${this.zileNecesareExtra}`);
+
         this.previewLoading = false;
       },
       error: (error: any) => {
@@ -269,7 +279,6 @@ export class PontajeComponent implements OnInit {
     });
   }
 
-  // Actualizăm metoda onConfirmGenerarePontaje
   onConfirmGenerarePontaje(): void {
     if (this.proiecteForm!.invalid) {
       return;
@@ -292,7 +301,7 @@ export class PontajeComponent implements OnInit {
       dataSfarsit: adjustedEndDate.toISOString(),
       numeProiect: numeProiect,
       oreAlocate: oreAlocate,
-      permiteAjustareaNorma: this.ajustareNorma // Numele corect al proprietății
+      permiteAjustareaNorma: this.ajustareNorma
     };
 
     this.pontajeService.generarePontajeProiect(dto).subscribe({
