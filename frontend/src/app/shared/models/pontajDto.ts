@@ -7,4 +7,5 @@ export interface PontajDto {
   descriere: string;
   normaBaza: boolean;
   userId: string;
+  inlocuiesteNorma: boolean;
 }

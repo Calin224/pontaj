@@ -1,5 +1,5 @@
 <div class="container mx-auto p-4 max-w-screen-xl">
-  <h1 class="text-2xl font-bold mb-6 text-gray-800">Pontaje</h1>
+  <h1 class="text-2xl font-bold mb-6 text-gray-400">Pontaje</h1>
 
   <div class="bg-white rounded-lg shadow-md mb-6">
     <div class="bg-gray-50 p-4 border-b border-gray-200">
@@ -11,13 +11,13 @@
           <div class="md:col-span-5">
             <label for="dataInceput" class="block text-sm font-medium text-gray-700 mb-1">Data început</label>
             <p-datePicker id="dataInceput" formControlName="dataInceput" [showIcon]="true" dateFormat="dd.mm.yy"
-              styleClass="w-full" inputStyleClass="w-full p-inputtext">
+                          styleClass="w-full" inputStyleClass="w-full p-inputtext">
             </p-datePicker>
           </div>
           <div class="md:col-span-5">
             <label for="dataSfarsit" class="block text-sm font-medium text-gray-700 mb-1">Data sfârșit</label>
             <p-datePicker id="dataSfarsit" formControlName="dataSfarsit" [showIcon]="true" dateFormat="dd.mm.yy"
-              styleClass="w-full" inputStyleClass="w-full p-inputtext">
+                          styleClass="w-full" inputStyleClass="w-full p-inputtext">
             </p-datePicker>
           </div>
           <div class="md:col-span-2 flex items-end">
@@ -45,11 +45,11 @@
             <div class="mb-3">
               <label for="lunaSelectata1" class="block text-sm font-medium text-gray-700 mb-1">Selectează luna</label>
               <p-datePicker id="lunaSelectata1" [(ngModel)]="lunaSelectata" view="month" dateFormat="MM.yy"
-                [showIcon]="true" [readonlyInput]="true" styleClass="w-full">
+                            [showIcon]="true" [readonlyInput]="true" styleClass="w-full">
               </p-datePicker>
             </div>
             <p-button label="Generare normă" icon="pi pi-calendar-plus" styleClass="p-button-success"
-              [loading]="loading" (onClick)="generareNormaBaza()">
+                      [loading]="loading" (onClick)="generareNormaBaza()">
             </p-button>
           </div>
         </div>
@@ -62,19 +62,29 @@
               <div class="mb-3">
                 <label for="numeProiect" class="block text-sm font-medium text-gray-700 mb-1">Nume proiect</label>
                 <p-autoComplete id="numeProiect" formControlName="numeProiect" [suggestions]="proiecte"
-                  [dropdown]="true" styleClass="w-full" placeholder="Introduceți sau selectați un proiect">
+                                [dropdown]="true" styleClass="w-full"
+                                placeholder="Introduceți sau selectați un proiect">
                 </p-autoComplete>
               </div>
               <div class="mb-3">
                 <label for="oreAlocate" class="block text-sm font-medium text-gray-700 mb-1">Ore de alocat</label>
                 <p-inputNumber id="oreAlocate" formControlName="oreAlocate" [min]="1" [showButtons]="true"
-                  styleClass="w-full">
+                               styleClass="w-full">
                 </p-inputNumber>
                 <small class="text-xs text-gray-500 mt-1 block">Sistemul va căuta automat intervale libere și va aloca
                   orele în perioada selectată</small>
               </div>
+
+              <!-- Checkbox pentru ajustarea normei de bază -->
+              <div class="mb-3 flex items-center">
+                <p-checkbox [(ngModel)]="ajustareNorma" [binary]="true" id="ajustareNorma" [ngModelOptions]="{standalone: true}"></p-checkbox>
+                <label for="ajustareNorma" class="ml-2 text-sm text-gray-700">
+                  Permite înlocuirea normei de bază dacă nu există intervale libere suficiente
+                </label>
+              </div>
+
               <p-button type="submit" label="Previzualizare și alocare" icon="pi pi-plus"
-                [disabled]="proiecteForm.invalid" [loading]="loading">
+                        [disabled]="proiecteForm.invalid" [loading]="loading">
               </p-button>
             </form>
           </div>
@@ -82,6 +92,41 @@
       </div>
     </div>
   </div>
+
+  <div class="grid">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h4>Analiza pontajelor</h4>
+        </div>
+        <div class="card-body">
+          <!-- Butoane pentru comutare vizualizare (opțional) -->
+          <div class="mb-3 flex justify-content-end">
+            <p-button
+              label="Vizualizare grafic"
+              icon="pi pi-chart-pie"
+              styleClass="p-button-outlined mr-2"
+              [outlined]="!showChart"
+              (onClick)="showChart = true">
+            </p-button>
+            <p-button
+              label="Vizualizare tabel"
+              icon="pi pi-table"
+              styleClass="p-button-outlined"
+              [outlined]="showChart"
+              (onClick)="showChart = false">
+            </p-button>
+          </div>
+
+          <!-- Graficul -->
+          <div *ngIf="showChart" class="mt-3">
+            <app-pontaje-chart [pontaje]="pontaje"></app-pontaje-chart>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <div class="bg-white rounded-lg shadow-md">
     <div class="bg-gray-50 p-4 border-b border-gray-200 flex justify-between items-center">
@@ -94,86 +139,135 @@
         <p class="mt-3 text-gray-600">Se încarcă datele...</p>
       </div>
 
-      <p-message *ngIf="!loading && pontaje.length === 0" severity="info"
-        text="Nu există pontaje în perioada selectată." styleClass="w-full"></p-message>
 
-      @if(!vizualizarePontajeCuNorma){
-      <button class="bg-sky-400 rounded-xl shadow-md px-3 py-4 mb-3" (click)="toggleNormaBaza()">Afiseaza normele de
-        baza</button>
-      }@else {
-      <button class="bg-sky-300 rounded-xl shadow-md px-3 py-4 mb-3" (click)="toggleNormaBaza()">Ascunde normele de
-        baza</button>
-      }
+      <!--      @if(!vizualizarePontajeCuNorma){-->
+      <!--      <button class="bg-sky-400 rounded-xl shadow-md px-3 py-4 mb-3" (click)="toggleNormaBaza()">Afiseaza normele de-->
+      <!--        baza</button>-->
+      <!--      }@else {-->
+      <!--      <button class="bg-sky-300 rounded-xl shadow-md px-3 py-4 mb-3" (click)="toggleNormaBaza()">Ascunde normele de-->
+      <!--        baza</button>-->
+      <!--      }-->
 
-      @if(vizualizarePontajeCuNorma){
-      <p-table *ngIf="!loading && pontaje.length > 0" [value]="pontaje" styleClass="p-datatable-sm" [rowHover]="true"
-        [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
-        currentPageReportTemplate="Afișare {first} - {last} din {totalRecords} pontaje"
-        [rowsPerPageOptions]="[10, 25, 50]">
+      <div class="card my-4">
+        <div class="card-header d-flex justify-content-between align-items-center text-black mb-4">
+          <h5 class="mb-0">Sumar pontaje pe perioada selectată</h5>
+          <span class="badge bg-info">Total ore: {{ totalGeneral | number:'1.1-1' }}</span>
+        </div>
+        <div class="card-body">
+          <!--          <div *ngIf="loading" class="text-center py-4">-->
+          <!--            <p-progressSpinner></p-progressSpinner>-->
+          <!--            <p class="mt-2">Se încarcă datele...</p>-->
+          <!--          </div>-->
 
-        <ng-template pTemplate="header">
-          <tr>
-            <th>Data</th>
-            <th>Interval</th>
-            <th>Durată</th>
-            <th>Proiect</th>
-            <th style="width: 10%">Acțiuni</th>
-          </tr>
-        </ng-template>
+          <p-message *ngIf="!loading && pontajeSumar.length === 0"
+                     severity="info"
+                     text="Nu există pontaje în perioada selectată.">
+          </p-message>
 
+          <p-table *ngIf="!loading && pontajeSumar.length > 0"
+                   [value]="pontajeSumar"
+                   styleClass="p-datatable-sm"
+                   [paginator]="pontajeSumar.length > 10"
+                   [rows]="10">
 
-        <ng-template pTemplate="body" let-pontaj>
-          <tr [ngClass]="{'bg-green-500': pontaj.normaBaza}">
-            <td>{{ pontaj.data | date:'dd.MM.yyyy' }}</td>
-            <td>{{ formatTime(pontaj.oraStart) }} - {{ formatTime(pontaj.oraFinal) }}</td>
-            <td>{{ calculateDuration(pontaj.oraStart, pontaj.oraFinal) }}</td>
-            <td>{{ pontaj.numeProiect }}</td>
-            <td>
-              <p-button label="Șterge" severity="danger" size="small" (onClick)="deletePontaj(pontaj.id)"
-                pTooltip="Șterge pontaj">
-              </p-button>
-            </td>
-          </tr>
-        </ng-template>
-      </p-table>
-      }@else {
-      <p-table *ngIf="!loading && pontaje.length > 0" [value]="pontajeFiltered" styleClass="p-datatable-sm" [rowHover]="true"
-        [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
-        currentPageReportTemplate="Afișare {first} - {last} din {totalRecords} pontaje"
-        [rowsPerPageOptions]="[10, 25, 50]">
+            <ng-template pTemplate="header">
+              <tr>
+                <th>Proiect</th>
+                <th class="text-right">Total ore</th>
+                <th class="text-right">Nr. pontaje</th>
+              </tr>
+            </ng-template>
 
-        <ng-template pTemplate="header">
-          <tr>
-            <th>Data</th>
-            <th>Interval</th>
-            <th>Durată</th>
-            <th>Proiect</th>
-            <th style="width: 10%">Acțiuni</th>
-          </tr>
-        </ng-template>
+            <ng-template pTemplate="body" let-pontaj>
+              <tr [ngClass]="{'bg-light': pontaj.numeProiect === 'Normă de bază'}"
+                  (click)="showProjectDetails(pontaj.numeProiect)">
+                <td>{{ pontaj.numeProiect }}</td>
+                <td class="text-right">{{ pontaj.totalOre | number:'1.1-1' }}</td>
+                <td class="text-right">{{ pontaj.nrPontaje }}</td>
+              </tr>
+            </ng-template>
 
-
-        <ng-template pTemplate="body" let-pontaj>
-          <tr [ngClass]="{'bg-green-500': pontaj.normaBaza}">
-            <td>{{ pontaj.data | date:'dd.MM.yyyy' }}</td>
-            <td>{{ formatTime(pontaj.oraStart) }} - {{ formatTime(pontaj.oraFinal) }}</td>
-            <td>{{ calculateDuration(pontaj.oraStart, pontaj.oraFinal) }}</td>
-            <td>{{ pontaj.numeProiect }}</td>
-            <td>
-              <p-button label="Șterge" severity="danger" size="small" (onClick)="deletePontaj(pontaj.id)"
-                pTooltip="Șterge pontaj">
-              </p-button>
-            </td>
-          </tr>
-        </ng-template>
-      </p-table>
-      }
+            <ng-template pTemplate="footer" *ngIf="pontajeSumar.length > 0">
+              <tr>
+                <td><strong>TOTAL</strong></td>
+                <td></td>
+                <td class="text-right"><strong>{{ totalGeneral | number:'1.1-1' }}</strong></td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
+      </div>
 
     </div>
   </div>
 
+  <!-- Secțiunea de detalii proiect - apare doar când un proiect este selectat -->
+  <div *ngIf="selectedProject && !loading" class="card my-4">
+
+    <!-- În secțiunea de detalii proiect -->
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <div>
+        <button pButton icon="pi pi-arrow-left" class="p-button-text p-button-sm"
+                (click)="clearSelectedProject()"></button>
+        <h5 class="d-inline-block mb-0 ml-2">Detalii pontaje: {{ selectedProject }}</h5>
+      </div>
+      <div>
+        <span class="badge bg-info mr-2">Total pontaje: {{ projectDetails.length }}</span>
+        <button pButton icon="pi pi-file-excel" label="Export Fișă Pontaj"
+                class="p-button-success"
+                (click)="exportToExcel()"></button>
+      </div>
+    </div>
+    <div class="card-body">
+      <p-table [value]="projectDetails"
+               styleClass="p-datatable-sm"
+               [paginator]="projectDetails.length > 10"
+               [rows]="10">
+
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Data</th>
+            <th>Interval orar</th>
+            <th>Durată</th>
+            <th>Acțiuni</th>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-pontaj>
+          <tr>
+            <td>{{ pontaj.data | date:'dd.MM.yyyy' }}</td>
+            <td>{{ formatTime(pontaj.oraStart) }} - {{ formatTime(pontaj.oraFinal) }}</td>
+            <td>{{ calculateDuration(pontaj.oraStart, pontaj.oraFinal) }}</td>
+            <td>
+              <button pButton icon="pi pi-trash" class="p-button-danger p-button-sm"
+                      (click)="deletePontaj(pontaj.id); $event.stopPropagation();"
+                      pTooltip="Șterge pontaj">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                     stroke="currentColor" class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"/>
+                </svg>
+
+              </button>
+            </td>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="emptymessage">
+          <tr>
+            <td colspan="5" class="text-center">Nu există pontaje pentru acest proiect în perioada selectată.</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+
   <app-pontaje-preview-dialog [(visible)]="showPreviewDialog" [pontajePreview]="pontajePreview"
-    [numeProiect]="proiecteForm.get('numeProiect')?.value || ''" [loading]="previewLoading" [submitting]="submitting"
-    (confirm)="onConfirmGenerarePontaje()" (cancel)="onCancelGenerarePontaje()">
+                              [numeProiect]="proiecteForm.get('numeProiect')?.value || ''" [loading]="previewLoading"
+                              [submitting]="submitting"
+                              (confirm)="onConfirmGenerarePontaje()" (cancel)="onCancelGenerarePontaje()">
   </app-pontaje-preview-dialog>
 </div>
+
+
+<p-toast></p-toast>

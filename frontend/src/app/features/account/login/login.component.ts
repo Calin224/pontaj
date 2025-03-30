@@ -8,6 +8,7 @@ import {Router} from '@angular/router';
 import {CardModule} from 'primeng/card';
 import { RouterLink } from '@angular/router';
 import { MessageService } from 'primeng/api';
+import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,7 @@ import { MessageService } from 'primeng/api';
     InputText,
     Button,
     CardModule,
-    RouterLink
+    RouterLink,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',

@@ -11,4 +11,5 @@ public class PontajDto
     public string NumeProiect { get; set; }
     public bool NormaBaza { get; set; }
     public string UserId { get; set; }
+    public bool InlocuiesteNorma { get; set; }
 }

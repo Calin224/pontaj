@@ -3,4 +3,5 @@ export interface GenerarePontajDto {
   dataSfarsit: string;
   numeProiect: string;
   oreAlocate: number;
+  permiteAjustareaNorma?: boolean;
 }

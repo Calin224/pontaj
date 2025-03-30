@@ -1,6 +1,7 @@
 export type PontajPreviewDto = {
-    data: string;
-    oraStart: string;
-    oraFinal: string;
-    numeProiect: string;
+  data: string;
+  oraStart: string;
+  oraFinal: string;
+  numeProiect: string;
+  inlocuiesteNorma: boolean;
 }

@@ -1301,6 +1301,48 @@
           "buildTransitive/Mono.TextTemplating.targets": {}
         }
       },
+      "Nager.Date/2.8.2": {
+        "type": "package",
+        "dependencies": {
+          "Nager.LicenseSystem": "1.1.0"
+        },
+        "compile": {
+          "lib/net8.0/Nager.Date.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Nager.Date.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Nager.LicenseSystem/1.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Nager.LicenseSystem.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Nager.LicenseSystem.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "PublicHoliday/3.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/PublicHoliday.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/PublicHoliday.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.ClientModel/1.0.0": {
         "type": "package",
         "dependencies": {
@@ -1942,7 +1984,8 @@
         "dependencies": {
           "Core": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "9.0.3",
-          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.3"
+          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.3",
+          "PublicHoliday": "3.2.0"
         },
         "compile": {
           "bin/placeholder/Infrastructure.dll": {}
@@ -4278,6 +4321,74 @@
         "readme.md"
       ]
     },
+    "Nager.Date/2.8.2": {
+      "sha512": "YiV8VQ0I/NN2ndxR5SHkzegcbxO7LkdcPjduYiWr/6JvAIS4slvsFo1gt7ckaEbRgozeBVf4jK6ZrZvwsVXN2w==",
+      "type": "package",
+      "path": "nager.date/2.8.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "calendar.png",
+        "lib/net472/Nager.Date.dll",
+        "lib/net472/Nager.Date.xml",
+        "lib/net6.0/Nager.Date.dll",
+        "lib/net6.0/Nager.Date.xml",
+        "lib/net8.0/Nager.Date.dll",
+        "lib/net8.0/Nager.Date.xml",
+        "lib/netstandard2.0/Nager.Date.dll",
+        "lib/netstandard2.0/Nager.Date.xml",
+        "nager.date.2.8.2.nupkg.sha512",
+        "nager.date.nuspec",
+        "readme.txt"
+      ]
+    },
+    "Nager.LicenseSystem/1.1.0": {
+      "sha512": "ihcA33JzSss1gXwCx3BSFJbbHFMU04vPuyE52Yufcg073VGVMCirVnKAhs3DFPzSORJhndiMHanfaYdBflqcpg==",
+      "type": "package",
+      "path": "nager.licensesystem/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE/LICENSE",
+        "lib/net472/Nager.LicenseSystem.dll",
+        "lib/net472/Nager.LicenseSystem.xml",
+        "lib/net6.0/Nager.LicenseSystem.dll",
+        "lib/net6.0/Nager.LicenseSystem.xml",
+        "lib/net8.0/Nager.LicenseSystem.dll",
+        "lib/net8.0/Nager.LicenseSystem.xml",
+        "lib/netstandard2.0/Nager.LicenseSystem.dll",
+        "lib/netstandard2.0/Nager.LicenseSystem.xml",
+        "nager.licensesystem.1.1.0.nupkg.sha512",
+        "nager.licensesystem.nuspec",
+        "packageicon.png"
+      ]
+    },
+    "PublicHoliday/3.2.0": {
+      "sha512": "SoaAmVGyCZSt+EYtfa74wQipSSSxkdsgG+DO0tr4cJe2/2dtaWYW2KlYTAb/3DjY0ThFHOjB1YObrdnkKYkt8A==",
+      "type": "package",
+      "path": "publicholiday/3.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net35/PublicHoliday.dll",
+        "lib/net35/PublicHoliday.xml",
+        "lib/net40/PublicHoliday.dll",
+        "lib/net40/PublicHoliday.xml",
+        "lib/net46/PublicHoliday.dll",
+        "lib/net46/PublicHoliday.xml",
+        "lib/net6.0/PublicHoliday.dll",
+        "lib/net6.0/PublicHoliday.xml",
+        "lib/netstandard1.3/PublicHoliday.dll",
+        "lib/netstandard1.3/PublicHoliday.xml",
+        "lib/netstandard2.1/PublicHoliday.dll",
+        "lib/netstandard2.1/PublicHoliday.xml",
+        "publicholiday.3.2.0.nupkg.sha512",
+        "publicholiday.nuspec"
+      ]
+    },
     "System.ClientModel/1.0.0": {
       "sha512": "I3CVkvxeqFYjIVEP59DnjbeoGNfo/+SZrCLpRz2v/g0gpCHaEMPtWSY0s9k/7jR1rAsLNg2z2u1JRB76tPjnIw==",
       "type": "package",
@@ -5605,11 +5716,13 @@
       "Infrastructure >= 1.0.0",
       "Microsoft.Build >= 17.13.9",
       "Microsoft.Build.Framework >= 17.13.9",
-      "Microsoft.EntityFrameworkCore.Design >= 9.0.3"
+      "Microsoft.EntityFrameworkCore.Design >= 9.0.3",
+      "Nager.Date >= 2.8.2"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sandu\\.nuget\\packages\\": {}
+    "C:\\Users\\sandu\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -5620,13 +5733,21 @@
       "packagesPath": "C:\\Users\\sandu\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\sandu\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\sandu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "C:\\Users\\sandu\\AppData\\Roaming\\Cosmos User Kit\\packages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -5674,6 +5795,10 @@
           "Microsoft.EntityFrameworkCore.Design": {
             "target": "Package",
             "version": "[9.0.3, )"
+          },
+          "Nager.Date": {
+            "target": "Package",
+            "version": "[2.8.2, )"
           }
         },
         "imports": [
@@ -5695,7 +5820,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

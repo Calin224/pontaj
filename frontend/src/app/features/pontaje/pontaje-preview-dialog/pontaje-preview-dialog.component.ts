@@ -1,45 +1,123 @@
-import { CommonModule, DatePipe } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ButtonModule } from 'primeng/button';
+import { DatePipe, NgClass, NgIf } from '@angular/common';
 import { DialogModule } from 'primeng/dialog';
-import { MessageModule } from 'primeng/message';
-import { ProgressSpinnerModule } from "primeng/progressspinner";
-import { PontajDto } from '../../../shared/models/pontajDto';
+import { ButtonModule } from 'primeng/button';
+import { TableModule } from 'primeng/table';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { BadgeModule } from 'primeng/badge';
+import {PontajDto} from '../../../shared/models/pontajDto';
 
 @Component({
   selector: 'app-pontaje-preview-dialog',
+  standalone: true,
   imports: [
     DialogModule,
-    DatePipe,
     ButtonModule,
+    TableModule,
     ProgressSpinnerModule,
-    MessageModule,
-    CommonModule
+    NgIf,
+    NgClass,
+    DatePipe,
+    BadgeModule,
   ],
-  templateUrl: './pontaje-preview-dialog.component.html',
-  styleUrl: './pontaje-preview-dialog.component.css'
+  template: `
+    <p-dialog
+      [header]="'Previzualizare pontaje: ' + numeProiect"
+      [(visible)]="visible"
+      [style]="{ width: '80vw' }"
+      [dismissableMask]="true"
+      [modal]="true"
+      [closable]="!submitting"
+      [draggable]="false"
+      [resizable]="false"
+      (onHide)="cancel.emit()"
+    >
+      <div class="p-fluid">
+        <div *ngIf="loading" class="flex flex-col items-center justify-center py-8">
+          <p-progressSpinner styleClass="w-12 h-12"></p-progressSpinner>
+          <p class="mt-3 text-gray-600">Se generează previzualizarea...</p>
+        </div>
+
+        <div *ngIf="!loading && pontajePreview.length === 0" class="p-4 text-center">
+          <p>Nu s-au putut genera pontaje pentru perioada și orele specificate.</p>
+        </div>
+
+        <div *ngIf="!loading && pontajePreview.length > 0" class="p-4">
+          <h5 class="mb-2">Pontaje ce vor fi generate:</h5>
+
+          <div class="flex items-center gap-2 mb-3 p-2 bg-gray-50 rounded text-sm">
+            <span class="p-badge p-badge-warning">Înlocuiește normă</span>
+            <span>- Aceste pontaje vor înlocui ore din norma de bază</span>
+          </div>
+
+          <p-table [value]="pontajePreview" styleClass="p-datatable-sm">
+            <ng-template pTemplate="header">
+              <tr>
+                <th>Data</th>
+                <th>Interval orar</th>
+                <th>Durata</th>
+                <th>Status</th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-pontaj>
+              <tr [ngClass]="{'bg-yellow-100': pontaj.inlocuiesteNorma}">
+                <td>{{ pontaj.data | date:'dd.MM.yyyy' }}</td>
+                <td>{{ formatTime(pontaj.oraStart) }} - {{ formatTime(pontaj.oraFinal) }}</td>
+                <td>{{ calculateDuration(pontaj.oraStart, pontaj.oraFinal) }}</td>
+                <td>
+                  <span *ngIf="pontaj.inlocuiesteNorma" class="p-badge p-badge-warning">
+                    Înlocuiește normă de bază
+                  </span>
+                  <span *ngIf="!pontaj.inlocuiesteNorma" class="p-badge p-badge-success">
+                    Interval liber
+                  </span>
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
+      </div>
+
+      <ng-template pTemplate="footer">
+        <div class="flex justify-end gap-2">
+          <p-button
+            label="Anulare"
+            icon="pi pi-times"
+            styleClass="p-button-outlined"
+            [disabled]="submitting"
+            (onClick)="cancel.emit()"
+          ></p-button>
+          <p-button
+            *ngIf="pontajePreview.length > 0"
+            label="Generare pontaje"
+            icon="pi pi-check"
+            styleClass="p-button-success"
+            [loading]="submitting"
+            (onClick)="confirm.emit()"
+          ></p-button>
+        </div>
+      </ng-template>
+    </p-dialog>
+  `,
 })
 export class PontajePreviewDialogComponent {
-
-  @Input() visible = false;
+  @Input() visible: boolean = false;
   @Input() pontajePreview: PontajDto[] = [];
-  @Input() numeProiect = '';
-  @Input() loading = false;
-  @Input() submitting = false;
+  @Input() numeProiect: string = '';
+  @Input() loading: boolean = false;
+  @Input() submitting: boolean = false;
 
+  @Output() visibleChange = new EventEmitter<boolean>();
   @Output() confirm = new EventEmitter<void>();
   @Output() cancel = new EventEmitter<void>();
-  @Output() visibleChange = new EventEmitter<boolean>();
 
-  formatTime(timeStr: string){
+  formatTime(timeStr: string): string {
     if (!timeStr) return '';
     const parts = timeStr.split(':');
     return `${parts[0]}:${parts[1]}`;
   }
 
   calculateDuration(start: string, end: string): string {
-    if (!start || !end) return '';
-    
     const startParts = start.split(':').map(Number);
     const endParts = end.split(':').map(Number);
 
@@ -51,15 +129,5 @@ export class PontajePreviewDialogComponent {
     const minutes = durationMinutes % 60;
 
     return `${hours}h${minutes > 0 ? ` ${minutes}m` : ''}`;
-  }
-
-  onConfirm(): void {
-    this.confirm.emit();
-  }
-
-  onCancel(): void {
-    this.visible = false;
-    this.visibleChange.emit(false);
-    this.cancel.emit();
   }
 }

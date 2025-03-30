@@ -29,3 +29,12 @@ public class PontajByUserAndDateSpecification : BaseSpecification<Pontaj>
         AddOrderBy(p => p.OraStart);
     }
 }
+
+public class PontajByUserProjectAndPeriodSpecification : BaseSpecification<Pontaj>
+{
+    public PontajByUserProjectAndPeriodSpecification(string userId, string project, DateTime start, DateTime end)
+        : base(p => p.UserId == userId && p.NumeProiect == project && p.Data >= start && p.Data <= end)
+    {
+        AddOrderBy(p => p.Data);
+    }
+}

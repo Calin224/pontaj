@@ -50,7 +50,7 @@ builder.Services.ConfigureApplicationCookie(options =>
 
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<IPontajService, PontajService>();
-
+builder.Services.AddScoped<ITimpDisponibilService, TimpDisponibilService>();
 
 var app = builder.Build();
 

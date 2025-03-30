@@ -12,6 +12,7 @@
     <PackageReference Include="Microsoft.Build" Version="17.13.9" />
     <PackageReference Include="Microsoft.Build.Framework" Version="17.13.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.3" />
+    <PackageReference Include="Nager.Date" Version="2.8.2" />
   </ItemGroup>
 
   <ItemGroup>

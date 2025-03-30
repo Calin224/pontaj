@@ -1,5 +1,5 @@
 // src/app/pontaje/pontaje.component.ts
-import { Component, inject, OnInit } from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -7,23 +7,27 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { PontajeService } from '../../core/services/pontaje.service';
-import { PontajDto } from '../../shared/models/pontajDto';
-import { GenerarePontajDto } from '../../shared/models/generarePontajDto';
-import { DatePipe, NgClass, NgIf } from '@angular/common';
+import {PontajeService} from '../../core/services/pontaje.service';
+import {PontajDto} from '../../shared/models/pontajDto';
+import {GenerarePontajDto} from '../../shared/models/generarePontajDto';
+import {CurrencyPipe, DatePipe, DecimalPipe, NgClass, NgIf} from '@angular/common';
 
-import { TableModule } from 'primeng/table';
-import { ButtonModule } from 'primeng/button';
-import { InputNumberModule } from 'primeng/inputnumber';
-import { CalendarModule } from 'primeng/calendar';
-import { AutoCompleteModule } from 'primeng/autocomplete';
-import { ProgressSpinnerModule } from 'primeng/progressspinner';
-import { BadgeModule } from 'primeng/badge';
-import { MessageModule } from 'primeng/message';
-import { TooltipModule } from 'primeng/tooltip';
-import { MessageService } from 'primeng/api';
-import { DatePickerModule } from 'primeng/datepicker';
-import { PontajePreviewDialogComponent } from './pontaje-preview-dialog/pontaje-preview-dialog.component';
+import {TableModule} from 'primeng/table';
+import {ButtonModule} from 'primeng/button';
+import {InputNumberModule} from 'primeng/inputnumber';
+import {CalendarModule} from 'primeng/calendar';
+import {AutoCompleteModule} from 'primeng/autocomplete';
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
+import {BadgeModule} from 'primeng/badge';
+import {MessageModule} from 'primeng/message';
+import {TooltipModule} from 'primeng/tooltip';
+import {MessageService} from 'primeng/api';
+import {DatePickerModule} from 'primeng/datepicker';
+import {CheckboxModule} from 'primeng/checkbox';
+import {PontajePreviewDialogComponent} from './pontaje-preview-dialog/pontaje-preview-dialog.component';
+import {PontajeChartComponent} from "../../shared/pontaje-chart/pontaje-chart.component";
+import {PontajSumarDto} from '../../shared/models/pontajSumarDto';
+import {Toast} from 'primeng/toast';
 
 @Component({
   selector: 'app-pontaje',
@@ -43,7 +47,11 @@ import { PontajePreviewDialogComponent } from './pontaje-preview-dialog/pontaje-
     MessageModule,
     TooltipModule,
     DatePickerModule,
-    PontajePreviewDialogComponent
+    PontajePreviewDialogComponent,
+    PontajeChartComponent,
+    DecimalPipe,
+    CheckboxModule,
+    Toast,
   ],
   templateUrl: './pontaje.component.html',
   styleUrls: ['./pontaje.component.scss'],
@@ -51,32 +59,44 @@ import { PontajePreviewDialogComponent } from './pontaje-preview-dialog/pontaje-
 })
 export class PontajeComponent implements OnInit {
   pontaje: PontajDto[] = [];
+
+  showChart: boolean = false;
   pontajeFiltered: PontajDto[] = [];
   proiecte: string[] = [];
   loading = false;
-  
+
+  pontajeSumar: PontajSumarDto[] = [];
+  selectedProject: string | null = null;
+  projectDetails: PontajDto[] = [];
+  totalGeneral: number = 0;
+
   pontajePreview: PontajDto[] = [];
   showPreviewDialog = false;
   previewLoading = false;
   submitting = false;
 
   vizualizarePontajeCuNorma: boolean = true;
-  
+
+  // Proprietate pentru ajustarea normei de bază
+  ajustareNorma: boolean = false;
+
   protected pontajeService = inject(PontajeService);
   private fb = inject(FormBuilder);
 
   lunaSelectata: Date = new Date();
 
-  constructor(private messageService: MessageService) {}
+  constructor(private messageService: MessageService) {
+  }
 
   ngOnInit(): void {
     this.loadProiecte();
+    this.loadPontajeSumar();
     this.loadPontaje();
   }
 
   dataForm = this.fb.group({
-    dataInceput: [new Date(), Validators.required],
-    dataSfarsit: [new Date(), Validators.required],
+    dataInceput: [new Date(new Date().setHours(0, 0, 0, 0)), Validators.required],
+    dataSfarsit: [new Date(new Date().setHours(0, 0, 0, 0)), Validators.required],
   });
 
   proiecteForm = this.fb.group({
@@ -95,6 +115,24 @@ export class PontajeComponent implements OnInit {
       },
       (error: any) => {
         console.error('Eroare la încărcarea proiectelor:', error);
+      }
+    );
+  }
+
+  loadPontajeSumar(): void {
+    this.loading = true;
+    const startDate = this.dataForm.get('dataInceput')?.value || new Date();
+    const endDate = this.dataForm.get('dataSfarsit')?.value || new Date();
+
+    this.pontajeService.getPontajeSumarizate(startDate, endDate).subscribe(
+      (pontajeSumar) => {
+        this.pontajeSumar = pontajeSumar;
+        this.totalGeneral = pontajeSumar.reduce((total, p) => total + p.totalOre, 0);
+        this.loading = false;
+      },
+      (error) => {
+        console.error('Eroare la încărcarea sumarului de pontaje:', error);
+        this.loading = false;
       }
     );
   }
@@ -119,6 +157,7 @@ export class PontajeComponent implements OnInit {
 
   onDateChange(): void {
     this.loadPontaje();
+    this.loadPontajeSumar();
   }
 
   generareNormaBaza(): void {
@@ -137,16 +176,16 @@ export class PontajeComponent implements OnInit {
     dataCorectata.setMonth(dataCorectata.getMonth() + 1);
 
     this.loading = true;
-    this.pontajeService.generareNormaBaza(dataCorectata).subscribe(
-      () => {
-        this.loadPontaje();
+    this.pontajeService.generareNormaBaza(dataCorectata).subscribe({
+      next: _ => {
         this.messageService.add({
           severity: 'success',
           summary: 'Succes',
           detail: 'Norma de bază a fost generată cu succes!',
         });
+        this.loadPontaje();
       },
-      (error: any) => {
+      error: error => {
         console.error('Eroare la generarea normei de bază:', error);
         this.loading = false;
         this.messageService.add({
@@ -155,7 +194,8 @@ export class PontajeComponent implements OnInit {
           detail: 'Eroare la generarea normei de bază!',
         });
       }
-    );
+    })
+    ;
   }
 
   previzualizarePontajeProiect(): void {
@@ -168,6 +208,12 @@ export class PontajeComponent implements OnInit {
     const numeProiect = this.proiecteForm!.get('numeProiect')?.value || '';
 
     const oreAlocateRaw = this.proiecteForm!.get('oreAlocate')?.value;
+
+    const adjustedStartDate = new Date(startDate);
+    adjustedStartDate.setHours(0, 0, 0, 0);
+
+    const adjustedEndDate = new Date(endDate);
+    adjustedEndDate.setHours(23, 59, 59, 999);
 
     let oreAlocate: number;
     if (oreAlocateRaw === null || oreAlocateRaw === undefined) {
@@ -189,18 +235,26 @@ export class PontajeComponent implements OnInit {
       }
     }
 
+    console.log("Ajustare normă:", this.ajustareNorma); // Verifică valoarea checkbox-ului
+
     const dto: GenerarePontajDto = {
-      dataInceput: startDate.toISOString(),
-      dataSfarsit: endDate.toISOString(),
+      dataInceput: adjustedStartDate.toISOString(),
+      dataSfarsit: adjustedEndDate.toISOString(),
       numeProiect: numeProiect,
       oreAlocate: oreAlocate,
+      permiteAjustareaNorma: this.ajustareNorma // Numele corect al proprietății
     };
+
+    console.log("DTO trimis:", dto); // Verifică obiectul trimis la backend
 
     this.showPreviewDialog = true;
     this.previewLoading = true;
+
     this.pontajeService.simualrePontaje(dto).subscribe({
       next: (pontaje: any) => {
         this.pontajePreview = pontaje;
+        console.log("Pontaje primite:", pontaje); // Verifică răspunsul primit
+        console.log("Pontaje care înlocuiesc normă:", pontaje.filter((p: PontajDto) => p.inlocuiesteNorma)); // Verifică dacă există pontaje care înlocuiesc normă
         this.previewLoading = false;
       },
       error: (error: any) => {
@@ -215,6 +269,7 @@ export class PontajeComponent implements OnInit {
     });
   }
 
+  // Actualizăm metoda onConfirmGenerarePontaje
   onConfirmGenerarePontaje(): void {
     if (this.proiecteForm!.invalid) {
       return;
@@ -225,17 +280,25 @@ export class PontajeComponent implements OnInit {
     const numeProiect = this.proiecteForm!.get('numeProiect')?.value || '';
     const oreAlocate = Number(this.proiecteForm!.get('oreAlocate')?.value || 0);
 
+    const adjustedStartDate = new Date(startDate);
+    adjustedStartDate.setHours(0, 0, 0, 0);
+
+    const adjustedEndDate = new Date(endDate);
+    adjustedEndDate.setHours(23, 59, 59, 999);
+
     this.submitting = true;
     const dto: GenerarePontajDto = {
-      dataInceput: startDate.toISOString(),
-      dataSfarsit: endDate.toISOString(),
+      dataInceput: adjustedStartDate.toISOString(),
+      dataSfarsit: adjustedEndDate.toISOString(),
       numeProiect: numeProiect,
       oreAlocate: oreAlocate,
+      permiteAjustareaNorma: this.ajustareNorma // Numele corect al proprietății
     };
 
     this.pontajeService.generarePontajeProiect(dto).subscribe({
       next: (_) => {
         this.loadPontaje();
+        this.loadPontajeSumar();
         this.showPreviewDialog = false;
         this.submitting = false;
         this.messageService.add({
@@ -278,6 +341,7 @@ export class PontajeComponent implements OnInit {
       this.pontajeService.deletePontaj(id).subscribe(
         () => {
           this.loadPontaje();
+          this.loadPontajeSumar();
           this.messageService.add({
             severity: 'success',
             summary: 'Succes',
@@ -315,5 +379,54 @@ export class PontajeComponent implements OnInit {
     const minutes = durationMinutes % 60;
 
     return `${hours}h${minutes > 0 ? ` ${minutes}m` : ''}`;
+  }
+
+  showProjectDetails(project: string): void {
+    this.selectedProject = project;
+    this.loadProjectDetails(project);
+  }
+
+  clearSelectedProject(): void {
+    this.selectedProject = null;
+    this.projectDetails = [];
+  }
+
+  loadProjectDetails(numeProiect: string): void {
+    this.loading = true;
+    const startDate = this.dataForm.get('dataInceput')?.value || new Date();
+    const endDate = this.dataForm.get('dataSfarsit')?.value || new Date();
+
+    this.pontajeService.getPontajeByProject(startDate, endDate, numeProiect).subscribe(
+      (pontaje) => {
+        this.projectDetails = pontaje;
+        this.loading = false;
+      },
+      (error) => {
+        console.error(`Eroare la încărcarea detaliilor pentru proiectul ${numeProiect}:`, error);
+        this.loading = false;
+      }
+    );
+  }
+
+  exportToExcel() {
+    if (!this.selectedProject) return;
+
+    const startDate = this.dataForm.get('dataInceput')?.value || new Date();
+    const luna = new Date(startDate.getFullYear(), startDate.getMonth(), 1);
+
+    this.pontajeService.exportPontajToExcel(this.selectedProject, luna).subscribe({
+      next: file => {
+        const blob = new Blob([file], {type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `Pontaj.xlsx`;
+        a.click();
+        window.URL.revokeObjectURL(url);
+      },
+      error: err => {
+        console.error('Eroare la exportul în Excel:', err);
+      }
+    });
   }
 }

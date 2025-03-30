@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "AOc6E95RByU=",
+  "dgSpecHash": "5RGsgVbOQAg=",
   "success": true,
   "projectFilePath": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\API.csproj",
   "expectedPackageFiles": [
@@ -67,6 +67,9 @@
     "C:\\Users\\sandu\\.nuget\\packages\\microsoft.visualstudio.solutionpersistence\\1.0.28\\microsoft.visualstudio.solutionpersistence.1.0.28.nupkg.sha512",
     "C:\\Users\\sandu\\.nuget\\packages\\microsoft.win32.systemevents\\9.0.1\\microsoft.win32.systemevents.9.0.1.nupkg.sha512",
     "C:\\Users\\sandu\\.nuget\\packages\\mono.texttemplating\\3.0.0\\mono.texttemplating.3.0.0.nupkg.sha512",
+    "C:\\Users\\sandu\\.nuget\\packages\\nager.date\\2.8.2\\nager.date.2.8.2.nupkg.sha512",
+    "C:\\Users\\sandu\\.nuget\\packages\\nager.licensesystem\\1.1.0\\nager.licensesystem.1.1.0.nupkg.sha512",
+    "C:\\Users\\sandu\\.nuget\\packages\\publicholiday\\3.2.0\\publicholiday.3.2.0.nupkg.sha512",
     "C:\\Users\\sandu\\.nuget\\packages\\system.clientmodel\\1.0.0\\system.clientmodel.1.0.0.nupkg.sha512",
     "C:\\Users\\sandu\\.nuget\\packages\\system.codedom\\6.0.0\\system.codedom.6.0.0.nupkg.sha512",
     "C:\\Users\\sandu\\.nuget\\packages\\system.collections.immutable\\8.0.0\\system.collections.immutable.8.0.0.nupkg.sha512",
