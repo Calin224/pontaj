@@ -5,6 +5,7 @@ C:\Users\sandu\Desktop\pontaj\api\bin\Publish\API.dll
 C:\Users\sandu\Desktop\pontaj\api\bin\Publish\API.deps.json
 C:\Users\sandu\Desktop\pontaj\api\bin\Publish\API.runtimeconfig.json
 C:\Users\sandu\Desktop\pontaj\api\bin\Publish\API.pdb
+C:\Users\sandu\Desktop\pontaj\api\bin\Publish\AutoMapper.dll
 C:\Users\sandu\Desktop\pontaj\api\bin\Publish\Azure.Core.dll
 C:\Users\sandu\Desktop\pontaj\api\bin\Publish\Azure.Identity.dll
 C:\Users\sandu\Desktop\pontaj\api\bin\Publish\EPPlus.dll
@@ -56,6 +57,9 @@ C:\Users\sandu\Desktop\pontaj\api\bin\Publish\Microsoft.SqlServer.Server.dll
 C:\Users\sandu\Desktop\pontaj\api\bin\Publish\Microsoft.VisualStudio.SolutionPersistence.dll
 C:\Users\sandu\Desktop\pontaj\api\bin\Publish\Microsoft.Win32.SystemEvents.dll
 C:\Users\sandu\Desktop\pontaj\api\bin\Publish\Mono.TextTemplating.dll
+C:\Users\sandu\Desktop\pontaj\api\bin\Publish\Nager.Date.dll
+C:\Users\sandu\Desktop\pontaj\api\bin\Publish\Nager.LicenseSystem.dll
+C:\Users\sandu\Desktop\pontaj\api\bin\Publish\PublicHoliday.dll
 C:\Users\sandu\Desktop\pontaj\api\bin\Publish\System.ClientModel.dll
 C:\Users\sandu\Desktop\pontaj\api\bin\Publish\System.CodeDom.dll
 C:\Users\sandu\Desktop\pontaj\api\bin\Publish\System.Composition.AttributedModel.dll

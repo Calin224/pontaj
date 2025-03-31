@@ -13,7 +13,8 @@
           "Infrastructure": "1.0.0",
           "Microsoft.Build": "17.13.9",
           "Microsoft.Build.Framework": "17.13.9",
-          "Microsoft.EntityFrameworkCore.Design": "9.0.3"
+          "Microsoft.EntityFrameworkCore.Design": "9.0.3",
+          "Nager.Date": "2.8.2"
         },
         "runtime": {
           "API.dll": {}
@@ -924,6 +925,33 @@
           }
         }
       },
+      "Nager.Date/2.8.2": {
+        "dependencies": {
+          "Nager.LicenseSystem": "1.1.0"
+        },
+        "runtime": {
+          "lib/net8.0/Nager.Date.dll": {
+            "assemblyVersion": "2.8.2.0",
+            "fileVersion": "2.8.2.0"
+          }
+        }
+      },
+      "Nager.LicenseSystem/1.1.0": {
+        "runtime": {
+          "lib/net8.0/Nager.LicenseSystem.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.0"
+          }
+        }
+      },
+      "PublicHoliday/3.2.0": {
+        "runtime": {
+          "lib/net6.0/PublicHoliday.dll": {
+            "assemblyVersion": "3.2.0.0",
+            "fileVersion": "3.2.0.0"
+          }
+        }
+      },
       "System.ClientModel/1.0.0": {
         "dependencies": {
           "System.Memory.Data": "1.0.2",
@@ -1170,7 +1198,8 @@
         "dependencies": {
           "Core": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "9.0.3",
-          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.3"
+          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.3",
+          "PublicHoliday": "3.2.0"
         },
         "runtime": {
           "Infrastructure.dll": {
@@ -1627,6 +1656,27 @@
       "sha512": "sha512-YqueG52R/Xej4VVbKuRIodjiAhV0HR/XVbLbNrJhCZnzjnSjgMJ/dCdV0akQQxavX6hp/LC6rqLGLcXeQYU7XA==",
       "path": "mono.texttemplating/3.0.0",
       "hashPath": "mono.texttemplating.3.0.0.nupkg.sha512"
+    },
+    "Nager.Date/2.8.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YiV8VQ0I/NN2ndxR5SHkzegcbxO7LkdcPjduYiWr/6JvAIS4slvsFo1gt7ckaEbRgozeBVf4jK6ZrZvwsVXN2w==",
+      "path": "nager.date/2.8.2",
+      "hashPath": "nager.date.2.8.2.nupkg.sha512"
+    },
+    "Nager.LicenseSystem/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ihcA33JzSss1gXwCx3BSFJbbHFMU04vPuyE52Yufcg073VGVMCirVnKAhs3DFPzSORJhndiMHanfaYdBflqcpg==",
+      "path": "nager.licensesystem/1.1.0",
+      "hashPath": "nager.licensesystem.1.1.0.nupkg.sha512"
+    },
+    "PublicHoliday/3.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SoaAmVGyCZSt+EYtfa74wQipSSSxkdsgG+DO0tr4cJe2/2dtaWYW2KlYTAb/3DjY0ThFHOjB1YObrdnkKYkt8A==",
+      "path": "publicholiday/3.2.0",
+      "hashPath": "publicholiday.3.2.0.nupkg.sha512"
     },
     "System.ClientModel/1.0.0": {
       "type": "package",
