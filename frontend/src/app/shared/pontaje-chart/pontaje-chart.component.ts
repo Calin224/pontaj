@@ -114,16 +114,19 @@ export class PontajeChartComponent implements OnChanges, OnInit {
 
     // Calculăm orele pontate pe categorii
     const orePontatePerCategorie = new Map<string, number>();
-    
+
     // Grupăm pontajele pe categorii (normă bază vs proiecte)
+    let totalOrePontate = 0;
+
     if (this.pontaje && this.pontaje.length > 0) {
       // Inițializăm categoria "Normă de bază"
       orePontatePerCategorie.set('Normă de bază', 0);
-      
+
       this.pontaje.forEach(pontaj => {
         if (pontaj.oraStart && pontaj.oraFinal) {
           const orePontaj = this.calculeazaOre(pontaj.oraStart, pontaj.oraFinal);
-          
+          totalOrePontate += orePontaj;
+
           if (pontaj.normaBaza) {
             // Adăugăm la categoria "Normă de bază"
             const oreNormaBaza = orePontatePerCategorie.get('Normă de bază') || 0;
@@ -138,29 +141,25 @@ export class PontajeChartComponent implements OnChanges, OnInit {
       });
     }
 
-    // Calculăm timpul disponibil rămas
+    // Calculăm timpul disponibil rămas ca 240 - totalul orelor pontate
+    // sau folosim valoarea din server dacă este disponibilă
     let oreRamaseLuna = 0;
-    
-    // Folosim datele din timpDisponibil dacă există
-    if (this.timpDisponibil.oreRamaseLuna !== undefined) {
+
+    if (this.timpDisponibil.oreRamaseLuna !== undefined && this.timpDisponibil.oreRamaseLuna > 0) {
+      // Folosim valoarea din server
       oreRamaseLuna = this.timpDisponibil.oreRamaseLuna;
-    } else if (this.timpDisponibil.oreDisponibileLuna !== undefined && this.timpDisponibil.orePontateLuna !== undefined) {
-      // Calculăm manual dacă nu există direct
-      oreRamaseLuna = this.timpDisponibil.oreDisponibileLuna - this.timpDisponibil.orePontateLuna;
+      console.log('Folosim ore rămase din server:', oreRamaseLuna);
     } else {
-      // Valoare de rezervă - estimăm pe baza zilelor lucrătoare
-      const zileLucratoare = 21; // Estimare standard
-      oreRamaseLuna = zileLucratoare * 12 - Array.from(orePontatePerCategorie.values()).reduce((sum, ore) => sum + ore, 0);
+      // Calculăm manual (240 - totalOrePontate)
+      // Presupunem că avem 20 de zile lucrătoare × 12 ore = 240 ore
+      const limitaMaxima = 240;
+      oreRamaseLuna = Math.max(0, limitaMaxima - totalOrePontate);
+      console.log('Calculăm ore rămase manual:', oreRamaseLuna);
     }
-    
-    console.log('Ore rămase calculate:', oreRamaseLuna);
-    
-    // Adăugăm timpul disponibil rămas, forțând o valoare pozitivă
-    if (oreRamaseLuna > 0) {
-      orePontatePerCategorie.set('Timp disponibil rămas', oreRamaseLuna);
-    } else {
-      console.log('Timp disponibil rămas este negativ sau zero:', oreRamaseLuna);
-    }
+
+    // Forțăm adăugarea timpului disponibil rămas, chiar dacă este 0
+    orePontatePerCategorie.set('Timp disponibil rămas', oreRamaseLuna);
+    console.log('Timp disponibil rămas pentru grafic:', oreRamaseLuna);
 
     // Construim datele pentru grafic
     const labels: string[] = [];

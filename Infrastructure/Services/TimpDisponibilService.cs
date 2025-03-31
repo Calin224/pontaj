@@ -50,10 +50,25 @@ namespace Infrastructure.Services
                 }
             }
 
+            // Calculează limita maximă de ore permisă pentru lună (12 ore pe zi lucrătoare)
+            var limitaMaximaLuna = zileLucratoareLuna * 12;
+
+            // Calculează orele deja pontate
+            var oreTotalPontate = pontajeLuna.Sum(p => (p.OraFinal - p.OraStart).TotalHours);
+
             // Calculează orele disponibile pe categorii
             var oreNormaBazaLuna = zileLucratoareLuna * ORE_NORMA_BAZA_PE_ZI;
             var oreProiecteLuna = zileLucratoareLuna * ORE_PROIECTE_PE_ZI;
             var oreDisponibileLuna = oreNormaBazaLuna + oreProiecteLuna;
+
+            // Verifică dacă s-a depășit limita maximă
+            if (oreTotalPontate > limitaMaximaLuna)
+            {
+                Console.WriteLine(
+                    $"ATENȚIE: S-a depășit limita maximă de ore pentru lună ({oreTotalPontate} > {limitaMaximaLuna})");
+                // În acest caz, nu mai sunt ore disponibile
+                oreTotalPontate = limitaMaximaLuna;
+            }
 
             // Calculează orele pontate, separând pe categorii
             var rezultatPontaje = CalculeazaOrePontate(pontajeLuna);
@@ -61,11 +76,11 @@ namespace Infrastructure.Services
             var orePontateProiecte = rezultatPontaje.OrePontateProiecte;
             var orePontateLuna = orePontateNormaBaza + orePontateProiecte;
 
-            // Calculează orele rămase
-            var oreRamaseLuna = Math.Max(0, oreDisponibileLuna - orePontateLuna);
+            // Calculează orele rămase disponibile (folosind limita maximă)
+            var oreRamaseLuna = Math.Max(0, limitaMaximaLuna - oreTotalPontate);
 
-            var procentUtilizare = oreDisponibileLuna > 0
-                ? (float)(orePontateLuna / oreDisponibileLuna * 100)
+            var procentUtilizare = limitaMaximaLuna > 0
+                ? (float)(oreTotalPontate / limitaMaximaLuna * 100)
                 : 0;
 
             return new TimpDisponibilDto
@@ -76,14 +91,16 @@ namespace Infrastructure.Services
                 OrePontateLuna = orePontateLuna,
                 OrePontateNormaBaza = orePontateNormaBaza,
                 OrePontateProiecte = orePontateProiecte,
-                OreRamaseLuna = oreRamaseLuna,
+                OreRamaseLuna = oreRamaseLuna, // Această valoare va fi acum limitată corect
                 ZileLucratoareLuna = zileLucratoareLuna,
                 ZileLucratoareRamase = zileLucratoareRamase,
-                ProcentUtilizare = procentUtilizare
+                ProcentUtilizare = procentUtilizare,
+                // LimitaMaximaLuna = limitaMaximaLuna // Adăugat pentru referință
             };
         }
 
-        private (double OrePontateNormaBaza, double OrePontateProiecte) CalculeazaOrePontate(IReadOnlyList<Pontaj> pontaje)
+        private (double OrePontateNormaBaza, double OrePontateProiecte) CalculeazaOrePontate(
+            IReadOnlyList<Pontaj> pontaje)
         {
             double oreTotaleNormaBaza = 0;
             double oreTotaleProiecte = 0;
@@ -91,7 +108,7 @@ namespace Infrastructure.Services
             foreach (var pontaj in pontaje)
             {
                 var durataOre = (pontaj.OraFinal - pontaj.OraStart).TotalHours;
-                
+
                 if (pontaj.NormaBaza)
                 {
                     oreTotaleNormaBaza += durataOre;

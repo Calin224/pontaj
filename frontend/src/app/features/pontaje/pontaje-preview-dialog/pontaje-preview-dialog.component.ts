@@ -66,7 +66,7 @@ import { PontajDto } from '../../../shared/models/pontajDto';
 
           <div class="flex items-center gap-2 mb-3 p-2 bg-gray-50 rounded text-sm">
             <span class="p-badge p-badge-warning">Înlocuiește normă</span>
-            <span>- Aceste pontaje vor înlocui ore din norma de bază</span>
+            <span class="text-black">- Aceste pontaje vor înlocui ore din norma de bază</span>
           </div>
 
           <p-table [value]="pontajePreview" styleClass="p-datatable-sm">

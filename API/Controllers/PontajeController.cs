@@ -110,7 +110,7 @@ public class PontajeController(
                 user.Id, dto.DataInceput, dto.DataSfarsit, dto.NumeProiect, dto.OreAlocate)
             : await pontajService.GenerarePontajeProiectAsync(
                 user.Id, dto.DataInceput, dto.DataSfarsit, dto.NumeProiect, dto.OreAlocate);
-            
+
         return Ok(pontajeCreate);
     }
 
@@ -137,33 +137,33 @@ public class PontajeController(
 
         Console.WriteLine($"Simulare pontaje: PermiteAjustareaNorma = {dto.PermiteAjustareaNorma}");
 
-        if (dto.PermiteAjustareaNorma)
+        try
         {
-            var rezultatCuAjustare = await pontajService.SimuleazaPontajeProiectCuAjustareNormaAsync(
-                user.Id, dto.DataInceput, dto.DataSfarsit, dto.NumeProiect, dto.OreAlocate);
-            
-            var countInlocuiri = rezultatCuAjustare.Pontaje.Count(p => p.InlocuiesteNorma);
-            Console.WriteLine($"Pontaje care înlocuiesc normă: {countInlocuiri} din {rezultatCuAjustare.Pontaje.Count()}");
-            Console.WriteLine($"Ore rămase: {rezultatCuAjustare.OreRamase}, Zile necesare: {rezultatCuAjustare.ZileNecesareExtra}");
-        
-            return Ok(rezultatCuAjustare);
-        }
-        else
-        {
-            var pontajeSimulate = await pontajService.SimuleazaPontajeProiectAsync(
-                user.Id, dto.DataInceput, dto.DataSfarsit, dto.NumeProiect, dto.OreAlocate);
-            
-            var oreAcoperite = pontajeSimulate.Sum(p => (p.OraFinal - p.OraStart).TotalHours);
-            var oreRamase = dto.OreAlocate - (int)oreAcoperite;
-            var zileNecesareExtra = oreRamase > 0 ? Math.Ceiling(oreRamase / 8.0) : 0;
-        
-            return Ok(new PontajSimulareResponse
+            if (dto.PermiteAjustareaNorma)
             {
-                Pontaje = pontajeSimulate,
-                OreRamase = oreRamase > 0 ? oreRamase : 0,
-                OreAcoperite = (int)oreAcoperite,
-                ZileNecesareExtra = (int)zileNecesareExtra
-            });
+                var rezultatCuAjustare = await pontajService.SimuleazaPontajeProiectCuAjustareNormaAsync(
+                    user.Id, dto.DataInceput, dto.DataSfarsit, dto.NumeProiect, dto.OreAlocate);
+
+                var countInlocuiri = rezultatCuAjustare.Pontaje.Count(p => p.InlocuiesteNorma);
+                Console.WriteLine(
+                    $"Pontaje care înlocuiesc normă: {countInlocuiri} din {rezultatCuAjustare.Pontaje.Count()}");
+                Console.WriteLine(
+                    $"Ore rămase: {rezultatCuAjustare.OreRamase}, Zile necesare: {rezultatCuAjustare.ZileNecesareExtra}");
+
+                return Ok(rezultatCuAjustare);
+            }
+            else
+            {
+                var rezultatSimulare = await pontajService.SimuleazaPontajeProiectAsync(
+                    user.Id, dto.DataInceput, dto.DataSfarsit, dto.NumeProiect, dto.OreAlocate);
+
+                return Ok(rezultatSimulare);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Excepție în timpul simulării: {ex.Message}");
+            return BadRequest(new { error = ex.Message });
         }
     }
 
