@@ -1,31 +1,31 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\3rdpartylicenses.txt",
+      "Id": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\3rdpartylicenses.txt",
       "PackagePath": "staticwebassets\\3rdpartylicenses.txt"
     },
     {
-      "Id": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\index.html",
+      "Id": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
     {
-      "Id": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\main-BTMGTAVK.js",
+      "Id": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\main-BTMGTAVK.js",
       "PackagePath": "staticwebassets\\main-BTMGTAVK.js"
     },
     {
-      "Id": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\polyfills-FFHMD2TL.js",
+      "Id": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\polyfills-FFHMD2TL.js",
       "PackagePath": "staticwebassets\\polyfills-FFHMD2TL.js"
     },
     {
-      "Id": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\prerendered-routes.json",
+      "Id": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\prerendered-routes.json",
       "PackagePath": "staticwebassets\\prerendered-routes.json"
     },
     {
-      "Id": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\styles-SAHOSFHQ.css",
+      "Id": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\styles-SAHOSFHQ.css",
       "PackagePath": "staticwebassets\\styles-SAHOSFHQ.css"
     },
     {

@@ -6,6 +6,7 @@ using Core.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace API.Controllers;
 
@@ -62,5 +63,11 @@ public class AccountController(SignInManager<AppUser> signInManager) : BaseApiCo
         return Ok(new {
             IsAuthenticated = User.Identity?.IsAuthenticated ?? false
         });
+    }
+
+    [HttpGet("all-users")]
+    public async Task<IReadOnlyList<AppUser>> GetAllUsers()
+    {
+        throw new NotImplementedException("This method is not implemented yet.");
     }
 }

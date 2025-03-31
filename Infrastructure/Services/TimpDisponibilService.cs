@@ -13,7 +13,9 @@ namespace Infrastructure.Services
     public class TimpDisponibilService : ITimpDisponibilService
     {
         private readonly IGenericRepository<Pontaj> _pontajRepository;
-        private const int ORE_MAXIME_PE_ZI = 12;
+        private const int ORE_NORMA_BAZA_PE_ZI = 8;
+        private const int ORE_PROIECTE_PE_ZI = 4;
+        private const int ORE_MAXIME_PE_ZI = 12; // Total: 8 ore normă + 4 ore proiecte
 
         public TimpDisponibilService(IGenericRepository<Pontaj> pontajRepository)
         {
@@ -48,10 +50,18 @@ namespace Infrastructure.Services
                 }
             }
 
-            var oreDisponibileLuna = zileLucratoareLuna * ORE_MAXIME_PE_ZI;
+            // Calculează orele disponibile pe categorii
+            var oreNormaBazaLuna = zileLucratoareLuna * ORE_NORMA_BAZA_PE_ZI;
+            var oreProiecteLuna = zileLucratoareLuna * ORE_PROIECTE_PE_ZI;
+            var oreDisponibileLuna = oreNormaBazaLuna + oreProiecteLuna;
 
-            var orePontateLuna = CalculeazaOrePontate(pontajeLuna);
+            // Calculează orele pontate, separând pe categorii
+            var rezultatPontaje = CalculeazaOrePontate(pontajeLuna);
+            var orePontateNormaBaza = rezultatPontaje.OrePontateNormaBaza;
+            var orePontateProiecte = rezultatPontaje.OrePontateProiecte;
+            var orePontateLuna = orePontateNormaBaza + orePontateProiecte;
 
+            // Calculează orele rămase
             var oreRamaseLuna = Math.Max(0, oreDisponibileLuna - orePontateLuna);
 
             var procentUtilizare = oreDisponibileLuna > 0
@@ -61,7 +71,11 @@ namespace Infrastructure.Services
             return new TimpDisponibilDto
             {
                 OreDisponibileLuna = oreDisponibileLuna,
+                OreNormaBazaLuna = oreNormaBazaLuna,
+                OreProiecteLuna = oreProiecteLuna,
                 OrePontateLuna = orePontateLuna,
+                OrePontateNormaBaza = orePontateNormaBaza,
+                OrePontateProiecte = orePontateProiecte,
                 OreRamaseLuna = oreRamaseLuna,
                 ZileLucratoareLuna = zileLucratoareLuna,
                 ZileLucratoareRamase = zileLucratoareRamase,
@@ -69,17 +83,26 @@ namespace Infrastructure.Services
             };
         }
 
-        private double CalculeazaOrePontate(IReadOnlyList<Pontaj> pontaje)
+        private (double OrePontateNormaBaza, double OrePontateProiecte) CalculeazaOrePontate(IReadOnlyList<Pontaj> pontaje)
         {
-            double oreTotale = 0;
+            double oreTotaleNormaBaza = 0;
+            double oreTotaleProiecte = 0;
 
             foreach (var pontaj in pontaje)
             {
                 var durataOre = (pontaj.OraFinal - pontaj.OraStart).TotalHours;
-                oreTotale += durataOre;
+                
+                if (pontaj.NormaBaza)
+                {
+                    oreTotaleNormaBaza += durataOre;
+                }
+                else
+                {
+                    oreTotaleProiecte += durataOre;
+                }
             }
 
-            return oreTotale;
+            return (oreTotaleNormaBaza, oreTotaleProiecte);
         }
     }
 }

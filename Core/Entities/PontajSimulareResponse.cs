@@ -8,4 +8,5 @@ public class PontajSimulareResponse
     public int OreRamase { get; set; }
     public int OreAcoperite { get; set; }
     public double ZileNecesareExtra { get; set; }
+    public string Error { get; set; }
 }

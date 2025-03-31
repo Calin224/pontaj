@@ -1,4 +1,3 @@
-// src/app/pontaje/pontaje-chart/pontaje-chart.component.ts
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ChartModule } from 'primeng/chart';
@@ -55,6 +54,7 @@ export class PontajeChartComponent implements OnChanges, OnInit {
     this.loading = true;
     this.timpDisponibilService.getTimpDisponibil(this.lunaSelectata).subscribe({
       next: (data) => {
+        console.log('Timp disponibil răspuns:', data);
         this.timpDisponibil = data;
         this.updateChartData();
         this.loading = false;
@@ -89,7 +89,6 @@ export class PontajeChartComponent implements OnChanges, OnInit {
       maintainAspectRatio: false
     };
 
-    // Inițializare cu valori goale
     this.chartData = {
       labels: [],
       datasets: [
@@ -98,7 +97,7 @@ export class PontajeChartComponent implements OnChanges, OnInit {
           backgroundColor: [
             '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF',
             '#FF9F40', '#5AD3D1', '#A569BD', '#5DADE2', '#48C9B0',
-            '#E6E6FA' // Culoare pentru timpul disponibil
+            '#E6E6FA'
           ]
         }
       ]
@@ -106,36 +105,73 @@ export class PontajeChartComponent implements OnChanges, OnInit {
   }
 
   private updateChartData(): void {
-    if (!this.pontaje?.length || !this.timpDisponibil) {
+    if (!this.timpDisponibil) {
+      console.log('Timp disponibil nu există, nu se poate actualiza graficul');
       return;
     }
 
-    const proiecteMap = new Map<string, number>();
+    console.log('Actualizare grafic cu:', this.timpDisponibil);
 
-    // Calculăm orele pentru fiecare proiect
-    this.pontaje.forEach(pontaj => {
-      if (!pontaj.normaBaza && pontaj.oraStart && pontaj.oraFinal) { // Excludem pontajele cu normă de bază
-        const proiect = pontaj.numeProiect || 'Necunoscut';
-        const oreTotale = this.calculeazaOre(pontaj.oraStart, pontaj.oraFinal);
-        const oreExistente = proiecteMap.get(proiect) || 0;
-        proiecteMap.set(proiect, oreExistente + oreTotale);
-      }
-    });
+    // Calculăm orele pontate pe categorii
+    const orePontatePerCategorie = new Map<string, number>();
+    
+    // Grupăm pontajele pe categorii (normă bază vs proiecte)
+    if (this.pontaje && this.pontaje.length > 0) {
+      // Inițializăm categoria "Normă de bază"
+      orePontatePerCategorie.set('Normă de bază', 0);
+      
+      this.pontaje.forEach(pontaj => {
+        if (pontaj.oraStart && pontaj.oraFinal) {
+          const orePontaj = this.calculeazaOre(pontaj.oraStart, pontaj.oraFinal);
+          
+          if (pontaj.normaBaza) {
+            // Adăugăm la categoria "Normă de bază"
+            const oreNormaBaza = orePontatePerCategorie.get('Normă de bază') || 0;
+            orePontatePerCategorie.set('Normă de bază', oreNormaBaza + orePontaj);
+          } else {
+            // Adăugăm la proiectul specific
+            const numeProiect = pontaj.numeProiect || 'Necunoscut';
+            const oreProiect = orePontatePerCategorie.get(numeProiect) || 0;
+            orePontatePerCategorie.set(numeProiect, oreProiect + orePontaj);
+          }
+        }
+      });
+    }
 
+    // Calculăm timpul disponibil rămas
+    let oreRamaseLuna = 0;
+    
+    // Folosim datele din timpDisponibil dacă există
+    if (this.timpDisponibil.oreRamaseLuna !== undefined) {
+      oreRamaseLuna = this.timpDisponibil.oreRamaseLuna;
+    } else if (this.timpDisponibil.oreDisponibileLuna !== undefined && this.timpDisponibil.orePontateLuna !== undefined) {
+      // Calculăm manual dacă nu există direct
+      oreRamaseLuna = this.timpDisponibil.oreDisponibileLuna - this.timpDisponibil.orePontateLuna;
+    } else {
+      // Valoare de rezervă - estimăm pe baza zilelor lucrătoare
+      const zileLucratoare = 21; // Estimare standard
+      oreRamaseLuna = zileLucratoare * 12 - Array.from(orePontatePerCategorie.values()).reduce((sum, ore) => sum + ore, 0);
+    }
+    
+    console.log('Ore rămase calculate:', oreRamaseLuna);
+    
+    // Adăugăm timpul disponibil rămas, forțând o valoare pozitivă
+    if (oreRamaseLuna > 0) {
+      orePontatePerCategorie.set('Timp disponibil rămas', oreRamaseLuna);
+    } else {
+      console.log('Timp disponibil rămas este negativ sau zero:', oreRamaseLuna);
+    }
+
+    // Construim datele pentru grafic
     const labels: string[] = [];
     const data: number[] = [];
 
-    // Adăugăm fiecare proiect
-    proiecteMap.forEach((ore, proiect) => {
-      labels.push(proiect);
-      data.push(parseFloat(ore.toFixed(1))); // Rotunjim la 1 zecimală
+    orePontatePerCategorie.forEach((ore, categorie) => {
+      labels.push(categorie);
+      data.push(parseFloat(ore.toFixed(1)));
     });
 
-    // Adăugăm timpul disponibil rămas din backend
-    if (this.timpDisponibil && this.timpDisponibil.oreRamaseLuna > 0) {
-      labels.push('Timp disponibil rămas');
-      data.push(parseFloat(this.timpDisponibil.oreRamaseLuna.toFixed(1)));
-    }
+    console.log('Date grafic finale:', { labels, data });
 
     this.chartData = {
       labels: labels,

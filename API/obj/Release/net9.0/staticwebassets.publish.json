@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0AIAc/PuXb2W2okCeNvkYmMdNNff9/l/zVPGc1hlwv8=",
+  "Hash": "3Z/+z4W8GwqUOG00/QA0VXlaY0+oyU0AfCDK/sJCXiI=",
   "Source": "API",
   "BasePath": "_content/API",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "API\\wwwroot",
       "Source": "API",
-      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\",
       "BasePath": "_content/API",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\1dpm1p8bmc-0xifb4zx19.gz",
+      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\1dpm1p8bmc-0xifb4zx19.gz",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\",
+      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\",
       "BasePath": "_content/API",
       "RelativePath": "index#[.{fingerprint=0xifb4zx19}]?.html.gz",
       "AssetKind": "All",
@@ -28,20 +28,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\index.html",
+      "RelatedAsset": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\index.html",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "ivf8ujnkc6",
       "Integrity": "XnxMYPCcQVMvgZN4OAf1eengr2k9peNu0PHOxQ5V9SQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\index.html"
+      "OriginalItemSpec": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\index.html"
     },
     {
-      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\6x0scahnf1-vagikyz9qx.gz",
+      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\6x0scahnf1-vagikyz9qx.gz",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\",
+      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\",
       "BasePath": "_content/API",
       "RelativePath": "favicon#[.{fingerprint=vagikyz9qx}]?.ico.gz",
       "AssetKind": "All",
@@ -49,41 +49,41 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\favicon.ico",
+      "RelatedAsset": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\favicon.ico",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "spc2whqxhc",
       "Integrity": "4JD5TBkaKkYJVw5DzZh1jKJdCSTQYxpre7fdXrSQ/P8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\favicon.ico"
+      "OriginalItemSpec": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\9h1o294wjp-z7l0t8zhlj.gz",
+      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\9h1o294wjp-i4y0bjhxm2.gz",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\",
+      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\",
       "BasePath": "_content/API",
-      "RelativePath": "main-BTMGTAVK#[.{fingerprint=z7l0t8zhlj}]?.js.gz",
+      "RelativePath": "main-BTMGTAVK#[.{fingerprint=i4y0bjhxm2}]?.js.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\main-BTMGTAVK.js",
+      "RelatedAsset": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\main-BTMGTAVK.js",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "yczzniehvi",
-      "Integrity": "wrzS+mZRbQN25rhl+pDzW3ZvX7GIHjZdbjwigPMZyeE=",
+      "Fingerprint": "5uooq1qgq1",
+      "Integrity": "Q84vjHjSRvrdBfoOrvyBqylav4bWBHiTsD7p6z7pNkE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\main-BTMGTAVK.js"
+      "OriginalItemSpec": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\main-BTMGTAVK.js"
     },
     {
-      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\1dpm1p8bmc-0xifb4zx19.br",
+      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\1dpm1p8bmc-0xifb4zx19.br",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\",
+      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\",
       "BasePath": "_content/API",
       "RelativePath": "index#[.{fingerprint=0xifb4zx19}]?.html.br",
       "AssetKind": "All",
@@ -91,20 +91,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\index.html",
+      "RelatedAsset": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\index.html",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "br",
       "Fingerprint": "hc6lf04bdn",
       "Integrity": "YYIhaL1O4id1/zEyWNH4/Wbl9KPxIYIMfWvjw8Q49NM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\index.html"
+      "OriginalItemSpec": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\index.html"
     },
     {
-      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\6x0scahnf1-vagikyz9qx.br",
+      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\6x0scahnf1-vagikyz9qx.br",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\",
+      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\",
       "BasePath": "_content/API",
       "RelativePath": "favicon#[.{fingerprint=vagikyz9qx}]?.ico.br",
       "AssetKind": "All",
@@ -112,209 +112,209 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\favicon.ico",
+      "RelatedAsset": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\favicon.ico",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "br",
       "Fingerprint": "z44oi65n2z",
       "Integrity": "DZvQlN6nTeKU0K8Ab7twyTbcOiDwAKYlMmsyGJ+ukfM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\favicon.ico"
+      "OriginalItemSpec": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\9h1o294wjp-z7l0t8zhlj.br",
+      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\9h1o294wjp-i4y0bjhxm2.br",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\",
+      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\",
       "BasePath": "_content/API",
-      "RelativePath": "main-BTMGTAVK#[.{fingerprint=z7l0t8zhlj}]?.js.br",
+      "RelativePath": "main-BTMGTAVK#[.{fingerprint=i4y0bjhxm2}]?.js.br",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\main-BTMGTAVK.js",
+      "RelatedAsset": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\main-BTMGTAVK.js",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "br",
-      "Fingerprint": "fgzd8l93pk",
-      "Integrity": "v8ARzPHMR4AY3QBg5R4UZFB/buldKdbqcPqrml8gOe8=",
+      "Fingerprint": "xnv3oj08vn",
+      "Integrity": "8/h+hJzOY6GOyVLT1swAWgavZ/gN+UVFr7fUKj3vHnI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\main-BTMGTAVK.js"
+      "OriginalItemSpec": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\main-BTMGTAVK.js"
     },
     {
-      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\wsenxafarw-39tegmrjtp.br",
+      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\wsenxafarw-gv9nnx918d.br",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\",
+      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\",
       "BasePath": "_content/API",
-      "RelativePath": "polyfills-FFHMD2TL#[.{fingerprint=39tegmrjtp}]?.js.br",
+      "RelativePath": "polyfills-FFHMD2TL#[.{fingerprint=gv9nnx918d}]?.js.br",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\polyfills-FFHMD2TL.js",
+      "RelatedAsset": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\polyfills-FFHMD2TL.js",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "br",
-      "Fingerprint": "txwjkp4l8q",
-      "Integrity": "f7o/UqxPl0Oka4CNAP9duYnZgpjuS/aDEJ6rWCKX9ZA=",
+      "Fingerprint": "73wx9mkia6",
+      "Integrity": "TV5XnPBlsxjFVw9ffqQOKykMC5C7FwphNq7tRzMsRR4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\polyfills-FFHMD2TL.js"
+      "OriginalItemSpec": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\polyfills-FFHMD2TL.js"
     },
     {
-      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\xtgzzp8wob-tvy3j3n584.br",
+      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\xtgzzp8wob-bdlfngeg9h.br",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\",
+      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\",
       "BasePath": "_content/API",
-      "RelativePath": "prerendered-routes#[.{fingerprint=tvy3j3n584}]?.json.br",
+      "RelativePath": "prerendered-routes#[.{fingerprint=bdlfngeg9h}]?.json.br",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\prerendered-routes.json",
+      "RelatedAsset": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\prerendered-routes.json",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "br",
-      "Fingerprint": "s1s0vs4vxa",
-      "Integrity": "AAOcDdoxFiyeGdEWYmSBa0pItxin+SuPp3FEivY+fgo=",
+      "Fingerprint": "9kp1rr16dh",
+      "Integrity": "qQ6asg9TVNxDyeCae3KNzQLDjaxy6KUJ4wQ3DjLD7x8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\prerendered-routes.json"
+      "OriginalItemSpec": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\prerendered-routes.json"
     },
     {
-      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\znb6xkz1sl-u5yxn8q1z3.br",
+      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\znb6xkz1sl-dzcp996a97.br",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\",
+      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\",
       "BasePath": "_content/API",
-      "RelativePath": "styles-SAHOSFHQ#[.{fingerprint=u5yxn8q1z3}]?.css.br",
+      "RelativePath": "styles-SAHOSFHQ#[.{fingerprint=dzcp996a97}]?.css.br",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\styles-SAHOSFHQ.css",
+      "RelatedAsset": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\styles-SAHOSFHQ.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "br",
-      "Fingerprint": "9lvlpd3w60",
-      "Integrity": "0y9qu9O2QtieUzJyS3YXK0oVMZN0EgTUJl9DnibVsD8=",
+      "Fingerprint": "irb39a5a1i",
+      "Integrity": "Tj9WVAG+361rEbLKEXkBsr3M24M7TuxAdS4QWNzwxJE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\styles-SAHOSFHQ.css"
+      "OriginalItemSpec": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\styles-SAHOSFHQ.css"
     },
     {
-      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\zzyd6wgwl5-5npfohhw4t.br",
+      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\zzyd6wgwl5-xijim17l10.br",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\",
+      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\",
       "BasePath": "_content/API",
-      "RelativePath": "3rdpartylicenses#[.{fingerprint=5npfohhw4t}]?.txt.br",
+      "RelativePath": "3rdpartylicenses#[.{fingerprint=xijim17l10}]?.txt.br",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\3rdpartylicenses.txt",
+      "RelatedAsset": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\3rdpartylicenses.txt",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "br",
-      "Fingerprint": "xqrgr7isd8",
-      "Integrity": "eYdF4CMGRblKgdgfo9SObsuW2iRVcujyDGG+tsP3Bn4=",
+      "Fingerprint": "4u9i6g3nba",
+      "Integrity": "TPj4EXevwkc7qJYcai0r3t+8Rwx4SWYSeSLivsCZy/Q=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\3rdpartylicenses.txt"
+      "OriginalItemSpec": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\3rdpartylicenses.txt"
     },
     {
-      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\wsenxafarw-39tegmrjtp.gz",
+      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\wsenxafarw-gv9nnx918d.gz",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\",
+      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\",
       "BasePath": "_content/API",
-      "RelativePath": "polyfills-FFHMD2TL#[.{fingerprint=39tegmrjtp}]?.js.gz",
+      "RelativePath": "polyfills-FFHMD2TL#[.{fingerprint=gv9nnx918d}]?.js.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\polyfills-FFHMD2TL.js",
+      "RelatedAsset": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\polyfills-FFHMD2TL.js",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "w4lx0xupn9",
-      "Integrity": "wNJFFxSczIGO97svjP9ishXOSHGLv5Y4VbZ5Mb0PkLw=",
+      "Fingerprint": "3jrowha8j4",
+      "Integrity": "oboJR7y/jQyGhso7YFALQGSENyN5yVw35miDjrppL9s=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\polyfills-FFHMD2TL.js"
+      "OriginalItemSpec": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\polyfills-FFHMD2TL.js"
     },
     {
-      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\xtgzzp8wob-tvy3j3n584.gz",
+      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\xtgzzp8wob-bdlfngeg9h.gz",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\",
+      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\",
       "BasePath": "_content/API",
-      "RelativePath": "prerendered-routes#[.{fingerprint=tvy3j3n584}]?.json.gz",
+      "RelativePath": "prerendered-routes#[.{fingerprint=bdlfngeg9h}]?.json.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\prerendered-routes.json",
+      "RelatedAsset": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\prerendered-routes.json",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "flm15mbdxq",
-      "Integrity": "o1VjVQwEDpUxfB4dvCKgJktgYa0JihcBq69Qd6fuU3I=",
+      "Fingerprint": "4se9d5lfji",
+      "Integrity": "7Ns5howeBzjngCtWHv6WNpbtaodI+J0taRbGPsEpZ/Y=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\prerendered-routes.json"
+      "OriginalItemSpec": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\prerendered-routes.json"
     },
     {
-      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\znb6xkz1sl-u5yxn8q1z3.gz",
+      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\znb6xkz1sl-dzcp996a97.gz",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\",
+      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\",
       "BasePath": "_content/API",
-      "RelativePath": "styles-SAHOSFHQ#[.{fingerprint=u5yxn8q1z3}]?.css.gz",
+      "RelativePath": "styles-SAHOSFHQ#[.{fingerprint=dzcp996a97}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\styles-SAHOSFHQ.css",
+      "RelatedAsset": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\styles-SAHOSFHQ.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "l3pja40k7o",
-      "Integrity": "LyDzTcvD1XrqzqquNOagxoQV+vyORNTxE8PmxMlfGqc=",
+      "Fingerprint": "ak1x8c599f",
+      "Integrity": "1jH7i5tWDCzBP4MkoEEXf5pDTINQpnpsaEcCd72Q/n8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\styles-SAHOSFHQ.css"
+      "OriginalItemSpec": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\styles-SAHOSFHQ.css"
     },
     {
-      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\zzyd6wgwl5-5npfohhw4t.gz",
+      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\zzyd6wgwl5-xijim17l10.gz",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\",
+      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\",
       "BasePath": "_content/API",
-      "RelativePath": "3rdpartylicenses#[.{fingerprint=5npfohhw4t}]?.txt.gz",
+      "RelativePath": "3rdpartylicenses#[.{fingerprint=xijim17l10}]?.txt.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\3rdpartylicenses.txt",
+      "RelatedAsset": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\3rdpartylicenses.txt",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "rfu9r9ey95",
-      "Integrity": "qd7gVccQZH+2D2kwouV6aGluRsu+ywAVxy/LYA8w4JE=",
+      "Fingerprint": "d19jxoqif8",
+      "Integrity": "fwqOQf/yE3G27Ev30l0vMaqVJtKIi5n2/lUIXM5gyAo=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\3rdpartylicenses.txt"
+      "OriginalItemSpec": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\3rdpartylicenses.txt"
     },
     {
-      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\3rdpartylicenses.txt",
+      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\3rdpartylicenses.txt",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "3rdpartylicenses#[.{fingerprint}]?.txt",
       "AssetKind": "All",
@@ -325,17 +325,17 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "5npfohhw4t",
-      "Integrity": "b8SIevO7ekmKwrcpUwKhzkigjwjZpFH6rxyI26g5QGM=",
+      "Fingerprint": "xijim17l10",
+      "Integrity": "p6J+NoX1eQ3GjBO51onasFa1i6wowhZqc9V8Q7vmqV8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\3rdpartylicenses.txt"
     },
     {
-      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\favicon.ico",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "favicon#[.{fingerprint}]?.ico",
       "AssetKind": "All",
@@ -353,10 +353,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\index.html",
+      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\index.html",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "index#[.{fingerprint}]?.html",
       "AssetKind": "All",
@@ -374,10 +374,10 @@
       "OriginalItemSpec": "wwwroot\\index.html"
     },
     {
-      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\main-BTMGTAVK.js",
+      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\main-BTMGTAVK.js",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "main-BTMGTAVK#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -388,17 +388,17 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "z7l0t8zhlj",
-      "Integrity": "bzifHPLVTAI5dXPANeg6tAlwwa3yy+HfyIZygRtvJc0=",
+      "Fingerprint": "i4y0bjhxm2",
+      "Integrity": "Pux2pm8B5kG2CrrII1JIdcH1mW5GIrx3qC7jlYa5Rhc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\main-BTMGTAVK.js"
     },
     {
-      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\polyfills-FFHMD2TL.js",
+      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\polyfills-FFHMD2TL.js",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "polyfills-FFHMD2TL#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -409,17 +409,17 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "39tegmrjtp",
-      "Integrity": "adzqBFZD3Q3pmKPNDMu7RrRr/yZRqHpWxzwo6yCOj5g=",
+      "Fingerprint": "gv9nnx918d",
+      "Integrity": "vPx+uL0mspJ05685sS/8avZF1v4RS4ClEj6mMd0DTxA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\polyfills-FFHMD2TL.js"
     },
     {
-      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\prerendered-routes.json",
+      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\prerendered-routes.json",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "prerendered-routes#[.{fingerprint}]?.json",
       "AssetKind": "All",
@@ -430,17 +430,17 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "tvy3j3n584",
-      "Integrity": "p53cyKEVGQ6cGUee02kUdBp9HbdPChFTUp78gHJVBf4=",
+      "Fingerprint": "bdlfngeg9h",
+      "Integrity": "EU9ZtuQhQrnLyvbSvsWZrvS9r3f6MA06EdbEt+ua/wQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\prerendered-routes.json"
     },
     {
-      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\styles-SAHOSFHQ.css",
+      "Identity": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\styles-SAHOSFHQ.css",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "styles-SAHOSFHQ#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -451,8 +451,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "u5yxn8q1z3",
-      "Integrity": "zl2QDp60CVO5HYCV3aUVF/w0Lze5IDHZ2KOtqhhoqEk=",
+      "Fingerprint": "dzcp996a97",
+      "Integrity": "B6WJziL6GGvAzmpeVQCGhFI3W4Rv6NolY0+DvmMjfbQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\styles-SAHOSFHQ.css"
@@ -460,13 +460,13 @@
   ],
   "Endpoints": [
     {
-      "Route": "3rdpartylicenses.5npfohhw4t.txt",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\zzyd6wgwl5-5npfohhw4t.br",
+      "Route": "3rdpartylicenses.txt",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\zzyd6wgwl5-xijim17l10.br",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "br",
-          "Quality": "0.000160823416"
+          "Quality": "0.000159769931"
         }
       ],
       "ResponseHeaders": [
@@ -476,15 +476,252 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6217"
+          "Value": "6258"
         },
         {
           "Name": "ETag",
-          "Value": "\"eYdF4CMGRblKgdgfo9SObsuW2iRVcujyDGG+tsP3Bn4=\""
+          "Value": "\"TPj4EXevwkc7qJYcai0r3t+8Rwx4SWYSeSLivsCZy/Q=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "br"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"p6J+NoX1eQ3GjBO51onasFa1i6wowhZqc9V8Q7vmqV8=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-p6J+NoX1eQ3GjBO51onasFa1i6wowhZqc9V8Q7vmqV8="
+        }
+      ]
+    },
+    {
+      "Route": "3rdpartylicenses.txt",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\zzyd6wgwl5-xijim17l10.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000123411082"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8102"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fwqOQf/yE3G27Ev30l0vMaqVJtKIi5n2/lUIXM5gyAo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"p6J+NoX1eQ3GjBO51onasFa1i6wowhZqc9V8Q7vmqV8=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-p6J+NoX1eQ3GjBO51onasFa1i6wowhZqc9V8Q7vmqV8="
+        }
+      ]
+    },
+    {
+      "Route": "3rdpartylicenses.txt",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\3rdpartylicenses.txt",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "46079"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"p6J+NoX1eQ3GjBO51onasFa1i6wowhZqc9V8Q7vmqV8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-p6J+NoX1eQ3GjBO51onasFa1i6wowhZqc9V8Q7vmqV8="
+        }
+      ]
+    },
+    {
+      "Route": "3rdpartylicenses.txt.br",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\zzyd6wgwl5-xijim17l10.br",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6258"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TPj4EXevwkc7qJYcai0r3t+8Rwx4SWYSeSLivsCZy/Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "br"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-TPj4EXevwkc7qJYcai0r3t+8Rwx4SWYSeSLivsCZy/Q="
+        }
+      ]
+    },
+    {
+      "Route": "3rdpartylicenses.txt.gz",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\zzyd6wgwl5-xijim17l10.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8102"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fwqOQf/yE3G27Ev30l0vMaqVJtKIi5n2/lUIXM5gyAo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fwqOQf/yE3G27Ev30l0vMaqVJtKIi5n2/lUIXM5gyAo="
+        }
+      ]
+    },
+    {
+      "Route": "3rdpartylicenses.xijim17l10.txt",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\zzyd6wgwl5-xijim17l10.br",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "br",
+          "Quality": "0.000159769931"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6258"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TPj4EXevwkc7qJYcai0r3t+8Rwx4SWYSeSLivsCZy/Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -504,13 +741,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"b8SIevO7ekmKwrcpUwKhzkigjwjZpFH6rxyI26g5QGM=\""
+          "Value": "W/\"p6J+NoX1eQ3GjBO51onasFa1i6wowhZqc9V8Q7vmqV8=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "5npfohhw4t"
+          "Value": "xijim17l10"
         },
         {
           "Name": "label",
@@ -518,18 +755,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-b8SIevO7ekmKwrcpUwKhzkigjwjZpFH6rxyI26g5QGM="
+          "Value": "sha256-p6J+NoX1eQ3GjBO51onasFa1i6wowhZqc9V8Q7vmqV8="
         }
       ]
     },
     {
-      "Route": "3rdpartylicenses.5npfohhw4t.txt",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\zzyd6wgwl5-5npfohhw4t.gz",
+      "Route": "3rdpartylicenses.xijim17l10.txt",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\zzyd6wgwl5-xijim17l10.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000124131082"
+          "Quality": "0.000123411082"
         }
       ],
       "ResponseHeaders": [
@@ -539,15 +776,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "8055"
+          "Value": "8102"
         },
         {
           "Name": "ETag",
-          "Value": "\"qd7gVccQZH+2D2kwouV6aGluRsu+ywAVxy/LYA8w4JE=\""
+          "Value": "\"fwqOQf/yE3G27Ev30l0vMaqVJtKIi5n2/lUIXM5gyAo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -567,13 +804,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"b8SIevO7ekmKwrcpUwKhzkigjwjZpFH6rxyI26g5QGM=\""
+          "Value": "W/\"p6J+NoX1eQ3GjBO51onasFa1i6wowhZqc9V8Q7vmqV8=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "5npfohhw4t"
+          "Value": "xijim17l10"
         },
         {
           "Name": "label",
@@ -581,13 +818,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-b8SIevO7ekmKwrcpUwKhzkigjwjZpFH6rxyI26g5QGM="
+          "Value": "sha256-p6J+NoX1eQ3GjBO51onasFa1i6wowhZqc9V8Q7vmqV8="
         }
       ]
     },
     {
-      "Route": "3rdpartylicenses.5npfohhw4t.txt",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\3rdpartylicenses.txt",
+      "Route": "3rdpartylicenses.xijim17l10.txt",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\3rdpartylicenses.txt",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -596,7 +833,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "45387"
+          "Value": "46079"
         },
         {
           "Name": "Content-Type",
@@ -604,11 +841,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"b8SIevO7ekmKwrcpUwKhzkigjwjZpFH6rxyI26g5QGM=\""
+          "Value": "\"p6J+NoX1eQ3GjBO51onasFa1i6wowhZqc9V8Q7vmqV8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -618,7 +855,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "5npfohhw4t"
+          "Value": "xijim17l10"
         },
         {
           "Name": "label",
@@ -626,13 +863,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-b8SIevO7ekmKwrcpUwKhzkigjwjZpFH6rxyI26g5QGM="
+          "Value": "sha256-p6J+NoX1eQ3GjBO51onasFa1i6wowhZqc9V8Q7vmqV8="
         }
       ]
     },
     {
-      "Route": "3rdpartylicenses.5npfohhw4t.txt.br",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\zzyd6wgwl5-5npfohhw4t.br",
+      "Route": "3rdpartylicenses.xijim17l10.txt.br",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\zzyd6wgwl5-xijim17l10.br",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -641,7 +878,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6217"
+          "Value": "6258"
         },
         {
           "Name": "Content-Type",
@@ -649,11 +886,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"eYdF4CMGRblKgdgfo9SObsuW2iRVcujyDGG+tsP3Bn4=\""
+          "Value": "\"TPj4EXevwkc7qJYcai0r3t+8Rwx4SWYSeSLivsCZy/Q=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -671,7 +908,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "5npfohhw4t"
+          "Value": "xijim17l10"
         },
         {
           "Name": "label",
@@ -679,13 +916,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-eYdF4CMGRblKgdgfo9SObsuW2iRVcujyDGG+tsP3Bn4="
+          "Value": "sha256-TPj4EXevwkc7qJYcai0r3t+8Rwx4SWYSeSLivsCZy/Q="
         }
       ]
     },
     {
-      "Route": "3rdpartylicenses.5npfohhw4t.txt.gz",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\zzyd6wgwl5-5npfohhw4t.gz",
+      "Route": "3rdpartylicenses.xijim17l10.txt.gz",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\zzyd6wgwl5-xijim17l10.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -694,7 +931,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "8055"
+          "Value": "8102"
         },
         {
           "Name": "Content-Type",
@@ -702,11 +939,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"qd7gVccQZH+2D2kwouV6aGluRsu+ywAVxy/LYA8w4JE=\""
+          "Value": "\"fwqOQf/yE3G27Ev30l0vMaqVJtKIi5n2/lUIXM5gyAo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -724,7 +961,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "5npfohhw4t"
+          "Value": "xijim17l10"
         },
         {
           "Name": "label",
@@ -732,250 +969,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-qd7gVccQZH+2D2kwouV6aGluRsu+ywAVxy/LYA8w4JE="
-        }
-      ]
-    },
-    {
-      "Route": "3rdpartylicenses.txt",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\zzyd6wgwl5-5npfohhw4t.br",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "br",
-          "Quality": "0.000160823416"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6217"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"eYdF4CMGRblKgdgfo9SObsuW2iRVcujyDGG+tsP3Bn4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "br"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/plain"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"b8SIevO7ekmKwrcpUwKhzkigjwjZpFH6rxyI26g5QGM=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-b8SIevO7ekmKwrcpUwKhzkigjwjZpFH6rxyI26g5QGM="
-        }
-      ]
-    },
-    {
-      "Route": "3rdpartylicenses.txt",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\zzyd6wgwl5-5npfohhw4t.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000124131082"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "8055"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"qd7gVccQZH+2D2kwouV6aGluRsu+ywAVxy/LYA8w4JE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/plain"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"b8SIevO7ekmKwrcpUwKhzkigjwjZpFH6rxyI26g5QGM=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-b8SIevO7ekmKwrcpUwKhzkigjwjZpFH6rxyI26g5QGM="
-        }
-      ]
-    },
-    {
-      "Route": "3rdpartylicenses.txt",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\3rdpartylicenses.txt",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "45387"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/plain"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"b8SIevO7ekmKwrcpUwKhzkigjwjZpFH6rxyI26g5QGM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-b8SIevO7ekmKwrcpUwKhzkigjwjZpFH6rxyI26g5QGM="
-        }
-      ]
-    },
-    {
-      "Route": "3rdpartylicenses.txt.br",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\zzyd6wgwl5-5npfohhw4t.br",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6217"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/plain"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"eYdF4CMGRblKgdgfo9SObsuW2iRVcujyDGG+tsP3Bn4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "br"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-eYdF4CMGRblKgdgfo9SObsuW2iRVcujyDGG+tsP3Bn4="
-        }
-      ]
-    },
-    {
-      "Route": "3rdpartylicenses.txt.gz",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\zzyd6wgwl5-5npfohhw4t.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "8055"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/plain"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"qd7gVccQZH+2D2kwouV6aGluRsu+ywAVxy/LYA8w4JE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-qd7gVccQZH+2D2kwouV6aGluRsu+ywAVxy/LYA8w4JE="
+          "Value": "sha256-fwqOQf/yE3G27Ev30l0vMaqVJtKIi5n2/lUIXM5gyAo="
         }
       ]
     },
     {
       "Route": "favicon.ico",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\6x0scahnf1-vagikyz9qx.gz",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\6x0scahnf1-vagikyz9qx.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -998,7 +998,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 25 Mar 2025 19:46:24 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1030,7 +1030,7 @@
     },
     {
       "Route": "favicon.ico",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\6x0scahnf1-vagikyz9qx.br",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\6x0scahnf1-vagikyz9qx.br",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -1053,7 +1053,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 25 Mar 2025 19:46:24 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1085,7 +1085,7 @@
     },
     {
       "Route": "favicon.ico",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\favicon.ico",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\favicon.ico",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1106,7 +1106,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 25 Mar 2025 19:46:24 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1122,7 +1122,7 @@
     },
     {
       "Route": "favicon.ico.br",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\6x0scahnf1-vagikyz9qx.br",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\6x0scahnf1-vagikyz9qx.br",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1143,7 +1143,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 25 Mar 2025 19:46:24 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1167,7 +1167,7 @@
     },
     {
       "Route": "favicon.ico.gz",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\6x0scahnf1-vagikyz9qx.gz",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\6x0scahnf1-vagikyz9qx.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1188,7 +1188,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 25 Mar 2025 19:46:24 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1212,7 +1212,7 @@
     },
     {
       "Route": "favicon.vagikyz9qx.ico",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\6x0scahnf1-vagikyz9qx.gz",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\6x0scahnf1-vagikyz9qx.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -1235,7 +1235,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 25 Mar 2025 19:46:24 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1275,7 +1275,7 @@
     },
     {
       "Route": "favicon.vagikyz9qx.ico",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\6x0scahnf1-vagikyz9qx.br",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\6x0scahnf1-vagikyz9qx.br",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -1298,7 +1298,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 25 Mar 2025 19:46:24 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1338,7 +1338,7 @@
     },
     {
       "Route": "favicon.vagikyz9qx.ico",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\favicon.ico",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\favicon.ico",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1359,7 +1359,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 25 Mar 2025 19:46:24 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1383,7 +1383,7 @@
     },
     {
       "Route": "favicon.vagikyz9qx.ico.br",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\6x0scahnf1-vagikyz9qx.br",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\6x0scahnf1-vagikyz9qx.br",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1404,7 +1404,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 25 Mar 2025 19:46:24 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1436,7 +1436,7 @@
     },
     {
       "Route": "favicon.vagikyz9qx.ico.gz",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\6x0scahnf1-vagikyz9qx.gz",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\6x0scahnf1-vagikyz9qx.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1457,7 +1457,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 25 Mar 2025 19:46:24 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1489,7 +1489,7 @@
     },
     {
       "Route": "index.0xifb4zx19.html",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\1dpm1p8bmc-0xifb4zx19.gz",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\1dpm1p8bmc-0xifb4zx19.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -1512,7 +1512,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1552,7 +1552,7 @@
     },
     {
       "Route": "index.0xifb4zx19.html",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\1dpm1p8bmc-0xifb4zx19.br",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\1dpm1p8bmc-0xifb4zx19.br",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -1575,7 +1575,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1615,7 +1615,7 @@
     },
     {
       "Route": "index.0xifb4zx19.html",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\index.html",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\index.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1636,7 +1636,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1660,7 +1660,7 @@
     },
     {
       "Route": "index.0xifb4zx19.html.br",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\1dpm1p8bmc-0xifb4zx19.br",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\1dpm1p8bmc-0xifb4zx19.br",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1681,7 +1681,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1713,7 +1713,7 @@
     },
     {
       "Route": "index.0xifb4zx19.html.gz",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\1dpm1p8bmc-0xifb4zx19.gz",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\1dpm1p8bmc-0xifb4zx19.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1734,7 +1734,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1766,7 +1766,7 @@
     },
     {
       "Route": "index.html",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\1dpm1p8bmc-0xifb4zx19.gz",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\1dpm1p8bmc-0xifb4zx19.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -1789,7 +1789,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1821,7 +1821,7 @@
     },
     {
       "Route": "index.html",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\1dpm1p8bmc-0xifb4zx19.br",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\1dpm1p8bmc-0xifb4zx19.br",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -1844,7 +1844,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1876,7 +1876,7 @@
     },
     {
       "Route": "index.html",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\index.html",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\index.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1897,7 +1897,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1913,7 +1913,7 @@
     },
     {
       "Route": "index.html.br",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\1dpm1p8bmc-0xifb4zx19.br",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\1dpm1p8bmc-0xifb4zx19.br",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1934,7 +1934,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1958,7 +1958,7 @@
     },
     {
       "Route": "index.html.gz",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\1dpm1p8bmc-0xifb4zx19.gz",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\1dpm1p8bmc-0xifb4zx19.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1979,7 +1979,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2002,13 +2002,13 @@
       ]
     },
     {
-      "Route": "main-BTMGTAVK.js",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\9h1o294wjp-z7l0t8zhlj.gz",
+      "Route": "main-BTMGTAVK.i4y0bjhxm2.js",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\9h1o294wjp-i4y0bjhxm2.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000002406889"
+          "Quality": "0.000002405153"
         }
       ],
       "ResponseHeaders": [
@@ -2018,19 +2018,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "415473"
+          "Value": "415773"
         },
         {
           "Name": "ETag",
-          "Value": "\"wrzS+mZRbQN25rhl+pDzW3ZvX7GIHjZdbjwigPMZyeE=\""
+          "Value": "\"Q84vjHjSRvrdBfoOrvyBqylav4bWBHiTsD7p6z7pNkE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Encoding",
@@ -2046,24 +2046,32 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"bzifHPLVTAI5dXPANeg6tAlwwa3yy+HfyIZygRtvJc0=\""
+          "Value": "W/\"Pux2pm8B5kG2CrrII1JIdcH1mW5GIrx3qC7jlYa5Rhc=\""
         }
       ],
       "EndpointProperties": [
         {
+          "Name": "fingerprint",
+          "Value": "i4y0bjhxm2"
+        },
+        {
+          "Name": "label",
+          "Value": "main-BTMGTAVK.js"
+        },
+        {
           "Name": "integrity",
-          "Value": "sha256-bzifHPLVTAI5dXPANeg6tAlwwa3yy+HfyIZygRtvJc0="
+          "Value": "sha256-Pux2pm8B5kG2CrrII1JIdcH1mW5GIrx3qC7jlYa5Rhc="
         }
       ]
     },
     {
-      "Route": "main-BTMGTAVK.js",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\9h1o294wjp-z7l0t8zhlj.br",
+      "Route": "main-BTMGTAVK.i4y0bjhxm2.js",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\9h1o294wjp-i4y0bjhxm2.br",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "br",
-          "Quality": "0.000003170456"
+          "Quality": "0.000003168979"
         }
       ],
       "ResponseHeaders": [
@@ -2073,197 +2081,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "315411"
+          "Value": "315558"
         },
         {
           "Name": "ETag",
-          "Value": "\"v8ARzPHMR4AY3QBg5R4UZFB/buldKdbqcPqrml8gOe8=\""
+          "Value": "\"8/h+hJzOY6GOyVLT1swAWgavZ/gN+UVFr7fUKj3vHnI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "br"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"bzifHPLVTAI5dXPANeg6tAlwwa3yy+HfyIZygRtvJc0=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-bzifHPLVTAI5dXPANeg6tAlwwa3yy+HfyIZygRtvJc0="
-        }
-      ]
-    },
-    {
-      "Route": "main-BTMGTAVK.js",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\main-BTMGTAVK.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1607480"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"bzifHPLVTAI5dXPANeg6tAlwwa3yy+HfyIZygRtvJc0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-bzifHPLVTAI5dXPANeg6tAlwwa3yy+HfyIZygRtvJc0="
-        }
-      ]
-    },
-    {
-      "Route": "main-BTMGTAVK.js.br",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\9h1o294wjp-z7l0t8zhlj.br",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "315411"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"v8ARzPHMR4AY3QBg5R4UZFB/buldKdbqcPqrml8gOe8=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "br"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-v8ARzPHMR4AY3QBg5R4UZFB/buldKdbqcPqrml8gOe8="
-        }
-      ]
-    },
-    {
-      "Route": "main-BTMGTAVK.js.gz",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\9h1o294wjp-z7l0t8zhlj.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "415473"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"wrzS+mZRbQN25rhl+pDzW3ZvX7GIHjZdbjwigPMZyeE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-wrzS+mZRbQN25rhl+pDzW3ZvX7GIHjZdbjwigPMZyeE="
-        }
-      ]
-    },
-    {
-      "Route": "main-BTMGTAVK.z7l0t8zhlj.js",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\9h1o294wjp-z7l0t8zhlj.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000002406889"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "415473"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"wrzS+mZRbQN25rhl+pDzW3ZvX7GIHjZdbjwigPMZyeE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2271,7 +2097,7 @@
         },
         {
           "Name": "Content-Encoding",
-          "Value": "gzip"
+          "Value": "br"
         },
         {
           "Name": "Vary",
@@ -2283,13 +2109,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"bzifHPLVTAI5dXPANeg6tAlwwa3yy+HfyIZygRtvJc0=\""
+          "Value": "W/\"Pux2pm8B5kG2CrrII1JIdcH1mW5GIrx3qC7jlYa5Rhc=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "z7l0t8zhlj"
+          "Value": "i4y0bjhxm2"
         },
         {
           "Name": "label",
@@ -2297,76 +2123,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-bzifHPLVTAI5dXPANeg6tAlwwa3yy+HfyIZygRtvJc0="
+          "Value": "sha256-Pux2pm8B5kG2CrrII1JIdcH1mW5GIrx3qC7jlYa5Rhc="
         }
       ]
     },
     {
-      "Route": "main-BTMGTAVK.z7l0t8zhlj.js",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\9h1o294wjp-z7l0t8zhlj.br",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "br",
-          "Quality": "0.000003170456"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "315411"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"v8ARzPHMR4AY3QBg5R4UZFB/buldKdbqcPqrml8gOe8=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "br"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"bzifHPLVTAI5dXPANeg6tAlwwa3yy+HfyIZygRtvJc0=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "z7l0t8zhlj"
-        },
-        {
-          "Name": "label",
-          "Value": "main-BTMGTAVK.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-bzifHPLVTAI5dXPANeg6tAlwwa3yy+HfyIZygRtvJc0="
-        }
-      ]
-    },
-    {
-      "Route": "main-BTMGTAVK.z7l0t8zhlj.js",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\main-BTMGTAVK.js",
+      "Route": "main-BTMGTAVK.i4y0bjhxm2.js",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\main-BTMGTAVK.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2375,7 +2138,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1607480"
+          "Value": "1612459"
         },
         {
           "Name": "Content-Type",
@@ -2383,11 +2146,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"bzifHPLVTAI5dXPANeg6tAlwwa3yy+HfyIZygRtvJc0=\""
+          "Value": "\"Pux2pm8B5kG2CrrII1JIdcH1mW5GIrx3qC7jlYa5Rhc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2397,7 +2160,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "z7l0t8zhlj"
+          "Value": "i4y0bjhxm2"
         },
         {
           "Name": "label",
@@ -2405,13 +2168,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-bzifHPLVTAI5dXPANeg6tAlwwa3yy+HfyIZygRtvJc0="
+          "Value": "sha256-Pux2pm8B5kG2CrrII1JIdcH1mW5GIrx3qC7jlYa5Rhc="
         }
       ]
     },
     {
-      "Route": "main-BTMGTAVK.z7l0t8zhlj.js.br",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\9h1o294wjp-z7l0t8zhlj.br",
+      "Route": "main-BTMGTAVK.i4y0bjhxm2.js.br",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\9h1o294wjp-i4y0bjhxm2.br",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2420,7 +2183,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "315411"
+          "Value": "315558"
         },
         {
           "Name": "Content-Type",
@@ -2428,11 +2191,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"v8ARzPHMR4AY3QBg5R4UZFB/buldKdbqcPqrml8gOe8=\""
+          "Value": "\"8/h+hJzOY6GOyVLT1swAWgavZ/gN+UVFr7fUKj3vHnI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2450,7 +2213,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "z7l0t8zhlj"
+          "Value": "i4y0bjhxm2"
         },
         {
           "Name": "label",
@@ -2458,13 +2221,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-v8ARzPHMR4AY3QBg5R4UZFB/buldKdbqcPqrml8gOe8="
+          "Value": "sha256-8/h+hJzOY6GOyVLT1swAWgavZ/gN+UVFr7fUKj3vHnI="
         }
       ]
     },
     {
-      "Route": "main-BTMGTAVK.z7l0t8zhlj.js.gz",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\9h1o294wjp-z7l0t8zhlj.gz",
+      "Route": "main-BTMGTAVK.i4y0bjhxm2.js.gz",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\9h1o294wjp-i4y0bjhxm2.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2473,7 +2236,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "415473"
+          "Value": "415773"
         },
         {
           "Name": "Content-Type",
@@ -2481,11 +2244,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"wrzS+mZRbQN25rhl+pDzW3ZvX7GIHjZdbjwigPMZyeE=\""
+          "Value": "\"Q84vjHjSRvrdBfoOrvyBqylav4bWBHiTsD7p6z7pNkE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2503,7 +2266,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "z7l0t8zhlj"
+          "Value": "i4y0bjhxm2"
         },
         {
           "Name": "label",
@@ -2511,18 +2274,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-wrzS+mZRbQN25rhl+pDzW3ZvX7GIHjZdbjwigPMZyeE="
+          "Value": "sha256-Q84vjHjSRvrdBfoOrvyBqylav4bWBHiTsD7p6z7pNkE="
         }
       ]
     },
     {
-      "Route": "polyfills-FFHMD2TL.39tegmrjtp.js",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\wsenxafarw-39tegmrjtp.br",
+      "Route": "main-BTMGTAVK.js",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\9h1o294wjp-i4y0bjhxm2.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
-          "Value": "br",
-          "Quality": "0.000088636767"
+          "Value": "gzip",
+          "Quality": "0.000002405153"
         }
       ],
       "ResponseHeaders": [
@@ -2532,15 +2295,252 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "11281"
+          "Value": "415773"
         },
         {
           "Name": "ETag",
-          "Value": "\"f7o/UqxPl0Oka4CNAP9duYnZgpjuS/aDEJ6rWCKX9ZA=\""
+          "Value": "\"Q84vjHjSRvrdBfoOrvyBqylav4bWBHiTsD7p6z7pNkE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"Pux2pm8B5kG2CrrII1JIdcH1mW5GIrx3qC7jlYa5Rhc=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Pux2pm8B5kG2CrrII1JIdcH1mW5GIrx3qC7jlYa5Rhc="
+        }
+      ]
+    },
+    {
+      "Route": "main-BTMGTAVK.js",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\9h1o294wjp-i4y0bjhxm2.br",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "br",
+          "Quality": "0.000003168979"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "315558"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8/h+hJzOY6GOyVLT1swAWgavZ/gN+UVFr7fUKj3vHnI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "br"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"Pux2pm8B5kG2CrrII1JIdcH1mW5GIrx3qC7jlYa5Rhc=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Pux2pm8B5kG2CrrII1JIdcH1mW5GIrx3qC7jlYa5Rhc="
+        }
+      ]
+    },
+    {
+      "Route": "main-BTMGTAVK.js",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\main-BTMGTAVK.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1612459"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Pux2pm8B5kG2CrrII1JIdcH1mW5GIrx3qC7jlYa5Rhc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Pux2pm8B5kG2CrrII1JIdcH1mW5GIrx3qC7jlYa5Rhc="
+        }
+      ]
+    },
+    {
+      "Route": "main-BTMGTAVK.js.br",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\9h1o294wjp-i4y0bjhxm2.br",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "315558"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8/h+hJzOY6GOyVLT1swAWgavZ/gN+UVFr7fUKj3vHnI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "br"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-8/h+hJzOY6GOyVLT1swAWgavZ/gN+UVFr7fUKj3vHnI="
+        }
+      ]
+    },
+    {
+      "Route": "main-BTMGTAVK.js.gz",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\9h1o294wjp-i4y0bjhxm2.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "415773"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Q84vjHjSRvrdBfoOrvyBqylav4bWBHiTsD7p6z7pNkE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Q84vjHjSRvrdBfoOrvyBqylav4bWBHiTsD7p6z7pNkE="
+        }
+      ]
+    },
+    {
+      "Route": "polyfills-FFHMD2TL.gv9nnx918d.js",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\wsenxafarw-gv9nnx918d.br",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "br",
+          "Quality": "0.000088237889"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11332"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TV5XnPBlsxjFVw9ffqQOKykMC5C7FwphNq7tRzMsRR4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2560,13 +2560,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"adzqBFZD3Q3pmKPNDMu7RrRr/yZRqHpWxzwo6yCOj5g=\""
+          "Value": "W/\"vPx+uL0mspJ05685sS/8avZF1v4RS4ClEj6mMd0DTxA=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "39tegmrjtp"
+          "Value": "gv9nnx918d"
         },
         {
           "Name": "label",
@@ -2574,18 +2574,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-adzqBFZD3Q3pmKPNDMu7RrRr/yZRqHpWxzwo6yCOj5g="
+          "Value": "sha256-vPx+uL0mspJ05685sS/8avZF1v4RS4ClEj6mMd0DTxA="
         }
       ]
     },
     {
-      "Route": "polyfills-FFHMD2TL.39tegmrjtp.js",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\wsenxafarw-39tegmrjtp.gz",
+      "Route": "polyfills-FFHMD2TL.gv9nnx918d.js",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\wsenxafarw-gv9nnx918d.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000079636856"
+          "Quality": "0.000079605158"
         }
       ],
       "ResponseHeaders": [
@@ -2595,15 +2595,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "12556"
+          "Value": "12561"
         },
         {
           "Name": "ETag",
-          "Value": "\"wNJFFxSczIGO97svjP9ishXOSHGLv5Y4VbZ5Mb0PkLw=\""
+          "Value": "\"oboJR7y/jQyGhso7YFALQGSENyN5yVw35miDjrppL9s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2623,13 +2623,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"adzqBFZD3Q3pmKPNDMu7RrRr/yZRqHpWxzwo6yCOj5g=\""
+          "Value": "W/\"vPx+uL0mspJ05685sS/8avZF1v4RS4ClEj6mMd0DTxA=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "39tegmrjtp"
+          "Value": "gv9nnx918d"
         },
         {
           "Name": "label",
@@ -2637,13 +2637,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-adzqBFZD3Q3pmKPNDMu7RrRr/yZRqHpWxzwo6yCOj5g="
+          "Value": "sha256-vPx+uL0mspJ05685sS/8avZF1v4RS4ClEj6mMd0DTxA="
         }
       ]
     },
     {
-      "Route": "polyfills-FFHMD2TL.39tegmrjtp.js",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\polyfills-FFHMD2TL.js",
+      "Route": "polyfills-FFHMD2TL.gv9nnx918d.js",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\polyfills-FFHMD2TL.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2652,7 +2652,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "34519"
+          "Value": "34521"
         },
         {
           "Name": "Content-Type",
@@ -2660,11 +2660,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"adzqBFZD3Q3pmKPNDMu7RrRr/yZRqHpWxzwo6yCOj5g=\""
+          "Value": "\"vPx+uL0mspJ05685sS/8avZF1v4RS4ClEj6mMd0DTxA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2674,7 +2674,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "39tegmrjtp"
+          "Value": "gv9nnx918d"
         },
         {
           "Name": "label",
@@ -2682,13 +2682,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-adzqBFZD3Q3pmKPNDMu7RrRr/yZRqHpWxzwo6yCOj5g="
+          "Value": "sha256-vPx+uL0mspJ05685sS/8avZF1v4RS4ClEj6mMd0DTxA="
         }
       ]
     },
     {
-      "Route": "polyfills-FFHMD2TL.39tegmrjtp.js.br",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\wsenxafarw-39tegmrjtp.br",
+      "Route": "polyfills-FFHMD2TL.gv9nnx918d.js.br",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\wsenxafarw-gv9nnx918d.br",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2697,7 +2697,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "11281"
+          "Value": "11332"
         },
         {
           "Name": "Content-Type",
@@ -2705,11 +2705,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"f7o/UqxPl0Oka4CNAP9duYnZgpjuS/aDEJ6rWCKX9ZA=\""
+          "Value": "\"TV5XnPBlsxjFVw9ffqQOKykMC5C7FwphNq7tRzMsRR4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2727,7 +2727,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "39tegmrjtp"
+          "Value": "gv9nnx918d"
         },
         {
           "Name": "label",
@@ -2735,13 +2735,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-f7o/UqxPl0Oka4CNAP9duYnZgpjuS/aDEJ6rWCKX9ZA="
+          "Value": "sha256-TV5XnPBlsxjFVw9ffqQOKykMC5C7FwphNq7tRzMsRR4="
         }
       ]
     },
     {
-      "Route": "polyfills-FFHMD2TL.39tegmrjtp.js.gz",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\wsenxafarw-39tegmrjtp.gz",
+      "Route": "polyfills-FFHMD2TL.gv9nnx918d.js.gz",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\wsenxafarw-gv9nnx918d.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2750,7 +2750,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "12556"
+          "Value": "12561"
         },
         {
           "Name": "Content-Type",
@@ -2758,11 +2758,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"wNJFFxSczIGO97svjP9ishXOSHGLv5Y4VbZ5Mb0PkLw=\""
+          "Value": "\"oboJR7y/jQyGhso7YFALQGSENyN5yVw35miDjrppL9s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2780,7 +2780,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "39tegmrjtp"
+          "Value": "gv9nnx918d"
         },
         {
           "Name": "label",
@@ -2788,18 +2788,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-wNJFFxSczIGO97svjP9ishXOSHGLv5Y4VbZ5Mb0PkLw="
+          "Value": "sha256-oboJR7y/jQyGhso7YFALQGSENyN5yVw35miDjrppL9s="
         }
       ]
     },
     {
       "Route": "polyfills-FFHMD2TL.js",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\wsenxafarw-39tegmrjtp.br",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\wsenxafarw-gv9nnx918d.br",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "br",
-          "Quality": "0.000088636767"
+          "Quality": "0.000088237889"
         }
       ],
       "ResponseHeaders": [
@@ -2809,15 +2809,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "11281"
+          "Value": "11332"
         },
         {
           "Name": "ETag",
-          "Value": "\"f7o/UqxPl0Oka4CNAP9duYnZgpjuS/aDEJ6rWCKX9ZA=\""
+          "Value": "\"TV5XnPBlsxjFVw9ffqQOKykMC5C7FwphNq7tRzMsRR4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2837,24 +2837,24 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"adzqBFZD3Q3pmKPNDMu7RrRr/yZRqHpWxzwo6yCOj5g=\""
+          "Value": "W/\"vPx+uL0mspJ05685sS/8avZF1v4RS4ClEj6mMd0DTxA=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-adzqBFZD3Q3pmKPNDMu7RrRr/yZRqHpWxzwo6yCOj5g="
+          "Value": "sha256-vPx+uL0mspJ05685sS/8avZF1v4RS4ClEj6mMd0DTxA="
         }
       ]
     },
     {
       "Route": "polyfills-FFHMD2TL.js",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\wsenxafarw-39tegmrjtp.gz",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\wsenxafarw-gv9nnx918d.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000079636856"
+          "Quality": "0.000079605158"
         }
       ],
       "ResponseHeaders": [
@@ -2864,15 +2864,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "12556"
+          "Value": "12561"
         },
         {
           "Name": "ETag",
-          "Value": "\"wNJFFxSczIGO97svjP9ishXOSHGLv5Y4VbZ5Mb0PkLw=\""
+          "Value": "\"oboJR7y/jQyGhso7YFALQGSENyN5yVw35miDjrppL9s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2892,19 +2892,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"adzqBFZD3Q3pmKPNDMu7RrRr/yZRqHpWxzwo6yCOj5g=\""
+          "Value": "W/\"vPx+uL0mspJ05685sS/8avZF1v4RS4ClEj6mMd0DTxA=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-adzqBFZD3Q3pmKPNDMu7RrRr/yZRqHpWxzwo6yCOj5g="
+          "Value": "sha256-vPx+uL0mspJ05685sS/8avZF1v4RS4ClEj6mMd0DTxA="
         }
       ]
     },
     {
       "Route": "polyfills-FFHMD2TL.js",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\polyfills-FFHMD2TL.js",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\polyfills-FFHMD2TL.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2913,7 +2913,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "34519"
+          "Value": "34521"
         },
         {
           "Name": "Content-Type",
@@ -2921,11 +2921,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"adzqBFZD3Q3pmKPNDMu7RrRr/yZRqHpWxzwo6yCOj5g=\""
+          "Value": "\"vPx+uL0mspJ05685sS/8avZF1v4RS4ClEj6mMd0DTxA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2935,13 +2935,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-adzqBFZD3Q3pmKPNDMu7RrRr/yZRqHpWxzwo6yCOj5g="
+          "Value": "sha256-vPx+uL0mspJ05685sS/8avZF1v4RS4ClEj6mMd0DTxA="
         }
       ]
     },
     {
       "Route": "polyfills-FFHMD2TL.js.br",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\wsenxafarw-39tegmrjtp.br",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\wsenxafarw-gv9nnx918d.br",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2950,7 +2950,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "11281"
+          "Value": "11332"
         },
         {
           "Name": "Content-Type",
@@ -2958,11 +2958,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"f7o/UqxPl0Oka4CNAP9duYnZgpjuS/aDEJ6rWCKX9ZA=\""
+          "Value": "\"TV5XnPBlsxjFVw9ffqQOKykMC5C7FwphNq7tRzMsRR4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2980,13 +2980,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-f7o/UqxPl0Oka4CNAP9duYnZgpjuS/aDEJ6rWCKX9ZA="
+          "Value": "sha256-TV5XnPBlsxjFVw9ffqQOKykMC5C7FwphNq7tRzMsRR4="
         }
       ]
     },
     {
       "Route": "polyfills-FFHMD2TL.js.gz",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\wsenxafarw-39tegmrjtp.gz",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\wsenxafarw-gv9nnx918d.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2995,7 +2995,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "12556"
+          "Value": "12561"
         },
         {
           "Name": "Content-Type",
@@ -3003,11 +3003,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"wNJFFxSczIGO97svjP9ishXOSHGLv5Y4VbZ5Mb0PkLw=\""
+          "Value": "\"oboJR7y/jQyGhso7YFALQGSENyN5yVw35miDjrppL9s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3025,18 +3025,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-wNJFFxSczIGO97svjP9ishXOSHGLv5Y4VbZ5Mb0PkLw="
+          "Value": "sha256-oboJR7y/jQyGhso7YFALQGSENyN5yVw35miDjrppL9s="
         }
       ]
     },
     {
-      "Route": "prerendered-routes.json",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\xtgzzp8wob-tvy3j3n584.br",
+      "Route": "prerendered-routes.bdlfngeg9h.json",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\xtgzzp8wob-bdlfngeg9h.br",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "br",
-          "Quality": "0.043478260870"
+          "Quality": "0.040000000000"
         }
       ],
       "ResponseHeaders": [
@@ -3046,19 +3046,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "22"
+          "Value": "24"
         },
         {
           "Name": "ETag",
-          "Value": "\"AAOcDdoxFiyeGdEWYmSBa0pItxin+SuPp3FEivY+fgo=\""
+          "Value": "\"qQ6asg9TVNxDyeCae3KNzQLDjaxy6KUJ4wQ3DjLD7x8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Encoding",
@@ -3074,24 +3074,32 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"p53cyKEVGQ6cGUee02kUdBp9HbdPChFTUp78gHJVBf4=\""
+          "Value": "W/\"EU9ZtuQhQrnLyvbSvsWZrvS9r3f6MA06EdbEt+ua/wQ=\""
         }
       ],
       "EndpointProperties": [
         {
+          "Name": "fingerprint",
+          "Value": "bdlfngeg9h"
+        },
+        {
+          "Name": "label",
+          "Value": "prerendered-routes.json"
+        },
+        {
           "Name": "integrity",
-          "Value": "sha256-p53cyKEVGQ6cGUee02kUdBp9HbdPChFTUp78gHJVBf4="
+          "Value": "sha256-EU9ZtuQhQrnLyvbSvsWZrvS9r3f6MA06EdbEt+ua/wQ="
         }
       ]
     },
     {
-      "Route": "prerendered-routes.json",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\xtgzzp8wob-tvy3j3n584.gz",
+      "Route": "prerendered-routes.bdlfngeg9h.json",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\xtgzzp8wob-bdlfngeg9h.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.025641025641"
+          "Quality": "0.024390243902"
         }
       ],
       "ResponseHeaders": [
@@ -3101,260 +3109,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "38"
+          "Value": "40"
         },
         {
           "Name": "ETag",
-          "Value": "\"o1VjVQwEDpUxfB4dvCKgJktgYa0JihcBq69Qd6fuU3I=\""
+          "Value": "\"7Ns5howeBzjngCtWHv6WNpbtaodI+J0taRbGPsEpZ/Y=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/json"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"p53cyKEVGQ6cGUee02kUdBp9HbdPChFTUp78gHJVBf4=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-p53cyKEVGQ6cGUee02kUdBp9HbdPChFTUp78gHJVBf4="
-        }
-      ]
-    },
-    {
-      "Route": "prerendered-routes.json",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\prerendered-routes.json",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "18"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/json"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"p53cyKEVGQ6cGUee02kUdBp9HbdPChFTUp78gHJVBf4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-p53cyKEVGQ6cGUee02kUdBp9HbdPChFTUp78gHJVBf4="
-        }
-      ]
-    },
-    {
-      "Route": "prerendered-routes.json.br",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\xtgzzp8wob-tvy3j3n584.br",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "22"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/json"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"AAOcDdoxFiyeGdEWYmSBa0pItxin+SuPp3FEivY+fgo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "br"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-AAOcDdoxFiyeGdEWYmSBa0pItxin+SuPp3FEivY+fgo="
-        }
-      ]
-    },
-    {
-      "Route": "prerendered-routes.json.gz",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\xtgzzp8wob-tvy3j3n584.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "38"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/json"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"o1VjVQwEDpUxfB4dvCKgJktgYa0JihcBq69Qd6fuU3I=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-o1VjVQwEDpUxfB4dvCKgJktgYa0JihcBq69Qd6fuU3I="
-        }
-      ]
-    },
-    {
-      "Route": "prerendered-routes.tvy3j3n584.json",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\xtgzzp8wob-tvy3j3n584.br",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "br",
-          "Quality": "0.043478260870"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "22"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"AAOcDdoxFiyeGdEWYmSBa0pItxin+SuPp3FEivY+fgo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "br"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/json"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"p53cyKEVGQ6cGUee02kUdBp9HbdPChFTUp78gHJVBf4=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "tvy3j3n584"
-        },
-        {
-          "Name": "label",
-          "Value": "prerendered-routes.json"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-p53cyKEVGQ6cGUee02kUdBp9HbdPChFTUp78gHJVBf4="
-        }
-      ]
-    },
-    {
-      "Route": "prerendered-routes.tvy3j3n584.json",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\xtgzzp8wob-tvy3j3n584.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.025641025641"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "38"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"o1VjVQwEDpUxfB4dvCKgJktgYa0JihcBq69Qd6fuU3I=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3374,13 +3137,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"p53cyKEVGQ6cGUee02kUdBp9HbdPChFTUp78gHJVBf4=\""
+          "Value": "W/\"EU9ZtuQhQrnLyvbSvsWZrvS9r3f6MA06EdbEt+ua/wQ=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "tvy3j3n584"
+          "Value": "bdlfngeg9h"
         },
         {
           "Name": "label",
@@ -3388,13 +3151,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-p53cyKEVGQ6cGUee02kUdBp9HbdPChFTUp78gHJVBf4="
+          "Value": "sha256-EU9ZtuQhQrnLyvbSvsWZrvS9r3f6MA06EdbEt+ua/wQ="
         }
       ]
     },
     {
-      "Route": "prerendered-routes.tvy3j3n584.json",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\prerendered-routes.json",
+      "Route": "prerendered-routes.bdlfngeg9h.json",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\prerendered-routes.json",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3403,7 +3166,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "18"
+          "Value": "20"
         },
         {
           "Name": "Content-Type",
@@ -3411,11 +3174,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"p53cyKEVGQ6cGUee02kUdBp9HbdPChFTUp78gHJVBf4=\""
+          "Value": "\"EU9ZtuQhQrnLyvbSvsWZrvS9r3f6MA06EdbEt+ua/wQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3425,7 +3188,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "tvy3j3n584"
+          "Value": "bdlfngeg9h"
         },
         {
           "Name": "label",
@@ -3433,13 +3196,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-p53cyKEVGQ6cGUee02kUdBp9HbdPChFTUp78gHJVBf4="
+          "Value": "sha256-EU9ZtuQhQrnLyvbSvsWZrvS9r3f6MA06EdbEt+ua/wQ="
         }
       ]
     },
     {
-      "Route": "prerendered-routes.tvy3j3n584.json.br",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\xtgzzp8wob-tvy3j3n584.br",
+      "Route": "prerendered-routes.bdlfngeg9h.json.br",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\xtgzzp8wob-bdlfngeg9h.br",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3448,7 +3211,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "22"
+          "Value": "24"
         },
         {
           "Name": "Content-Type",
@@ -3456,11 +3219,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"AAOcDdoxFiyeGdEWYmSBa0pItxin+SuPp3FEivY+fgo=\""
+          "Value": "\"qQ6asg9TVNxDyeCae3KNzQLDjaxy6KUJ4wQ3DjLD7x8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3478,7 +3241,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "tvy3j3n584"
+          "Value": "bdlfngeg9h"
         },
         {
           "Name": "label",
@@ -3486,13 +3249,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-AAOcDdoxFiyeGdEWYmSBa0pItxin+SuPp3FEivY+fgo="
+          "Value": "sha256-qQ6asg9TVNxDyeCae3KNzQLDjaxy6KUJ4wQ3DjLD7x8="
         }
       ]
     },
     {
-      "Route": "prerendered-routes.tvy3j3n584.json.gz",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\xtgzzp8wob-tvy3j3n584.gz",
+      "Route": "prerendered-routes.bdlfngeg9h.json.gz",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\xtgzzp8wob-bdlfngeg9h.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3501,7 +3264,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "38"
+          "Value": "40"
         },
         {
           "Name": "Content-Type",
@@ -3509,11 +3272,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"o1VjVQwEDpUxfB4dvCKgJktgYa0JihcBq69Qd6fuU3I=\""
+          "Value": "\"7Ns5howeBzjngCtWHv6WNpbtaodI+J0taRbGPsEpZ/Y=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3531,7 +3294,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "tvy3j3n584"
+          "Value": "bdlfngeg9h"
         },
         {
           "Name": "label",
@@ -3539,18 +3302,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-o1VjVQwEDpUxfB4dvCKgJktgYa0JihcBq69Qd6fuU3I="
+          "Value": "sha256-7Ns5howeBzjngCtWHv6WNpbtaodI+J0taRbGPsEpZ/Y="
         }
       ]
     },
     {
-      "Route": "styles-SAHOSFHQ.css",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\znb6xkz1sl-u5yxn8q1z3.br",
+      "Route": "prerendered-routes.json",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\xtgzzp8wob-bdlfngeg9h.br",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "br",
-          "Quality": "0.000190150219"
+          "Quality": "0.040000000000"
         }
       ],
       "ResponseHeaders": [
@@ -3560,15 +3323,252 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5258"
+          "Value": "24"
         },
         {
           "Name": "ETag",
-          "Value": "\"0y9qu9O2QtieUzJyS3YXK0oVMZN0EgTUJl9DnibVsD8=\""
+          "Value": "\"qQ6asg9TVNxDyeCae3KNzQLDjaxy6KUJ4wQ3DjLD7x8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "br"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"EU9ZtuQhQrnLyvbSvsWZrvS9r3f6MA06EdbEt+ua/wQ=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-EU9ZtuQhQrnLyvbSvsWZrvS9r3f6MA06EdbEt+ua/wQ="
+        }
+      ]
+    },
+    {
+      "Route": "prerendered-routes.json",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\xtgzzp8wob-bdlfngeg9h.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.024390243902"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "40"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7Ns5howeBzjngCtWHv6WNpbtaodI+J0taRbGPsEpZ/Y=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"EU9ZtuQhQrnLyvbSvsWZrvS9r3f6MA06EdbEt+ua/wQ=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-EU9ZtuQhQrnLyvbSvsWZrvS9r3f6MA06EdbEt+ua/wQ="
+        }
+      ]
+    },
+    {
+      "Route": "prerendered-routes.json",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\prerendered-routes.json",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"EU9ZtuQhQrnLyvbSvsWZrvS9r3f6MA06EdbEt+ua/wQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-EU9ZtuQhQrnLyvbSvsWZrvS9r3f6MA06EdbEt+ua/wQ="
+        }
+      ]
+    },
+    {
+      "Route": "prerendered-routes.json.br",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\xtgzzp8wob-bdlfngeg9h.br",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qQ6asg9TVNxDyeCae3KNzQLDjaxy6KUJ4wQ3DjLD7x8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "br"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-qQ6asg9TVNxDyeCae3KNzQLDjaxy6KUJ4wQ3DjLD7x8="
+        }
+      ]
+    },
+    {
+      "Route": "prerendered-routes.json.gz",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\xtgzzp8wob-bdlfngeg9h.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "40"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7Ns5howeBzjngCtWHv6WNpbtaodI+J0taRbGPsEpZ/Y=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-7Ns5howeBzjngCtWHv6WNpbtaodI+J0taRbGPsEpZ/Y="
+        }
+      ]
+    },
+    {
+      "Route": "styles-SAHOSFHQ.css",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\znb6xkz1sl-dzcp996a97.br",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "br",
+          "Quality": "0.000191204589"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5229"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Tj9WVAG+361rEbLKEXkBsr3M24M7TuxAdS4QWNzwxJE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3588,24 +3588,24 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"zl2QDp60CVO5HYCV3aUVF/w0Lze5IDHZ2KOtqhhoqEk=\""
+          "Value": "W/\"B6WJziL6GGvAzmpeVQCGhFI3W4Rv6NolY0+DvmMjfbQ=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-zl2QDp60CVO5HYCV3aUVF/w0Lze5IDHZ2KOtqhhoqEk="
+          "Value": "sha256-B6WJziL6GGvAzmpeVQCGhFI3W4Rv6NolY0+DvmMjfbQ="
         }
       ]
     },
     {
       "Route": "styles-SAHOSFHQ.css",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\znb6xkz1sl-u5yxn8q1z3.gz",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\znb6xkz1sl-dzcp996a97.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000162999185"
+          "Quality": "0.000162919518"
         }
       ],
       "ResponseHeaders": [
@@ -3615,15 +3615,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6134"
+          "Value": "6137"
         },
         {
           "Name": "ETag",
-          "Value": "\"LyDzTcvD1XrqzqquNOagxoQV+vyORNTxE8PmxMlfGqc=\""
+          "Value": "\"1jH7i5tWDCzBP4MkoEEXf5pDTINQpnpsaEcCd72Q/n8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3643,19 +3643,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"zl2QDp60CVO5HYCV3aUVF/w0Lze5IDHZ2KOtqhhoqEk=\""
+          "Value": "W/\"B6WJziL6GGvAzmpeVQCGhFI3W4Rv6NolY0+DvmMjfbQ=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-zl2QDp60CVO5HYCV3aUVF/w0Lze5IDHZ2KOtqhhoqEk="
+          "Value": "sha256-B6WJziL6GGvAzmpeVQCGhFI3W4Rv6NolY0+DvmMjfbQ="
         }
       ]
     },
     {
       "Route": "styles-SAHOSFHQ.css",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\styles-SAHOSFHQ.css",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\styles-SAHOSFHQ.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3664,7 +3664,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "37976"
+          "Value": "37977"
         },
         {
           "Name": "Content-Type",
@@ -3672,11 +3672,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"zl2QDp60CVO5HYCV3aUVF/w0Lze5IDHZ2KOtqhhoqEk=\""
+          "Value": "\"B6WJziL6GGvAzmpeVQCGhFI3W4Rv6NolY0+DvmMjfbQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3686,13 +3686,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-zl2QDp60CVO5HYCV3aUVF/w0Lze5IDHZ2KOtqhhoqEk="
+          "Value": "sha256-B6WJziL6GGvAzmpeVQCGhFI3W4Rv6NolY0+DvmMjfbQ="
         }
       ]
     },
     {
       "Route": "styles-SAHOSFHQ.css.br",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\znb6xkz1sl-u5yxn8q1z3.br",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\znb6xkz1sl-dzcp996a97.br",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3701,7 +3701,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5258"
+          "Value": "5229"
         },
         {
           "Name": "Content-Type",
@@ -3709,11 +3709,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"0y9qu9O2QtieUzJyS3YXK0oVMZN0EgTUJl9DnibVsD8=\""
+          "Value": "\"Tj9WVAG+361rEbLKEXkBsr3M24M7TuxAdS4QWNzwxJE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3731,13 +3731,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-0y9qu9O2QtieUzJyS3YXK0oVMZN0EgTUJl9DnibVsD8="
+          "Value": "sha256-Tj9WVAG+361rEbLKEXkBsr3M24M7TuxAdS4QWNzwxJE="
         }
       ]
     },
     {
       "Route": "styles-SAHOSFHQ.css.gz",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\znb6xkz1sl-u5yxn8q1z3.gz",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\znb6xkz1sl-dzcp996a97.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3746,7 +3746,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6134"
+          "Value": "6137"
         },
         {
           "Name": "Content-Type",
@@ -3754,11 +3754,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"LyDzTcvD1XrqzqquNOagxoQV+vyORNTxE8PmxMlfGqc=\""
+          "Value": "\"1jH7i5tWDCzBP4MkoEEXf5pDTINQpnpsaEcCd72Q/n8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3776,18 +3776,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-LyDzTcvD1XrqzqquNOagxoQV+vyORNTxE8PmxMlfGqc="
+          "Value": "sha256-1jH7i5tWDCzBP4MkoEEXf5pDTINQpnpsaEcCd72Q/n8="
         }
       ]
     },
     {
-      "Route": "styles-SAHOSFHQ.u5yxn8q1z3.css",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\znb6xkz1sl-u5yxn8q1z3.br",
+      "Route": "styles-SAHOSFHQ.dzcp996a97.css",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\znb6xkz1sl-dzcp996a97.br",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "br",
-          "Quality": "0.000190150219"
+          "Quality": "0.000191204589"
         }
       ],
       "ResponseHeaders": [
@@ -3797,15 +3797,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5258"
+          "Value": "5229"
         },
         {
           "Name": "ETag",
-          "Value": "\"0y9qu9O2QtieUzJyS3YXK0oVMZN0EgTUJl9DnibVsD8=\""
+          "Value": "\"Tj9WVAG+361rEbLKEXkBsr3M24M7TuxAdS4QWNzwxJE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3825,13 +3825,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"zl2QDp60CVO5HYCV3aUVF/w0Lze5IDHZ2KOtqhhoqEk=\""
+          "Value": "W/\"B6WJziL6GGvAzmpeVQCGhFI3W4Rv6NolY0+DvmMjfbQ=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "u5yxn8q1z3"
+          "Value": "dzcp996a97"
         },
         {
           "Name": "label",
@@ -3839,18 +3839,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-zl2QDp60CVO5HYCV3aUVF/w0Lze5IDHZ2KOtqhhoqEk="
+          "Value": "sha256-B6WJziL6GGvAzmpeVQCGhFI3W4Rv6NolY0+DvmMjfbQ="
         }
       ]
     },
     {
-      "Route": "styles-SAHOSFHQ.u5yxn8q1z3.css",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\znb6xkz1sl-u5yxn8q1z3.gz",
+      "Route": "styles-SAHOSFHQ.dzcp996a97.css",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\znb6xkz1sl-dzcp996a97.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000162999185"
+          "Quality": "0.000162919518"
         }
       ],
       "ResponseHeaders": [
@@ -3860,15 +3860,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6134"
+          "Value": "6137"
         },
         {
           "Name": "ETag",
-          "Value": "\"LyDzTcvD1XrqzqquNOagxoQV+vyORNTxE8PmxMlfGqc=\""
+          "Value": "\"1jH7i5tWDCzBP4MkoEEXf5pDTINQpnpsaEcCd72Q/n8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3888,13 +3888,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"zl2QDp60CVO5HYCV3aUVF/w0Lze5IDHZ2KOtqhhoqEk=\""
+          "Value": "W/\"B6WJziL6GGvAzmpeVQCGhFI3W4Rv6NolY0+DvmMjfbQ=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "u5yxn8q1z3"
+          "Value": "dzcp996a97"
         },
         {
           "Name": "label",
@@ -3902,13 +3902,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-zl2QDp60CVO5HYCV3aUVF/w0Lze5IDHZ2KOtqhhoqEk="
+          "Value": "sha256-B6WJziL6GGvAzmpeVQCGhFI3W4Rv6NolY0+DvmMjfbQ="
         }
       ]
     },
     {
-      "Route": "styles-SAHOSFHQ.u5yxn8q1z3.css",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\wwwroot\\styles-SAHOSFHQ.css",
+      "Route": "styles-SAHOSFHQ.dzcp996a97.css",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\wwwroot\\styles-SAHOSFHQ.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3917,7 +3917,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "37976"
+          "Value": "37977"
         },
         {
           "Name": "Content-Type",
@@ -3925,11 +3925,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"zl2QDp60CVO5HYCV3aUVF/w0Lze5IDHZ2KOtqhhoqEk=\""
+          "Value": "\"B6WJziL6GGvAzmpeVQCGhFI3W4Rv6NolY0+DvmMjfbQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3939,7 +3939,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "u5yxn8q1z3"
+          "Value": "dzcp996a97"
         },
         {
           "Name": "label",
@@ -3947,13 +3947,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-zl2QDp60CVO5HYCV3aUVF/w0Lze5IDHZ2KOtqhhoqEk="
+          "Value": "sha256-B6WJziL6GGvAzmpeVQCGhFI3W4Rv6NolY0+DvmMjfbQ="
         }
       ]
     },
     {
-      "Route": "styles-SAHOSFHQ.u5yxn8q1z3.css.br",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\publish\\znb6xkz1sl-u5yxn8q1z3.br",
+      "Route": "styles-SAHOSFHQ.dzcp996a97.css.br",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\publish\\znb6xkz1sl-dzcp996a97.br",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3962,7 +3962,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5258"
+          "Value": "5229"
         },
         {
           "Name": "Content-Type",
@@ -3970,11 +3970,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"0y9qu9O2QtieUzJyS3YXK0oVMZN0EgTUJl9DnibVsD8=\""
+          "Value": "\"Tj9WVAG+361rEbLKEXkBsr3M24M7TuxAdS4QWNzwxJE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3992,7 +3992,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "u5yxn8q1z3"
+          "Value": "dzcp996a97"
         },
         {
           "Name": "label",
@@ -4000,13 +4000,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-0y9qu9O2QtieUzJyS3YXK0oVMZN0EgTUJl9DnibVsD8="
+          "Value": "sha256-Tj9WVAG+361rEbLKEXkBsr3M24M7TuxAdS4QWNzwxJE="
         }
       ]
     },
     {
-      "Route": "styles-SAHOSFHQ.u5yxn8q1z3.css.gz",
-      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\API\\obj\\Release\\net9.0\\compressed\\znb6xkz1sl-u5yxn8q1z3.gz",
+      "Route": "styles-SAHOSFHQ.dzcp996a97.css.gz",
+      "AssetFile": "C:\\Users\\sandu\\Desktop\\pontaj\\api\\obj\\Release\\net9.0\\compressed\\znb6xkz1sl-dzcp996a97.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4015,7 +4015,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6134"
+          "Value": "6137"
         },
         {
           "Name": "Content-Type",
@@ -4023,11 +4023,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"LyDzTcvD1XrqzqquNOagxoQV+vyORNTxE8PmxMlfGqc=\""
+          "Value": "\"1jH7i5tWDCzBP4MkoEEXf5pDTINQpnpsaEcCd72Q/n8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 21:03:54 GMT"
+          "Value": "Mon, 31 Mar 2025 07:10:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4045,7 +4045,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "u5yxn8q1z3"
+          "Value": "dzcp996a97"
         },
         {
           "Name": "label",
@@ -4053,7 +4053,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-LyDzTcvD1XrqzqquNOagxoQV+vyORNTxE8PmxMlfGqc="
+          "Value": "sha256-1jH7i5tWDCzBP4MkoEEXf5pDTINQpnpsaEcCd72Q/n8="
         }
       ]
     }
