@@ -12,7 +12,7 @@ import {PontajSimulareResponse} from '../../shared/models/pontajSimulareResponse
   providedIn: 'root',
 })
 export class PontajeService {
-  baseUrl = "https://localhost:5001/api/";
+  baseUrl = environment.apiUrl;
   http = inject(HttpClient);
 
   getPontaje(start: Date, end: Date) {

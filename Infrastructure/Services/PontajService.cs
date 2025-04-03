@@ -15,6 +15,8 @@ namespace Infrastructure.Services
         //     _pontajRepository = pontajRepository;
         // }
 
+        private const int ORE_MAXIME_PE_LUNA = 240; // limita maxima pe luna
+
         public async Task<PontajDto> GetPontajByIdAsync(int id)
         {
             var pontaj = await _pontajRepository.GetByIdAsync(id);
@@ -109,7 +111,7 @@ namespace Infrastructure.Services
         }
 
         public async Task<IEnumerable<PontajDto>> GenerarePontajeProiectAsync(string userId, DateTime dataInceput,
-            DateTime dataSfarsit, string numeProiect, int oreAlocate)
+    DateTime dataSfarsit, string numeProiect, int oreAlocate)
         {
             dataInceput = dataInceput.Date;
             dataSfarsit = dataSfarsit.Date.AddDays(1).AddTicks(-1);
@@ -272,7 +274,7 @@ namespace Infrastructure.Services
         }
 
         public async Task<PontajSimulareResponse> SimuleazaPontajeProiectAsync(string userId, DateTime dataInceput,
-            DateTime dataSfarsit, string numeProiect, int oreAlocate)
+    DateTime dataSfarsit, string numeProiect, int oreAlocate)
         {
             dataInceput = dataInceput.Date;
             dataSfarsit = dataSfarsit.Date.AddDays(1).AddTicks(-1);
@@ -392,17 +394,13 @@ namespace Infrastructure.Services
             };
         }
 
-        public async Task<PontajSimulareResponse> SimuleazaPontajeProiectCuAjustareNormaAsync(
-            string userId, DateTime dataInceput, DateTime dataSfarsit, string numeProiect, int oreAlocate)
+        public async Task<IEnumerable<PontajDto>> GenerarePontajeProiectCuAjustareNormaAsync(
+    string userId, DateTime dataInceput, DateTime dataSfarsit, string numeProiect, int oreAlocate)
         {
             dataInceput = dataInceput.Date;
             dataSfarsit = dataSfarsit.Date.AddDays(1).AddTicks(-1);
 
-            Console.WriteLine($"Simulare pontaje cu ajustare normă pentru perioada: {dataInceput} - {dataSfarsit}");
-
             // Verificăm limita maximă de ore pentru interval
-            // Pentru ajustare normă, trebuie să verificăm doar dacă nu depășim limita maximă teoretică
-            // Nu facem verificarea timpului disponibil aici, deoarece înlocuim ore de normă bază cu ore de proiect
             var romanianHolidays = new RomanianPublicHoliday();
             var zileLucratoareInterval = 0;
 
@@ -416,38 +414,218 @@ namespace Infrastructure.Services
                 }
             }
 
-            // Limita maximă teoretică (toate zilele lucrătoare din interval × 12 ore)
-            var limitaMaximaInterval = zileLucratoareInterval * 12;
-
-            Console.WriteLine($"Zile lucrătoare în interval: {zileLucratoareInterval}");
-            Console.WriteLine($"Limită maximă teoretică: {limitaMaximaInterval} ore");
-
-            // Verificăm dacă orele alocate depășesc limita teoretică
-            if (oreAlocate > limitaMaximaInterval)
-            {
-                Console.WriteLine(
-                    $"EROARE: Numărul de ore solicitate ({oreAlocate}) depășește limita maximă teoretică ({limitaMaximaInterval})");
-                return new PontajSimulareResponse
-                {
-                    Pontaje = new List<PontajDto>(),
-                    OreRamase = oreAlocate,
-                    OreAcoperite = 0,
-                    ZileNecesareExtra = 0
-                };
-            }
-
-            var pontajeSimulate = new List<Pontaj>();
-            var oreRamase = oreAlocate;
-            var pontajeNormaSterse = new List<Pontaj>();
-
+            // Verificăm și orele totale deja pontate în interval
             var spec = new PontajByUserAndPeriodSpecification(userId, dataInceput, dataSfarsit);
             var pontajeExistente = await _pontajRepository.ListAsync(spec);
+
+            // Verificăm câte ore de normă bază avem disponibile în interval
+            var pontajeNormaBaza = pontajeExistente.Where(p => p.NormaBaza).ToList();
+            var totalOreNormaBaza = pontajeNormaBaza.Sum(p => (p.OraFinal - p.OraStart).TotalHours);
+
+            Console.WriteLine($"Zile lucrătoare în interval: {zileLucratoareInterval}");
+            Console.WriteLine($"Total ore normă bază disponibile pentru înlocuire: {totalOreNormaBaza}");
+            Console.WriteLine($"Ore solicitate pentru proiect: {oreAlocate} ore");
+
+            var pontajeCreate = new List<Pontaj>();
+            var oreRamase = oreAlocate;
 
             var pontajePeZile = pontajeExistente
                 .GroupBy(p => p.Data.Date)
                 .ToDictionary(g => g.Key, g => g.ToList());
 
-            // Prima etapă: Încercăm să alocăm ore în intervale libere, ca în metoda originală
+            // Prima etapă: Încercăm să alocăm ore în intervale libere
+            for (var data = dataInceput; data <= dataSfarsit && oreRamase > 0; data = data.AddDays(1))
+            {
+                if (!romanianHolidays.IsPublicHoliday(data) &&
+                    data.DayOfWeek != DayOfWeek.Saturday &&
+                    data.DayOfWeek != DayOfWeek.Sunday)
+                {
+                    var pontajeZiCurenta = pontajePeZile.ContainsKey(data.Date)
+                        ? pontajePeZile[data.Date]
+                        : new List<Pontaj>();
+
+                    var intervaleLibere = GasesteIntervaleLibere(pontajeZiCurenta);
+
+                    foreach (var interval in intervaleLibere)
+                    {
+                        if (oreRamase <= 0) break;
+
+                        var durataInterval = (interval.Item2 - interval.Item1).TotalHours;
+                        var oreDeAlocat = Math.Min(durataInterval, oreRamase);
+
+                        if (oreDeAlocat >= 1)
+                        {
+                            oreDeAlocat = Math.Floor(oreDeAlocat);
+
+                            var oraStart = interval.Item1;
+                            var oraFinal = oraStart.Add(TimeSpan.FromHours(oreDeAlocat));
+
+                            var pontajNou = new Pontaj
+                            {
+                                UserId = userId,
+                                Data = data,
+                                OraStart = oraStart,
+                                OraFinal = oraFinal,
+                                NumeProiect = numeProiect,
+                                NormaBaza = false
+                            };
+
+                            _pontajRepository.Add(pontajNou);
+                            pontajeCreate.Add(pontajNou);
+
+                            if (!pontajePeZile.ContainsKey(data.Date))
+                            {
+                                pontajePeZile[data.Date] = new List<Pontaj>();
+                            }
+
+                            pontajePeZile[data.Date].Add(pontajNou);
+
+                            oreRamase -= (int)oreDeAlocat;
+
+                            Console.WriteLine(
+                                $"Pontaj adăugat: {data.ToShortDateString()} {oraStart} - {oraFinal}, ore: {oreDeAlocat}");
+                        }
+                    }
+                }
+            }
+
+            // A doua etapă: Dacă mai sunt ore rămase, înlocuim pontaje de normă bază
+            if (oreRamase > 0)
+            {
+                Console.WriteLine($"Au rămas {oreRamase} ore neacoperite. Încercăm înlocuirea normei de bază.");
+
+                // Verificăm dacă există suficiente ore de normă bază pentru a fi înlocuite
+                if (totalOreNormaBaza < oreRamase)
+                {
+                    Console.WriteLine("EROARE: Nu există suficiente ore de normă bază pentru a fi înlocuite!");
+                    throw new InvalidOperationException(
+                        $"Nu există suficiente ore de normă bază pentru a fi înlocuite. Aveți nevoie de {oreRamase} ore, dar există doar {Math.Floor(totalOreNormaBaza)} ore de normă bază în intervalul selectat.");
+                }
+
+                // Ordonăm zilele cronologic pentru predictibilitate
+                var zileOrdonate = pontajePeZile.Keys.OrderBy(d => d).ToList();
+
+                foreach (var dataZi in zileOrdonate)
+                {
+                    if (oreRamase <= 0) break;
+
+                    var pontajeZi = pontajePeZile[dataZi];
+                    var pontajeNormaBazaZi = pontajeZi.Where(p => p.NormaBaza).ToList();
+
+                    if (!pontajeNormaBazaZi.Any()) continue;
+
+                    foreach (var pontajNorma in pontajeNormaBazaZi)
+                    {
+                        if (oreRamase <= 0) break;
+
+                        var durataNorma = (pontajNorma.OraFinal - pontajNorma.OraStart).TotalHours;
+                        var oreDeInlocuit = Math.Min(durataNorma, oreRamase);
+
+                        if (oreDeInlocuit >= 1)
+                        {
+                            oreDeInlocuit = Math.Floor(oreDeInlocuit);
+
+                            var oraStart = pontajNorma.OraStart;
+                            var oraFinal = oraStart.Add(TimeSpan.FromHours(oreDeInlocuit));
+
+                            // Ștergem pontajul de normă bază existent
+                            _pontajRepository.Delete(pontajNorma);
+
+                            // Cream pontajul nou pentru proiect
+                            var pontajNou = new Pontaj
+                            {
+                                UserId = userId,
+                                Data = pontajNorma.Data,
+                                OraStart = oraStart,
+                                OraFinal = oraFinal,
+                                NumeProiect = numeProiect,
+                                NormaBaza = false
+                            };
+
+                            _pontajRepository.Add(pontajNou);
+                            pontajeCreate.Add(pontajNou);
+
+                            // Dacă înlocuim doar parțial norma de bază, creăm un nou pontaj pentru restul orelor
+                            if (oreDeInlocuit < durataNorma)
+                            {
+                                var pontajNormaRamas = new Pontaj
+                                {
+                                    UserId = userId,
+                                    Data = pontajNorma.Data,
+                                    OraStart = oraFinal,
+                                    OraFinal = pontajNorma.OraFinal,
+                                    NumeProiect = pontajNorma.NumeProiect,
+                                    NormaBaza = true
+                                };
+
+                                _pontajRepository.Add(pontajNormaRamas);
+                            }
+
+                            oreRamase -= (int)oreDeInlocuit;
+
+                            Console.WriteLine(
+                                $"Normă bază înlocuită: {pontajNorma.Data.ToShortDateString()} {oraStart} - {oraFinal}, ore: {oreDeInlocuit}");
+                        }
+                    }
+                }
+            }
+
+            await _pontajRepository.SaveChangesAsync();
+
+            return pontajeCreate.Select(p => new PontajDto
+            {
+                Id = p.Id,
+                Data = p.Data,
+                OraStart = p.OraStart,
+                OraFinal = p.OraFinal,
+                NumeProiect = p.NumeProiect,
+                NormaBaza = p.NormaBaza,
+                UserId = p.UserId
+            }).ToList();
+        }
+
+        public async Task<PontajSimulareResponse> SimuleazaPontajeProiectCuAjustareNormaAsync(
+    string userId, DateTime dataInceput, DateTime dataSfarsit, string numeProiect, int oreAlocate)
+        {
+            dataInceput = dataInceput.Date;
+            dataSfarsit = dataSfarsit.Date.AddDays(1).AddTicks(-1);
+
+            Console.WriteLine($"Simulare pontaje cu ajustare normă pentru perioada: {dataInceput} - {dataSfarsit}");
+
+            var romanianHolidays = new RomanianPublicHoliday();
+            var zileLucratoareInterval = 0;
+
+            for (var data = dataInceput.Date; data <= dataSfarsit.Date; data = data.AddDays(1))
+            {
+                if (data.DayOfWeek != DayOfWeek.Saturday &&
+                    data.DayOfWeek != DayOfWeek.Sunday &&
+                    !romanianHolidays.IsPublicHoliday(data))
+                {
+                    zileLucratoareInterval++;
+                }
+            }
+
+            // Verificăm și orele totale deja pontate în interval
+            var spec = new PontajByUserAndPeriodSpecification(userId, dataInceput, dataSfarsit);
+            var pontajeExistente = await _pontajRepository.ListAsync(spec);
+
+            // Verificăm câte ore de normă bază avem disponibile în interval
+            var pontajeNormaBaza = pontajeExistente.Where(p => p.NormaBaza).ToList();
+            var totalOreNormaBaza = pontajeNormaBaza.Sum(p => (p.OraFinal - p.OraStart).TotalHours);
+
+            Console.WriteLine($"Zile lucrătoare în interval: {zileLucratoareInterval}");
+            Console.WriteLine($"Total ore normă bază disponibile pentru înlocuire: {totalOreNormaBaza}");
+            Console.WriteLine($"Ore solicitate pentru proiect: {oreAlocate} ore");
+
+            var pontajeSimulate = new List<Pontaj>();
+            var oreRamase = oreAlocate;
+            var pontajeNormaSterse = new List<Pontaj>();
+
+            var pontajePeZile = pontajeExistente
+                .GroupBy(p => p.Data.Date)
+                .ToDictionary(g => g.Key, g => g.ToList());
+
+            // Prima etapă: Încercăm să alocăm ore în intervale libere
             for (var data = dataInceput.Date; data <= dataSfarsit.Date && oreRamase > 0; data = data.AddDays(1))
             {
                 if (!romanianHolidays.IsPublicHoliday(data) &&
@@ -522,11 +700,11 @@ namespace Infrastructure.Services
                     if (oreRamase <= 0) break;
 
                     var pontajeZi = pontajePeZile[dataZi];
-                    var pontajeNormaBaza = pontajeZi.Where(p => p.NormaBaza).ToList();
+                    var pontajeNormaBazaZi = pontajeZi.Where(p => p.NormaBaza && p.Id > 0).ToList(); // Doar pontaje reale, nu simulate
 
-                    if (!pontajeNormaBaza.Any()) continue;
+                    if (!pontajeNormaBazaZi.Any()) continue;
 
-                    foreach (var pontajNorma in pontajeNormaBaza)
+                    foreach (var pontajNorma in pontajeNormaBazaZi)
                     {
                         if (oreRamase <= 0) break;
 
@@ -556,7 +734,6 @@ namespace Infrastructure.Services
                             };
 
                             pontajeSimulate.Add(pontajNou);
-                            pontajePeZile[dataZi].Add(pontajNou);
 
                             // Dacă înlocuim doar parțial norma de bază, creăm un nou pontaj pentru restul orelor
                             if (oreDeInlocuit < durataNorma)
@@ -573,7 +750,6 @@ namespace Infrastructure.Services
                                 };
 
                                 pontajeSimulate.Add(pontajNormaRamas);
-                                pontajePeZile[dataZi].Add(pontajNormaRamas);
                             }
 
                             oreRamase -= (int)oreDeInlocuit;
@@ -586,7 +762,6 @@ namespace Infrastructure.Services
             }
 
             var oreAcoperite = oreAlocate - oreRamase;
-            var zileNecesareExtra = Math.Ceiling(oreRamase / 12.0); // presupun zile de 12 ore
 
             var rezultat = pontajeSimulate
                 .Where(p => p.Id != -2) // Excludem pontajele marcate ca fiind de normă rămasă după ajustare
@@ -614,206 +789,9 @@ namespace Infrastructure.Services
             {
                 Pontaje = rezultat,
                 OreRamase = oreRamase,
-                OreAcoperite = oreAcoperite,
-                ZileNecesareExtra = zileNecesareExtra
+                OreAcoperite = (int)oreAcoperite,
+                ZileNecesareExtra = (int)Math.Ceiling(oreRamase / 8.0)
             };
-        }
-
-        public async Task<IEnumerable<PontajDto>> GenerarePontajeProiectCuAjustareNormaAsync(
-            string userId, DateTime dataInceput, DateTime dataSfarsit, string numeProiect, int oreAlocate)
-        {
-            dataInceput = dataInceput.Date;
-            dataSfarsit = dataSfarsit.Date.AddDays(1).AddTicks(-1);
-
-            // Verificăm limita maximă de ore pentru interval
-            // Pentru ajustare normă, trebuie să verificăm doar dacă nu depășim limita maximă teoretică
-            var romanianHolidays = new RomanianPublicHoliday();
-            var zileLucratoareInterval = 0;
-
-            for (var data = dataInceput.Date; data <= dataSfarsit.Date; data = data.AddDays(1))
-            {
-                if (data.DayOfWeek != DayOfWeek.Saturday &&
-                    data.DayOfWeek != DayOfWeek.Sunday &&
-                    !romanianHolidays.IsPublicHoliday(data))
-                {
-                    zileLucratoareInterval++;
-                }
-            }
-
-            // Limita maximă teoretică (toate zilele lucrătoare din interval × 12 ore)
-            var limitaMaximaInterval = zileLucratoareInterval * 12;
-
-            Console.WriteLine($"Zile lucrătoare în interval: {zileLucratoareInterval}");
-            Console.WriteLine($"Limită maximă teoretică: {limitaMaximaInterval} ore");
-            Console.WriteLine($"Ore solicitate pentru proiect: {oreAlocate} ore");
-
-            // Verificăm și orele totale deja pontate în interval
-            var spec = new PontajByUserAndPeriodSpecification(userId, dataInceput, dataSfarsit);
-            var pontajeExistente = await _pontajRepository.ListAsync(spec);
-            var oreTotalPontateInterval = pontajeExistente.Sum(p => (p.OraFinal - p.OraStart).TotalHours);
-
-            Console.WriteLine($"Ore deja pontate în interval: {oreTotalPontateInterval}");
-
-            // Calculăm totalul orelor după adăugarea noilor ore
-            var totalOrePreconizate = oreTotalPontateInterval + oreAlocate;
-
-            // Verificăm dacă orele alocate depășesc limita teoretică
-            if (totalOrePreconizate > limitaMaximaInterval)
-            {
-                Console.WriteLine(
-                    $"EROARE: Totalul de ore preconizate ({totalOrePreconizate}) depășește limita maximă teoretică ({limitaMaximaInterval})");
-                throw new InvalidOperationException(
-                    $"Adăugarea a {oreAlocate} ore ar duce la un total de {totalOrePreconizate} ore, ceea ce depășește limita maximă de {limitaMaximaInterval} ore pentru intervalul selectat. Puteți adăuga maxim {Math.Floor(limitaMaximaInterval - oreTotalPontateInterval)} ore.");
-            }
-
-            var pontajeCreate = new List<Pontaj>();
-            var oreRamase = oreAlocate;
-
-            var pontajePeZile = pontajeExistente
-                .GroupBy(p => p.Data.Date)
-                .ToDictionary(g => g.Key, g => g.ToList());
-
-            // Prima etapă: Încercăm să alocăm ore în intervale libere
-            for (var data = dataInceput; data <= dataSfarsit && oreRamase > 0; data = data.AddDays(1))
-            {
-                if (!romanianHolidays.IsPublicHoliday(data) &&
-                    data.DayOfWeek != DayOfWeek.Saturday &&
-                    data.DayOfWeek != DayOfWeek.Sunday)
-                {
-                    var pontajeZiCurenta = pontajePeZile.ContainsKey(data.Date)
-                        ? pontajePeZile[data.Date]
-                        : new List<Pontaj>();
-
-                    var intervaleLibere = GasesteIntervaleLibere(pontajeZiCurenta);
-
-                    foreach (var interval in intervaleLibere)
-                    {
-                        if (oreRamase <= 0) break;
-
-                        var durataInterval = (interval.Item2 - interval.Item1).TotalHours;
-                        var oreDeAlocat = Math.Min(durataInterval, oreRamase);
-
-                        if (oreDeAlocat >= 1)
-                        {
-                            oreDeAlocat = Math.Floor(oreDeAlocat);
-
-                            var oraStart = interval.Item1;
-                            var oraFinal = oraStart.Add(TimeSpan.FromHours(oreDeAlocat));
-
-                            var pontajNou = new Pontaj
-                            {
-                                UserId = userId,
-                                Data = data,
-                                OraStart = oraStart,
-                                OraFinal = oraFinal,
-                                NumeProiect = numeProiect,
-                                NormaBaza = false
-                            };
-
-                            _pontajRepository.Add(pontajNou);
-                            pontajeCreate.Add(pontajNou);
-
-                            if (!pontajePeZile.ContainsKey(data.Date))
-                            {
-                                pontajePeZile[data.Date] = new List<Pontaj>();
-                            }
-
-                            pontajePeZile[data.Date].Add(pontajNou);
-
-                            oreRamase -= (int)oreDeAlocat;
-
-                            Console.WriteLine(
-                                $"Pontaj adăugat: {data.ToShortDateString()} {oraStart} - {oraFinal}, ore: {oreDeAlocat}");
-                        }
-                    }
-                }
-            }
-
-            // A doua etapă: Dacă mai sunt ore rămase, înlocuim pontaje de normă bază
-            if (oreRamase > 0)
-            {
-                Console.WriteLine($"Au rămas {oreRamase} ore neacoperite. Încercăm înlocuirea normei de bază.");
-
-                // Ordonăm zilele cronologic pentru predictibilitate
-                var zileOrdonate = pontajePeZile.Keys.OrderBy(d => d).ToList();
-
-                foreach (var dataZi in zileOrdonate)
-                {
-                    if (oreRamase <= 0) break;
-
-                    var pontajeZi = pontajePeZile[dataZi];
-                    var pontajeNormaBaza = pontajeZi.Where(p => p.NormaBaza).ToList();
-
-                    if (!pontajeNormaBaza.Any()) continue;
-
-                    foreach (var pontajNorma in pontajeNormaBaza)
-                    {
-                        if (oreRamase <= 0) break;
-
-                        var durataNorma = (pontajNorma.OraFinal - pontajNorma.OraStart).TotalHours;
-                        var oreDeInlocuit = Math.Min(durataNorma, oreRamase);
-
-                        if (oreDeInlocuit >= 1)
-                        {
-                            oreDeInlocuit = Math.Floor(oreDeInlocuit);
-
-                            var oraStart = pontajNorma.OraStart;
-                            var oraFinal = oraStart.Add(TimeSpan.FromHours(oreDeInlocuit));
-
-                            // Ștergem pontajul de normă bază existent
-                            _pontajRepository.Delete(pontajNorma);
-
-                            // Cream pontajul nou pentru proiect
-                            var pontajNou = new Pontaj
-                            {
-                                UserId = userId,
-                                Data = pontajNorma.Data,
-                                OraStart = oraStart,
-                                OraFinal = oraFinal,
-                                NumeProiect = numeProiect,
-                                NormaBaza = false
-                            };
-
-                            _pontajRepository.Add(pontajNou);
-                            pontajeCreate.Add(pontajNou);
-
-                            // Dacă înlocuim doar parțial norma de bază, creăm un nou pontaj pentru restul orelor
-                            if (oreDeInlocuit < durataNorma)
-                            {
-                                var pontajNormaRamas = new Pontaj
-                                {
-                                    UserId = userId,
-                                    Data = pontajNorma.Data,
-                                    OraStart = oraFinal,
-                                    OraFinal = pontajNorma.OraFinal,
-                                    NumeProiect = pontajNorma.NumeProiect,
-                                    NormaBaza = true
-                                };
-
-                                _pontajRepository.Add(pontajNormaRamas);
-                            }
-
-                            oreRamase -= (int)oreDeInlocuit;
-
-                            Console.WriteLine(
-                                $"Normă bază înlocuită: {pontajNorma.Data.ToShortDateString()} {oraStart} - {oraFinal}, ore: {oreDeInlocuit}");
-                        }
-                    }
-                }
-            }
-
-            await _pontajRepository.SaveChangesAsync();
-
-            return pontajeCreate.Select(p => new PontajDto
-            {
-                Id = p.Id,
-                Data = p.Data,
-                OraStart = p.OraStart,
-                OraFinal = p.OraFinal,
-                NumeProiect = p.NumeProiect,
-                NormaBaza = p.NormaBaza,
-                UserId = p.UserId
-            }).ToList();
         }
 
         private async Task<double> VerificaTimpDisponibilInIntervalAsync(string userId, DateTime dataInceput, DateTime dataSfarsit)
@@ -824,24 +802,55 @@ namespace Infrastructure.Services
             {
                 lunileUnice.Add((data.Year, data.Month));
             }
-    
+
             Console.WriteLine($"Verificare timp disponibil pentru {lunileUnice.Count} luni");
-    
+
             double timpDisponibilTotal = 0;
-    
+
             // Pentru fiecare lună, obținem timpul disponibil de la TimpDisponibilService
             foreach (var (an, luna) in lunileUnice)
             {
                 var primaZiLuna = new DateTime(an, luna, 1);
                 var timpDisponibilLuna = await timpDisponibilService.GetTimpDisponibilAsync(userId, primaZiLuna);
-        
-                // Adăugăm orele rămase disponibile pentru această lună
-                timpDisponibilTotal += timpDisponibilLuna.OreRamaseLuna;
-        
-                Console.WriteLine($"Luna {luna}/{an}: {timpDisponibilLuna.OreRamaseLuna} ore rămase disponibile");
+
+                // Verificăm dacă luna este parțial în interval
+                var ultimaZiLuna = primaZiLuna.AddMonths(1).AddDays(-1);
+                var primaZiIntersectie = primaZiLuna > dataInceput ? primaZiLuna : dataInceput;
+                var ultimaZiIntersectie = ultimaZiLuna < dataSfarsit ? ultimaZiLuna : dataSfarsit;
+
+                // Pentru calculul procentului de timp disponibil, numărăm zilele lucrătoare
+                var romanianHolidays = new RomanianPublicHoliday();
+                var zileLucratoareInLuna = 0;
+                var zileLucratoareInIntersectie = 0;
+
+                for (var data = primaZiLuna; data <= ultimaZiLuna; data = data.AddDays(1))
+                {
+                    if (data.DayOfWeek != DayOfWeek.Saturday &&
+                        data.DayOfWeek != DayOfWeek.Sunday &&
+                        !romanianHolidays.IsPublicHoliday(data))
+                    {
+                        zileLucratoareInLuna++;
+
+                        if (data >= primaZiIntersectie && data <= ultimaZiIntersectie)
+                        {
+                            zileLucratoareInIntersectie++;
+                        }
+                    }
+                }
+
+                // Calculăm procentul de timp disponibil pentru intervalul selectat din lună
+                double procentTimp = zileLucratoareInLuna > 0 ? (double)zileLucratoareInIntersectie / zileLucratoareInLuna : 0;
+
+                // Adăugăm orele rămase disponibile pentru această lună, proporțional cu intervalul selectat
+                double oreDisponibilePentruInterval = timpDisponibilLuna.OreRamaseLuna * procentTimp;
+                timpDisponibilTotal += oreDisponibilePentruInterval;
+
+                Console.WriteLine($"Luna {luna}/{an}: {timpDisponibilLuna.OreRamaseLuna} ore rămase disponibile, " +
+                                 $"din care {oreDisponibilePentruInterval:F2} ore pentru intervalul selectat " +
+                                 $"({procentTimp:P2} din zilele lucrătoare)");
             }
-    
-            Console.WriteLine($"TOTAL TIMP DISPONIBIL ÎN INTERVAL: {timpDisponibilTotal} ore");
+
+            Console.WriteLine($"TOTAL TIMP DISPONIBIL ÎN INTERVAL: {timpDisponibilTotal:F2} ore");
             return timpDisponibilTotal;
         }
     }

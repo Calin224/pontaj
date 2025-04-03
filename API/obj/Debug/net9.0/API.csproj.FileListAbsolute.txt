@@ -172,8 +172,6 @@ C:\Users\sandu\Desktop\pontaj\api\obj\Debug\net9.0\API.pdb
 C:\Users\sandu\Desktop\pontaj\api\obj\Debug\net9.0\API.genruntimeconfig.cache
 C:\Users\sandu\Desktop\pontaj\api\obj\Debug\net9.0\ref\API.dll
 C:\Users\sandu\Desktop\pontaj\api\bin\Debug\net9.0\AutoMapper.dll
-C:\Users\sandu\Desktop\pontaj\api\obj\Debug\net9.0\compressed\wsenxafarw-gv9nnx918d.gz
-C:\Users\sandu\Desktop\pontaj\api\obj\Debug\net9.0\compressed\xtgzzp8wob-bdlfngeg9h.gz
 C:\Users\sandu\Desktop\pontaj\api\bin\Debug\net9.0\Nager.Date.dll
 C:\Users\sandu\Desktop\pontaj\api\bin\Debug\net9.0\Nager.LicenseSystem.dll
 C:\Users\sandu\Desktop\pontaj\api\bin\Debug\net9.0\PublicHoliday.dll
@@ -182,7 +180,9 @@ C:\Users\sandu\Desktop\pontaj\api\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.
 C:\Users\sandu\Desktop\pontaj\api\bin\Debug\net9.0\System.Drawing.Common.dll
 C:\Users\sandu\Desktop\pontaj\api\bin\Debug\net9.0\System.Private.Windows.Core.dll
 C:\Users\sandu\Desktop\pontaj\api\bin\Debug\net9.0\runtimes\win\lib\net9.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\sandu\Desktop\pontaj\api\obj\Debug\net9.0\compressed\zzyd6wgwl5-xijim17l10.gz
-C:\Users\sandu\Desktop\pontaj\api\obj\Debug\net9.0\compressed\1dpm1p8bmc-0xifb4zx19.gz
-C:\Users\sandu\Desktop\pontaj\api\obj\Debug\net9.0\compressed\9h1o294wjp-i4y0bjhxm2.gz
-C:\Users\sandu\Desktop\pontaj\api\obj\Debug\net9.0\compressed\znb6xkz1sl-dzcp996a97.gz
+C:\Users\sandu\Desktop\pontaj\api\obj\Debug\net9.0\compressed\zzyd6wgwl5-5npfohhw4t.gz
+C:\Users\sandu\Desktop\pontaj\api\obj\Debug\net9.0\compressed\1dpm1p8bmc-14jzktvqsn.gz
+C:\Users\sandu\Desktop\pontaj\api\obj\Debug\net9.0\compressed\sb2ebrnjgd-d25eo772bx.gz
+C:\Users\sandu\Desktop\pontaj\api\obj\Debug\net9.0\compressed\wsenxafarw-39tegmrjtp.gz
+C:\Users\sandu\Desktop\pontaj\api\obj\Debug\net9.0\compressed\xtgzzp8wob-tvy3j3n584.gz
+C:\Users\sandu\Desktop\pontaj\api\obj\Debug\net9.0\compressed\znb6xkz1sl-u5yxn8q1z3.gz

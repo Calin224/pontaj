@@ -33,6 +33,7 @@ C:\Users\sandu\Desktop\pontaj\bin\Publish\Microsoft.IdentityModel.Protocols.Open
 C:\Users\sandu\Desktop\pontaj\bin\Publish\Microsoft.IdentityModel.Tokens.dll
 C:\Users\sandu\Desktop\pontaj\bin\Publish\Microsoft.SqlServer.Server.dll
 C:\Users\sandu\Desktop\pontaj\bin\Publish\Microsoft.Win32.SystemEvents.dll
+C:\Users\sandu\Desktop\pontaj\bin\Publish\PublicHoliday.dll
 C:\Users\sandu\Desktop\pontaj\bin\Publish\System.ClientModel.dll
 C:\Users\sandu\Desktop\pontaj\bin\Publish\System.Configuration.ConfigurationManager.dll
 C:\Users\sandu\Desktop\pontaj\bin\Publish\System.Drawing.Common.dll

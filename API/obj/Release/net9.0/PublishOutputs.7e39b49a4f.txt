@@ -57,6 +57,9 @@ C:\Users\sandu\Desktop\pontaj\bin\Publish\Microsoft.SqlServer.Server.dll
 C:\Users\sandu\Desktop\pontaj\bin\Publish\Microsoft.VisualStudio.SolutionPersistence.dll
 C:\Users\sandu\Desktop\pontaj\bin\Publish\Microsoft.Win32.SystemEvents.dll
 C:\Users\sandu\Desktop\pontaj\bin\Publish\Mono.TextTemplating.dll
+C:\Users\sandu\Desktop\pontaj\bin\Publish\Nager.Date.dll
+C:\Users\sandu\Desktop\pontaj\bin\Publish\Nager.LicenseSystem.dll
+C:\Users\sandu\Desktop\pontaj\bin\Publish\PublicHoliday.dll
 C:\Users\sandu\Desktop\pontaj\bin\Publish\System.ClientModel.dll
 C:\Users\sandu\Desktop\pontaj\bin\Publish\System.CodeDom.dll
 C:\Users\sandu\Desktop\pontaj\bin\Publish\System.Composition.AttributedModel.dll

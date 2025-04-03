@@ -16,6 +16,7 @@ namespace Infrastructure.Services
         private const int ORE_NORMA_BAZA_PE_ZI = 8;
         private const int ORE_PROIECTE_PE_ZI = 4;
         private const int ORE_MAXIME_PE_ZI = 12; // Total: 8 ore normă + 4 ore proiecte
+        private const int ORE_MAXIME_PE_LUNA = 240; // Limita maximă de ore pe lună
 
         public TimpDisponibilService(IGenericRepository<Pontaj> pontajRepository)
         {
@@ -50,16 +51,19 @@ namespace Infrastructure.Services
                 }
             }
 
-            // Calculează limita maximă de ore permisă pentru lună (12 ore pe zi lucrătoare)
-            var limitaMaximaLuna = zileLucratoareLuna * 12;
+            // Calculează limita teoretică maximă de ore permisă pentru lună (12 ore pe zi lucrătoare)
+            var limitaMaximaTeoretica = zileLucratoareLuna * ORE_MAXIME_PE_ZI;
+            
+            // Aplică limita fixă de 240 ore pe lună
+            var limitaMaximaLuna = Math.Min(limitaMaximaTeoretica, ORE_MAXIME_PE_LUNA);
 
             // Calculează orele deja pontate
             var oreTotalPontate = pontajeLuna.Sum(p => (p.OraFinal - p.OraStart).TotalHours);
 
-            // Calculează orele disponibile pe categorii
-            var oreNormaBazaLuna = zileLucratoareLuna * ORE_NORMA_BAZA_PE_ZI;
-            var oreProiecteLuna = zileLucratoareLuna * ORE_PROIECTE_PE_ZI;
-            var oreDisponibileLuna = oreNormaBazaLuna + oreProiecteLuna;
+            // Calculează orele disponibile pe categorii (în limita celor 240 ore)
+            var oreNormaBazaLuna = Math.Min(zileLucratoareLuna * ORE_NORMA_BAZA_PE_ZI, ORE_MAXIME_PE_LUNA);
+            var oreProiecteLuna = Math.Min(zileLucratoareLuna * ORE_PROIECTE_PE_ZI, ORE_MAXIME_PE_LUNA - oreNormaBazaLuna);
+            var oreDisponibileLuna = Math.Min(oreNormaBazaLuna + oreProiecteLuna, ORE_MAXIME_PE_LUNA);
 
             // Verifică dacă s-a depășit limita maximă
             if (oreTotalPontate > limitaMaximaLuna)
@@ -91,11 +95,10 @@ namespace Infrastructure.Services
                 OrePontateLuna = orePontateLuna,
                 OrePontateNormaBaza = orePontateNormaBaza,
                 OrePontateProiecte = orePontateProiecte,
-                OreRamaseLuna = oreRamaseLuna, // Această valoare va fi acum limitată corect
+                OreRamaseLuna = oreRamaseLuna,
                 ZileLucratoareLuna = zileLucratoareLuna,
                 ZileLucratoareRamase = zileLucratoareRamase,
-                ProcentUtilizare = procentUtilizare,
-                // LimitaMaximaLuna = limitaMaximaLuna // Adăugat pentru referință
+                ProcentUtilizare = procentUtilizare
             };
         }
 
