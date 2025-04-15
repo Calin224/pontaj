@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers;
 
@@ -66,8 +67,16 @@ public class AccountController(SignInManager<AppUser> signInManager) : BaseApiCo
     }
 
     [HttpGet("all-users")]
-    public async Task<IReadOnlyList<AppUser>> GetAllUsers()
+    public async Task<ActionResult<IReadOnlyList<AppUser>>> GetAllUsers()
     {
-        throw new NotImplementedException("This method is not implemented yet.");
+        var users = await signInManager.UserManager.Users.ToListAsync();
+        
+        // var user = await signInManager.UserManager.GetUserByEmail(User);
+
+        return Ok(users.Select(x => new
+        {
+            x.FirstName,
+            x.LastName
+        }).ToList());
     }
 }
